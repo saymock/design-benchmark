@@ -1,0 +1,69 @@
+{
+  "candidate": "b692dd",
+  "verdict": "A near-identical rebuild of the Wikipedia main page whose only visible gaps are Arimo standing in for the page's Arial/Helvetica and a 1-3 px vertical drift in the column content; it is a well-named, component-based Figma tree but with absolute top-level placement, spacer frames and no shared styles.",
+  "metrics": { "sizeMatch": true, "meanDiff": 14.015, "pctDiff": 9.72 },
+  "scores": {
+    "layout": 13,
+    "typography": 10,
+    "color": 8,
+    "icons": 9,
+    "content": 10,
+    "pixel": 1,
+    "hierarchy": 9,
+    "layoutPrimitives": 9,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 51,
+  "editability": 32,
+  "total": 83,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "whole page (headings, body, tabs)",
+      "what": "Arimo substituted for the reference's Arial/Helvetica sans-serif: the glyph shapes differ slightly, and the bold 19.2 px section headings ('From today's featured article', 'In the news') render a little wider and heavier than in the reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "left and right columns, section headings and bodies",
+      "what": "the heading boxes start about 1 CSS px right of and below the reference (500 px wide inner boxes instead of 502/590 with their border), and the body text drifts down by 1-3 CSS px toward the bottom ('Did you know' bullet, 'In the news' items, Kimi Antonelli caption). These sub-pixel text offsets are what push the grid meanDiff to 20-40 in the lower cells",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "pixel",
+      "where": "whole render",
+      "what": "meanDiff 14.0 and pctDiff 9.7 % even though nothing looks misplaced at a glance: text anti-aliasing and the small vertical drift account for most of it",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole file",
+      "what": "no text or color styles or variables (styled: 0): #3366cc, #202122 and the heading greens and blues are repeated as raw values, and footer link rows and figures are not components",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "root frame, Header, Page toolbar, figures",
+      "what": "the root, Header and Page toolbar are not auto-layout (63 absolute layers): the header items, columns and Appearance menu sit at fixed coordinates, and the photo Figures are placed absolutely inside auto-layout bodies",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "Welcome banner, Appearance menu, Tab instances",
+      "what": "1 px wide 'Spacer' frames are used for spacing instead of gap or padding, and the unselected Tab instances (Talk, View source, View history) keep a 67x2 'Selected indicator' layer that a variant should handle",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every block (header, toolbar with the onboarding dot, welcome banner, both columns, Appearance panel) is present at its measured position and size, with exact surface colors (#f9f9f9, #f5fffa/#cef2e0, #f5faff/#cedff2)",
+    "All text is exact, line breaks included (Świeczkowski, 'Eunos / MRT station', 'Blueberry-flavored frozen / yogurt'), and the three photos are correctly cropped",
+    "Real vector logo and icons, and meaningful components (Tab, Section heading, List item, Radio option) with 20 instances and readable layer names"
+  ]
+}

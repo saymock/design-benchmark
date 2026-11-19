@@ -1,0 +1,83 @@
+{
+  "candidate": "9954e7",
+  "verdict": "A very close reproduction whose layout and content line up almost everywhere, but it uses Inter instead of SF Pro and an opaque tab bar instead of the translucent glass one; the structure is a clean, well-named auto-layout tree with components for the repeated rows.",
+  "metrics": { "sizeMatch": true, "meanDiff": 3.978, "pctDiff": 2.353 },
+  "scores": {
+    "layout": 13,
+    "typography": 8,
+    "color": 6,
+    "icons": 8,
+    "content": 9,
+    "pixel": 3,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 47,
+  "editability": 33,
+  "total": 80,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "every text (Today title, feed text, tab labels, status bar clock)",
+      "what": "Inter used instead of SF Pro: wider glyphs and different letter shapes ('Today', 'y', 'a', digits), so the heatmap outlines every word even where sizes and positions match",
+      "points": 4
+    },
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "tab bar",
+      "what": "the reference's Liquid Glass bar shows the blurred 'Liste de Wikimédia' text and the blue rank circle through it; the candidate's bar is near-opaque white with nothing showing through",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "status bar, right indicators",
+      "what": "cellular bars and battery about 15-20% smaller than in the reference (battery ~85x38 px vs ~95x42 px at @3x), the bars sitting lower",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "Top read #1 and #3 thumbnails",
+      "what": "Pablo Pagis photo cropped wider (player smaller, more background) than in the reference; the Star Academy thumbnail shows the whole logo where the reference shows a tight crop ('ar / ader' letters)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "Top read #2 title",
+      "what": "the reference clips the title at the card edge ('présidentiell'), the candidate truncates it with an ellipsis ('présidentiel...')",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "top bar, tabs button (square.on.square)",
+      "what": "front square offset differs from the reference glyph (larger overlap, rounder corners)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole file",
+      "what": "no text or color styles/variables (styled: 0); #202122, #72777d, #3366cc and the 15 px sizes are repeated as raw values; the four tab items are not one component",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "status bar, tab bar selection, feed",
+      "what": "status bar and the tab selection capsule are absolutely placed; feed and card gaps are fractional magic numbers (62.6, 11.3) tuned to match pixels",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Block geometry matches within a few px from status bar to tab bar: segmented control, Card hidden banner, Games card, Top read rows and their thumbnails",
+    "All texts present and exact, French accents included, with the measured Wikipedia colors (#202122, #72777d, #3366cc)",
+    "Section header, game question row and top read row are components with instances, inside a named auto-layout tree"
+  ]
+}

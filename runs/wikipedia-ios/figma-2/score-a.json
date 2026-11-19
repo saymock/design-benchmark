@@ -1,0 +1,76 @@
+{
+  "candidate": "94bfc4",
+  "verdict": "A very close, well-placed rebuild whose main gaps are Inter standing in for SF Pro and card shadows clipped at the feed's edges, built as a cleanly named auto-layout tree with real components but no shared styles and some spacer hacks.",
+  "metrics": { "sizeMatch": true, "meanDiff": 6.687, "pctDiff": 3.516 },
+  "scores": {
+    "layout": 13,
+    "typography": 8,
+    "color": 5,
+    "icons": 8,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 8,
+    "layoutPrimitives": 9,
+    "reuse": 6,
+    "cleanliness": 6
+  },
+  "visual": 45,
+  "editability": 29,
+  "total": 74,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "whole screen",
+      "what": "Inter instead of SF Pro: wider glyphs and different shapes everywhere ('Community', 'Footballeur français', 'Card hidden' run 5-10% wider); 'Which came first?' and 'Today' heavier (Inter 700 vs SF semibold/bold)",
+      "points": 4
+    },
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "'Card hidden' banner, Games card, Top read card",
+      "what": "soft card shadows are clipped by the 390 px feed frame: hard vertical cut at the cards' left and right edges (x≈57 and x≈1233 px) instead of a shadow that spreads into the margins; grid column 0 meanDiff 6-11",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "tab bar over the Top read card",
+      "what": "glass tab bar too opaque: the blurred 'Page de liste de Wikimédia' and the tinted rank-2 circle showing through it in the reference are almost invisible",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Top read rows and card text",
+      "what": "row 2 title clips at 'présidentie' vs 'présidentiell', row 3 description truncates at 'réalité m…' vs 'réalité mu…'; 1-3 px vertical drifts on rows and 'Community' segment",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "Top read #3 thumbnail, Games card title",
+      "what": "Star Academy logo cropped/scaled differently (whole wordmark vs zoomed 'ar/ader' crop); calendar glyph a little larger and heavier than the reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "styles",
+      "what": "no shared color/text styles or variables (styled: 0): #202122, #72777d, #3366cc repeated as raw values; tab items not a component",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "Game card, Top read row 2",
+      "what": "'Spacer' frames (1×10, 1×20) used instead of padding/gap; row 2 title 488 px wide overflowing its 322 px text frame; 44 vectors all named 'Vector'",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "every element of the reference present with exact text, including status bar (23:11, silent, 39 %), 'Card hidden · Undo' and French content with accents",
+    "geometry very close: blocks within a few px across the whole feed, photos correctly cropped in 40 pt rounded thumbnails",
+    "Section header, Event row and Top read row built as components with instances; feed and cards in auto-layout"
+  ]
+}

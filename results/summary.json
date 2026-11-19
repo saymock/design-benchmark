@@ -1,0 +1,3611 @@
+{
+  "perPipeline": {
+    "figma": {
+      "runs": 9,
+      "ok": 9,
+      "scored": 9,
+      "total": 82.16666666666667,
+      "totalWithFailures": 82.16666666666667,
+      "totalRange": [
+        74.5,
+        85.5
+      ],
+      "visual": 49.666666666666664,
+      "editability": 32.833333333333336,
+      "meanDiff": 8.968,
+      "costUsd": 2.6922744666666674,
+      "minutes": 9.8337,
+      "turns": 38.666666666666664,
+      "toolCalls": 37,
+      "toolErrors": 4,
+      "outputTokens": 60534,
+      "totalTokens": 2742102,
+      "newInputTokens": 117114.66666666667,
+      "cacheReadTokens": 2560345.6666666665,
+      "costPerPoint": 0.032766017849898584,
+      "tokensPerPoint": 33372.43813387424,
+      "lost": {
+        "layout": 2.1666666666666665,
+        "typography": 2.1666666666666665,
+        "color": 1.3333333333333333,
+        "icons": 1.1666666666666667,
+        "content": 0.3333333333333333,
+        "pixel": 3.3333333333333335,
+        "hierarchy": 1,
+        "layoutPrimitives": 1.8333333333333333,
+        "reuse": 3.1666666666666665,
+        "cleanliness": 1
+      },
+      "structure": {
+        "layers": 144,
+        "autoLayout": 49.333333333333336,
+        "absolute": 48.666666666666664,
+        "named": 85.33333333333333,
+        "reuse": 14,
+        "images": 3.3333333333333335
+      },
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "tools": [
+        [
+          "Bash",
+          14.2
+        ],
+        [
+          "use_figma",
+          10.6
+        ],
+        [
+          "Read",
+          7.1
+        ],
+        [
+          "get_screenshot",
+          1.8
+        ],
+        [
+          "upload_assets",
+          1.6
+        ],
+        [
+          "ToolSearch",
+          1.2
+        ],
+        [
+          "Skill",
+          1
+        ],
+        [
+          "ReadMcpResourceTool",
+          1
+        ]
+      ],
+      "defects": [
+        {
+          "criterion": "typography",
+          "count": 20,
+          "major": 6,
+          "examples": [
+            "language button: 'EN' letters noticeably taller and bolder (12 px Medium vs about 11 px in the reference); the dark box is slightly narrower and its corners tighter",
+            "Language button: \"EN\" set at 12 px 500, visibly larger and heavier than the reference's label inside the #4d4d4e box",
+            "module description, article title and extract: sub-pixel glyph drift accumulating along lines (heatmap red on the second half of lines), otherwise same Roboto/Noto Serif sizes and wraps"
+          ]
+        },
+        {
+          "criterion": "color",
+          "count": 14,
+          "major": 5,
+          "examples": [
+            "featured image and article summary card corners: corner radii visibly larger than the reference's 16 dp image box and 8 dp summary card (rounder top corners, red arcs in the heatmap)",
+            "language button (EN): outer outline drawn as a full pill instead of the reference's rounded rectangle (~10 dp radius)",
+            "Featured article image card: corner radius about 24 dp instead of the reference's 16 dp (top-right curve spans ~67 px vs ~40 px)"
+          ]
+        },
+        {
+          "criterion": "reuse",
+          "count": 17,
+          "major": 1,
+          "examples": [
+            "whole frame: no text styles or color variables (styled: 0) and no local main components; spacing is fractional magic numbers (gap 36.2, 24.4, 4.3, 8.35, 12.2)",
+            "whole frame: no text styles, color styles or variables (styled 0) and fractional hand-measured gaps (36.2, 24.4, 4.3, 8.35, 12.2) instead of consistent spacing tokens",
+            "bottom navigation, tabs: items are instances but the file holds no local components (components 0), so the repeated nav item and tab cannot be edited from one main component here"
+          ]
+        },
+        {
+          "criterion": "layoutPrimitives",
+          "count": 11,
+          "major": 1,
+          "examples": [
+            "featured article card: the image, scrim, actions and summary are stacked absolutely in a 418 px card, and 38 absolute layers in all; the summary card does not hug to the bottom edge the way the Compose layout does",
+            "Featured article card, root frame: 38 absolute layers; image, scrim, actions and summary stacked absolutely inside an auto-layout card, and the status bar placed after Content in the layer order",
+            "Featured article card: the image, scrim, action buttons and summary are positioned absolutely inside a 380x414 'Card' frame (28 absolute layers), so the summary does not reflow against the image"
+          ]
+        },
+        {
+          "criterion": "layout",
+          "count": 24,
+          "major": 0,
+          "examples": [
+            "featured article image: badge artwork shifted about 2-3 px right/down inside the 415 dp crop (crown finial at x~531 vs ~528 in the reference), which drives the heatmap's 15-27 meanDiff in the image cells",
+            "Featured article card image and summary card: badge photo scaled/cropped slightly differently and card edges 1-2 px off: the heatmap's hottest band (grid row 3, meanDiff up to 27) is the whole image outlined, not a missing element",
+            "save and share buttons on the featured image: both circles about 22 px (8 dp) too far right: share button ends ~18 px from the image edge instead of ~40 px (15 dp)"
+          ]
+        },
+        {
+          "criterion": "icons",
+          "count": 11,
+          "major": 0,
+          "examples": [
+            "bottom navigation, Saved and Activity: red #b32424 'new' dots sit 2-3 px lower-left, overlapping the icon more than in the reference, where they sit at the icon's top-right corner",
+            "bottom navigation, Saved and Activity: red \"new\" dots offset by ~2-4 px (Saved dot lower/left of the reference's)",
+            "top bar, tabs button: the square.on.square glyph has more rounded corners and a heavier stroke than the reference's sharper squares"
+          ]
+        },
+        {
+          "criterion": "cleanliness",
+          "count": 11,
+          "major": 0,
+          "examples": [
+            "bottom navigation and header: a Badge ellipse in every nav item (3 hidden or unused), a 'For you' indicator rectangle kept, and a 'Title row' 384 px wide inside a 379 px parent (overflows by 5 px)",
+            "bottom navigation: every nav item carries a Badge ellipse, including Home, Search and More where none shows (hidden leftovers)",
+            "tabs and bottom navigation: leftover parts: a 73 px indicator inside the 47 px \"For you\" tab and a badge ellipse in every nav item (Home, Search, More) presumably hidden"
+          ]
+        },
+        {
+          "criterion": "pixel",
+          "count": 3,
+          "major": 0,
+          "examples": [
+            "columns (grid rows 2-4): meanDiff 15.64, pctDiff 10.5 %: text lines offset by a few pixels across the two columns",
+            "whole render: meanDiff 14.0 and pctDiff 9.7 % even though nothing looks misplaced at a glance: text anti-aliasing and the small vertical drift account for most of it",
+            "whole frame: meanDiff 14.0 and pctDiff 9.7 %, mostly from text edges offset by 1-3 px in the content columns (grid cells 16-42)"
+          ]
+        },
+        {
+          "criterion": "content",
+          "count": 2,
+          "major": 0,
+          "examples": [
+            "Top read row 2 title: the reference clips 'présidentielle' at the card's edge with no ellipsis; the candidate truncates it with '…'",
+            "Top read #2 title: the reference clips the title at the card edge ('présidentiell'), the candidate truncates it with an ellipsis ('présidentiel...')"
+          ]
+        }
+      ]
+    },
+    "saymock": {
+      "runs": 9,
+      "ok": 9,
+      "scored": 9,
+      "total": 79,
+      "totalWithFailures": 79,
+      "totalRange": [
+        77,
+        80.5
+      ],
+      "visual": 47,
+      "editability": 31.333333333333332,
+      "meanDiff": 9.071666666666665,
+      "costUsd": 1.7039995333333333,
+      "minutes": 5.4348777777777775,
+      "turns": 34.666666666666664,
+      "toolCalls": 33,
+      "toolErrors": 1,
+      "outputTokens": 30001.333333333332,
+      "totalTokens": 1884338.6666666667,
+      "newInputTokens": 95838.66666666667,
+      "cacheReadTokens": 1759228.3333333333,
+      "costPerPoint": 0.021569614345991563,
+      "tokensPerPoint": 23852.38818565401,
+      "lost": {
+        "layout": 2.5,
+        "typography": 2.8333333333333335,
+        "color": 1.5,
+        "icons": 2,
+        "content": 0.6666666666666666,
+        "pixel": 3.3333333333333335,
+        "hierarchy": 1.3333333333333333,
+        "layoutPrimitives": 2.1666666666666665,
+        "reuse": 3.6666666666666665,
+        "cleanliness": 1
+      },
+      "structure": {
+        "layers": 85,
+        "autoLayout": 25,
+        "absolute": 8,
+        "named": 23,
+        "reuse": 2.6666666666666665,
+        "images": 7.333333333333333
+      },
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "tools": [
+        [
+          "Bash",
+          8.4
+        ],
+        [
+          "compare_to_reference",
+          6.3
+        ],
+        [
+          "update_nodes",
+          5.7
+        ],
+        [
+          "edit_html",
+          2.9
+        ],
+        [
+          "get_screenshot",
+          2.4
+        ],
+        [
+          "ToolSearch",
+          2
+        ],
+        [
+          "Read",
+          1.4
+        ],
+        [
+          "get_html",
+          1.1
+        ]
+      ],
+      "defects": [
+        {
+          "criterion": "typography",
+          "count": 19,
+          "major": 9,
+          "examples": [
+            "banner text, module description, article extract, \"Unit of the British Army\": 14 px body text set with no letter spacing where the reference uses Material bodyMedium's 0.25 sp tracking; lines are about 10-25 px narrower at 2.625x and glyphs are offset all along each line (the heatmap's grid rows 3-4 reach a meanDiff of 13-18)",
+            "\"Community\" / \"For you\" tabs and \"EN\" box: the labels are slightly larger and heavier than the reference: \"Community\" plus its underline is about 4 px wider, \"For you\" starts about 3 px further right, and the \"EN\" letters are larger",
+            "body text (banner, module description, article extract): Roboto renders with tighter tracking than the Android reference. 'Content and resources selected by and about' ends ~11 px earlier, and the drift grows along each line, which makes up most of the heatmap's red text doubling"
+          ]
+        },
+        {
+          "criterion": "color",
+          "count": 24,
+          "major": 5,
+          "examples": [
+            "featured article card (image box): corner radius of 28 px instead of the reference's 16 dp, a clearly rounder top-left and top-right corner; the summary card is 12 px instead of 8 dp",
+            "summary card divider: #dcdcdc instead of the measured #d2d2d2",
+            "Featured article image card: corners at rounded-[28px] (~74 px at 2.625) instead of 16 dp (~42 px): the top corners are visibly rounder, and red corner wedges show on the heatmap"
+          ]
+        },
+        {
+          "criterion": "icons",
+          "count": 20,
+          "major": 4,
+          "examples": [
+            "status bar: Material Symbols Wi-Fi and battery glyphs differ slightly in shape and size from the system ones",
+            "Featured article image: badge photo is scaled about 5% larger and sits a few px lower: the crown and the frame edges are offset and the grey margin on the right of the badge is gone. The grid cells over the image reach a meanDiff of 24 to 39",
+            "status bar: the Wi-Fi and battery glyphs are about 10% larger and heavier than the reference's"
+          ]
+        },
+        {
+          "criterion": "reuse",
+          "count": 14,
+          "major": 2,
+          "examples": [
+            "whole frame: 149 arbitrary values (colors such as #54595d and #202122 repeated, mt-[28.5px] and similar magic offsets) and no tokens; only the nav bar is templated",
+            "whole frame: 135 arbitrary values (colors like #202122/#54595d/#3366cc repeated as literals, margins like mt-[13px], top-[204px]) instead of shared tokens; tabs not templated",
+            "whole frame: 136 arbitrary values and no shared tokens: #202122, #54595d and #3366cc are repeated literals. The two round action buttons and the tabs are copy-pasted; only the bottom navigation is a template"
+          ]
+        },
+        {
+          "criterion": "layout",
+          "count": 22,
+          "major": 1,
+          "examples": [
+            "article summary card and extract: the extract's lines sit 2-3 px higher than the reference, and the summary card's bottom edge stops about 2 px short",
+            "article summary card: the card's lines sit 2-4 px higher than the reference (title, subtitle, divider, extract), and its rounded bottom corners show above the navigation bar where the reference is cut square by it",
+            "tabs row and bottom navigation: the Community underline and 'EN' box sit 1-2 px off, and the nav icons, pill and badges sit ~2 px lower than in the reference"
+          ]
+        },
+        {
+          "criterion": "layoutPrimitives",
+          "count": 7,
+          "major": 1,
+          "examples": [
+            "bottom navigation: nav pinned with absolute top-[818px] instead of anchored to the bottom; card overlay positioned at top-[203px] by magic number",
+            "header, page tabs, main and Appearance aside: the shell blocks are placed with absolute left/top (9 absolute layers), and both columns are fixed h-[640px] overflow-hidden, so adding content does not reflow the page",
+            "header, page tabs, main, Appearance aside: top-level blocks and the header's menu, logo, search and user links are absolutely positioned; columns have a fixed h-[640px] overflow-hidden"
+          ]
+        },
+        {
+          "criterion": "content",
+          "count": 9,
+          "major": 0,
+          "examples": [
+            "article extract, last line: the line is cut at \"Cheltenham…\" instead of \"Cheltenham Tr…\" because the text is narrower",
+            "article extract, 4th line: ellipsis lands after 'Cheltenham…' instead of 'Cheltenham Tr…' because of the narrower text",
+            "article extract, last line: truncation point differs ('Cheltenham…' vs 'Cheltenham Tr…')"
+          ]
+        },
+        {
+          "criterion": "cleanliness",
+          "count": 8,
+          "major": 0,
+          "examples": [
+            "status bar, article image: hacks: 'gap-[-1px] -space-x-[1px]', inline style for FILL, and the image placed at left-[-47.5px] with max-w-none instead of object-position",
+            "status bar icons: inline style attributes (font-variation-settings) on Material Symbols spans, against the no-inline-style convention; summary panel placed at a magic top-[204px]",
+            "overflow dots: SVG recoloured with a CSS filter chain (invert/sepia/hue-rotate) rather than a coloured icon"
+          ]
+        },
+        {
+          "criterion": "hierarchy",
+          "count": 3,
+          "major": 0,
+          "examples": [
+            "content paragraphs and Appearance rows: 22 of 144 layers named; paragraphs, figures and row groups are anonymous",
+            "left and right columns: sections (featured article, Did you know, Help us improve, In the news) are loose h2 + paragraphs inside the column, not named section groups; only 14 of 130 layers named",
+            "body text: 30 of 139 layers named; paragraphs, link lists and footers of each section unnamed"
+          ]
+        },
+        {
+          "criterion": "pixel",
+          "count": 2,
+          "major": 0,
+          "examples": [
+            "metrics grid, bottom rows: meanDiff 10.4 (cells up to 24.9 in the lower right) comes from text anti-aliasing offsets and the photos shifted by a few pixels",
+            "whole screen: meanDiff 4.07 (band < 6 → 3/5), mostly text antialiasing offsets"
+          ]
+        }
+      ]
+    }
+  },
+  "perScreen": {
+    "wikipedia-android": {
+      "figma": {
+        "runs": 3,
+        "ok": 3,
+        "total": 84,
+        "visual": 52.5,
+        "editability": 32.5,
+        "costUsd": 2.8788704000000003,
+        "totalTokens": 3141199,
+        "minutes": 10.538783333333333,
+        "verdict": "A near pixel-faithful rebuild where only small offsets remain (featured image shifted 2-3 px, enlarged EN letters, red badges tucked closer to their icons); the layers are well named and mostly auto-layout, but there are no text or color styles and the gaps are fractional magic numbers. / A near-faithful rebuild where every block, icon and string is in place and colors match; the residual gaps are sub-pixel drifts (image crop, card, badges, a wider tab indicator, a bigger EN label), and the structure is well named with auto-layout and instanced nav items but no styles or variables and fractional magic spacings."
+      },
+      "saymock": {
+        "runs": 3,
+        "ok": 3,
+        "total": 78,
+        "visual": 46,
+        "editability": 32,
+        "costUsd": 1.4449404,
+        "totalTokens": 1200432,
+        "minutes": 4.590883333333333,
+        "verdict": "A very close, well-built rebuild of the Wikipedia home screen whose main gaps are body text set without Roboto's 0.25 letter spacing (changing the extract's truncation) and a 28 px card radius instead of 16 dp; editable with flex flows and a templated bottom bar, though the article card is held together by fixed heights and an absolute offset. / A very close rebuild where every block, icon and color is in place; the visible gaps are the featured-image card's corner radius (about 28 dp instead of 16) and web Roboto's tighter tracking, which shifts the wrapping and the extract's truncation. The structure is clean, named, flex-based HTML with a templated bottom navigation."
+      }
+    },
+    "wikipedia-ios": {
+      "figma": {
+        "runs": 3,
+        "ok": 3,
+        "total": 80,
+        "visual": 46.5,
+        "editability": 33.5,
+        "costUsd": 2.5777864000000004,
+        "totalTokens": 1907807,
+        "minutes": 9.712833333333334,
+        "verdict": "A near-exact rebuild of the screen: every block sits within a few pixels, but it is set in Inter instead of SF Pro and the tab bar is an opaque white, so the feed does not show through it; the file is well named, mostly auto-layout, with components for the repeated rows, but no shared styles. / A very close reproduction whose layout and content line up almost everywhere, but it uses Inter instead of SF Pro and an opaque tab bar instead of the translucent glass one; the structure is a clean, well-named auto-layout tree with components for the repeated rows."
+      },
+      "saymock": {
+        "runs": 3,
+        "ok": 3,
+        "total": 78.5,
+        "visual": 45.5,
+        "editability": 33,
+        "costUsd": 2.2882494,
+        "totalTokens": 3071456,
+        "minutes": 6.946016666666667,
+        "verdict": "A very close, well-placed rebuild whose worst gaps are uneven letter-spacing in body text and a few wrong glyphs (outlined profile, chimney-less home), on a clean flex structure with templates for the repeated rows. / A very close, well-placed rebuild of the Explore feed whose main weakness is the type rendering (fallback font with loose, uneven letter spacing that widens every line) plus a few off-glyph icons; cleanly structured with flex and templates."
+      }
+    },
+    "wikipedia-web": {
+      "figma": {
+        "runs": 3,
+        "ok": 3,
+        "total": 82.5,
+        "visual": 50,
+        "editability": 32.5,
+        "costUsd": 2.6201666000000006,
+        "totalTokens": 3177300,
+        "minutes": 9.249483333333334,
+        "verdict": "Nearly indistinguishable from the reference at 100 %, with only 1–3 px vertical drifts in the Appearance panel and the lower sections; well-structured auto-layout with components, but no shared styles and a few absolute or leftover layers. / A near-faithful Wikipedia Main Page with every block, photo and link present; the gap is a substitute sans (Arimo instead of the reference's Helvetica) plus 1–3 px vertical drifts, and it is a reasonably editable auto-layout build with four components but no shared styles."
+      },
+      "saymock": {
+        "runs": 3,
+        "ok": 3,
+        "total": 80.5,
+        "visual": 49.5,
+        "editability": 29,
+        "costUsd": 1.3788088000000003,
+        "totalTokens": 1381128,
+        "minutes": 4.767733333333333,
+        "verdict": "A very close, complete rebuild of the Main Page whose worst gaps are the wrong greys on the search border and tab underline plus a page-wide 1-2 px drift in text lines; it is editable, built from flex sections, but the shell is absolutely positioned and the colors are hard-coded. / A near-faithful rebuild where every block, text and photo sits where it should, held back by systematic sub-pixel text drift, icons drawn pure black instead of Wikipedia's grey and a few off greys, built as reasonably named flex HTML but with copy-pasted heading/link styles and absolutely placed top-level blocks."
+      }
+    }
+  },
+  "warnings": [
+    "wikipedia-web/figma-2: 1 permission denials (tools missing from --allowedTools?)",
+    "Several models in one benchmark: Opus 5.5 (Medium effort, Claude Design default), claude-opus-5-5"
+  ],
+  "runs": [
+    {
+      "screen": "wikipedia-android",
+      "pipeline": "figma",
+      "repeat": 1,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 2.3037403999999997,
+      "minutes": 9.406983333333333,
+      "apiMinutes": 8.650983333333333,
+      "turns": 33,
+      "tokens": {
+        "input": 60,
+        "cacheRead": 2411542,
+        "cacheWrite": 97869,
+        "output": 51912,
+        "total": 2561383
+      },
+      "toolCalls": {
+        "Read": 4,
+        "Bash": 11,
+        "Skill": 1,
+        "ToolSearch": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__create_session": 1,
+        "mcp__figma__use_figma": 8,
+        "mcp__figma__upload_assets": 2,
+        "mcp__figma__get_screenshot": 3
+      },
+      "toolCallsTotal": 32,
+      "toolErrors": 3,
+      "permissionDenials": 0,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "11:36"
+      },
+      "date": "2026-11-12T20:01:46.567Z",
+      "key": "wikipedia-android/figma-1",
+      "score": {
+        "candidate": "16e819",
+        "verdict": "A near pixel-faithful rebuild where only small offsets remain (featured image shifted 2-3 px, enlarged EN letters, red badges tucked closer to their icons); the layers are well named and mostly auto-layout, but there are no text or color styles and the gaps are fractional magic numbers. / A near-faithful rebuild where every block, icon and string is in place and colors match; the residual gaps are sub-pixel drifts (image crop, card, badges, a wider tab indicator, a bigger EN label), and the structure is well named with auto-layout and instanced nav items but no styles or variables and fractional magic spacings.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 8.939,
+          "pctDiff": 5.927
+        },
+        "scores": {
+          "layout": 13,
+          "typography": 11,
+          "color": 8,
+          "icons": 9,
+          "content": 10,
+          "pixel": 2,
+          "hierarchy": 9,
+          "layoutPrimitives": 10,
+          "reuse": 6.5,
+          "cleanliness": 7
+        },
+        "visual": 53,
+        "editability": 32.5,
+        "total": 85.5,
+        "judges": {
+          "a": 86,
+          "b": 85
+        },
+        "spread": 1,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "featured article image",
+            "what": "badge artwork shifted about 2-3 px right/down inside the 415 dp crop (crown finial at x~531 vs ~528 in the reference), which drives the heatmap's 15-27 meanDiff in the image cells",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "language button",
+            "what": "'EN' letters noticeably taller and bolder (12 px Medium vs about 11 px in the reference); the dark box is slightly narrower and its corners tighter",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "bottom navigation, Saved and Activity",
+            "what": "red #b32424 'new' dots sit 2-3 px lower-left, overlapping the icon more than in the reference, where they sit at the icon's top-right corner",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole frame",
+            "what": "no text styles or color variables (styled: 0) and no local main components; spacing is fractional magic numbers (gap 36.2, 24.4, 4.3, 8.35, 12.2)",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "bottom navigation and header",
+            "what": "a Badge ellipse in every nav item (3 hidden or unused), a 'For you' indicator rectangle kept, and a 'Title row' 384 px wide inside a 379 px parent (overflows by 5 px)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "featured article card",
+            "what": "the image, scrim, actions and summary are stacked absolutely in a 418 px card, and 38 absolute layers in all; the summary card does not hug to the bottom edge the way the Compose layout does",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Featured article card image and summary card",
+            "what": "badge photo scaled/cropped slightly differently and card edges 1-2 px off: the heatmap's hottest band (grid row 3, meanDiff up to 27) is the whole image outlined, not a missing element",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole frame",
+            "what": "no text styles, color styles or variables (styled 0) and fractional hand-measured gaps (36.2, 24.4, 4.3, 8.35, 12.2) instead of consistent spacing tokens",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "bottom navigation, tabs",
+            "what": "items are instances but the file holds no local components (components 0), so the repeated nav item and tab cannot be edited from one main component here",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "Featured article card, root frame",
+            "what": "38 absolute layers; image, scrim, actions and summary stacked absolutely inside an auto-layout card, and the status bar placed after Content in the layer order",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "Language button",
+            "what": "\"EN\" set at 12 px 500, visibly larger and heavier than the reference's label inside the #4d4d4e box",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "bottom navigation, Saved and Activity",
+            "what": "red \"new\" dots offset by ~2-4 px (Saved dot lower/left of the reference's)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "bottom navigation",
+            "what": "every nav item carries a Badge ellipse, including Home, Search and More where none shows (hidden leftovers)",
+            "points": 1
+          }
+        ],
+        "strengths": [
+          "Every text, icon and color matches the reference, down to the wrapping and the 'Cheltenham Tr…' ellipsis, Noto Serif title, #3366cc tab and #e8f0ff Home pill",
+          "The real Wikipedia wordmark, the globe and the badge are rebuilt from the supplied assets, and the scrim and 92% white summary card match the reference's tones",
+          "Clear naming (Header, Tabs bar, Community banner, Featured article card, Nav item – Home…) with tabs, nav items and action buttons as instances",
+          "All content present and exact, including the truncated extract, date line and red hint dots",
+          "Correct app icons (wordmark, bookmark, share, home-filled, activity) as real vectors with the reference colors #3366cc, #72777d, #e8f0ff, #eaecf0",
+          "Clear, readable layer names (Header, Tabs bar, Language button, Featured article card, Nav item – Home…) with auto-layout on bars and rows"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-android",
+      "pipeline": "figma",
+      "repeat": 2,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 2.9160118,
+      "minutes": 10.769283333333334,
+      "apiMinutes": 10.0777,
+      "turns": 46,
+      "tokens": {
+        "input": 78,
+        "cacheRead": 3314139,
+        "cacheWrite": 120169,
+        "output": 64576,
+        "total": 3498962
+      },
+      "toolCalls": {
+        "Read": 7,
+        "Bash": 18,
+        "Skill": 1,
+        "ToolSearch": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__create_session": 1,
+        "mcp__figma__use_figma": 12,
+        "mcp__figma__upload_assets": 2,
+        "mcp__figma__get_screenshot": 2
+      },
+      "toolCallsTotal": 45,
+      "toolErrors": 3,
+      "permissionDenials": 0,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "26:51"
+      },
+      "date": "2026-11-12T20:45:42.255Z",
+      "key": "wikipedia-android/figma-2",
+      "score": {
+        "candidate": "eeccbf",
+        "verdict": "A near-identical rebuild with every element, icon and line wrap in place; the main slips are the image action buttons pushed about 8 dp right and over-rounded corners, and the structure is a well-named auto-layout tree with instances but no shared styles. / A near pixel-faithful rebuild with every text, icon and image in place; the clearest gaps are the save/share buttons sitting ~8 dp too far right and a rounder image card, and it is a well-named auto-layout tree with instanced tabs and nav items but no shared styles or variables.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 6.202,
+          "pctDiff": 4.381
+        },
+        "scores": {
+          "layout": 11,
+          "typography": 11,
+          "color": 6.5,
+          "icons": 9.5,
+          "content": 10,
+          "pixel": 2,
+          "hierarchy": 9,
+          "layoutPrimitives": 10.5,
+          "reuse": 7.5,
+          "cleanliness": 7
+        },
+        "visual": 50,
+        "editability": 34,
+        "total": 84,
+        "judges": {
+          "a": 82,
+          "b": 86
+        },
+        "spread": 4,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "save and share buttons on the featured image",
+            "what": "both circles about 22 px (8 dp) too far right: share button ends ~18 px from the image edge instead of ~40 px (15 dp)",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "featured image and article summary card corners",
+            "what": "corner radii visibly larger than the reference's 16 dp image box and 8 dp summary card (rounder top corners, red arcs in the heatmap)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "language button (EN)",
+            "what": "outer outline drawn as a full pill instead of the reference's rounded rectangle (~10 dp radius)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "bottom navigation and card bottom",
+            "what": "navigation top edge, icons and the card's cut-off bottom sit about 3-4 px higher than in the reference",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole structure",
+            "what": "no colour or text styles/variables (styled: 0): #202122, #54595d, #3366cc etc. repeated as raw values; component masters not in the frame",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "module description, article title and extract",
+            "what": "sub-pixel glyph drift accumulating along lines (heatmap red on the second half of lines), otherwise same Roboto/Noto Serif sizes and wraps",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "tabs and bottom navigation",
+            "what": "leftover parts: a 73 px indicator inside the 47 px \"For you\" tab and a badge ellipse in every nav item (Home, Search, More) presumably hidden",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Save and share buttons on the featured image",
+            "what": "both circles about 22 px (~8 dp) further right than the reference (bookmark centre x~829 vs ~807 px), leaving a tighter right inset than the reference's 16 dp",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "Featured article image card",
+            "what": "corner radius about 24 dp instead of the reference's 16 dp (top-right curve spans ~67 px vs ~40 px)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Bottom navigation and the article card above it",
+            "what": "the bar starts ~3-4 px higher; the summary card ends with rounded bottom corners above the bar, whereas in the reference it runs on and is clipped under it",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Language button",
+            "what": "outline drawn as a full pill and the dark EN box slightly larger (~58 vs ~52 px wide) than the reference's rounded rectangle",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "Module description, article title and last extract line",
+            "what": "same wrapping but glyphs drift by 1-2 px toward the line ends (heatmap red on the second half of 'the highest-quality articles on' and 'Hussars'), a small advance/letter-spacing mismatch",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Featured image (crown and badge)",
+            "what": "badge image offset/scaled by a pixel or two: every edge of the photo shows in the heatmap (grid row 3 meanDiff 10-14)",
+            "points": 1
+          }
+        ],
+        "strengths": [
+          "Every text, line wrap and ellipsis matches the reference exactly, in Roboto and Noto Serif at the right sizes and colours",
+          "Icons, wordmark and globe come from the app's own drawables as vectors/images, red badges on Saved and Activity included",
+          "Clear named hierarchy (Status bar, App bar, Tabs row, Community banner, Featured article card, Bottom navigation) with auto-layout and instances for tabs, nav items and buttons",
+          "Every text of the reference present and exact, with identical wrapping and the 'Tr…' truncation; Roboto and Noto Serif at the right sizes and weights",
+          "All icons are the right glyphs at the right size and color, including the red 'new' dots on Saved and Activity, the Wikipedia wordmark as vectors and the globe",
+          "Clear named hierarchy (Status bar, App bar, Tabs row, Community banner, Featured article card, Bottom navigation) built with auto-layout, tabs and nav items as instances"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-android",
+      "pipeline": "figma",
+      "repeat": 3,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 2.8788704000000003,
+      "minutes": 10.538783333333333,
+      "apiMinutes": 10.073816666666668,
+      "turns": 41,
+      "tokens": {
+        "input": 66,
+        "cacheRead": 2947172,
+        "cacheWrite": 132504,
+        "output": 61457,
+        "total": 3141199
+      },
+      "toolCalls": {
+        "Read": 9,
+        "Bash": 19,
+        "Skill": 1,
+        "ToolSearch": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__create_session": 1,
+        "mcp__figma__use_figma": 5,
+        "mcp__figma__upload_assets": 1,
+        "mcp__figma__get_screenshot": 2
+      },
+      "toolCallsTotal": 40,
+      "toolErrors": 2,
+      "permissionDenials": 0,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "36:3"
+      },
+      "date": "2026-11-12T21:29:44.021Z",
+      "key": "wikipedia-android/figma-3",
+      "score": {
+        "candidate": "7530b7",
+        "verdict": "A near pixel-faithful rebuild with every element and icon right; the visible gaps are the featured card's too-round corners (~24 dp vs 16 dp) and slightly tighter extract leading, and the auto-layout structure is clean but under-uses components and has no styles or variables. / A near-identical rebuild of the Wikipedia Community home whose worst gaps are a too-round featured image card and 1-3 px drifts in the card text and nav labels; well-named auto-layout structure, but repeated nav items and styles are not reused.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 5.683,
+          "pctDiff": 3.676
+        },
+        "scores": {
+          "layout": 13,
+          "typography": 10,
+          "color": 6.5,
+          "icons": 10,
+          "content": 10,
+          "pixel": 3,
+          "hierarchy": 9,
+          "layoutPrimitives": 10,
+          "reuse": 4,
+          "cleanliness": 7
+        },
+        "visual": 52.5,
+        "editability": 30,
+        "total": 82.5,
+        "judges": {
+          "a": 82,
+          "b": 83
+        },
+        "spread": 1,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "featured article image card, corners",
+            "what": "corner radius about 23-24 dp (about 61 px at 2.625) instead of the reference's 16 dp (about 42 px); the top corners light up in the heatmap",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "article card extract (4 lines)",
+            "what": "line height about 52 px instead of 53 px, so the lines drift 2-3 px upward (1925/1978/2031/2084 in the reference vs 1923/1975/2028/2081)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "bottom navigation labels (Saved, Search, Activity, More)",
+            "what": "labels a little heavier and shifted 1-3 px left/down compared with the reference's regular-weight labels",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "\"Featured article\" description, second line, and article card title",
+            "what": "second line is 3-4 px wider (ends at x≈621 vs 617) and the serif title is about 8 px narrower (ends at x≈945 vs 953)",
+            "points": 2
+          },
+          {
+            "severity": "major",
+            "criterion": "reuse",
+            "where": "bottom navigation",
+            "what": "five nav items are copy-pasted frames rather than instances of a component; only Tab and the bookmark icon are components, and no color/text styles or variables are used (styled: 0)",
+            "points": 6
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "\"For you\" tab instance and article summary",
+            "what": "the instance keeps a 73 px indicator inside a 47 px tab (hidden leftover), and gaps carry float noise (11.600000381469727, 6.400000095367432)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "featured article image card, top corners",
+            "what": "corner radius about 24 dp (about 62 px) where the reference shows about 16 dp (about 40 px); the heatmap lights up both top corners",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "article extract in the summary card and the bottom navigation labels",
+            "what": "extract lines start 2-3 px higher with a slightly tighter line pitch; the nav labels (Saved, Search, Activity, More) render a little heavier and about 1 px lower than the reference; with the date line and other 1-2 px vertical offsets this costs 2 layout points too",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "bottom navigation",
+            "what": "the five nav items are separate frames, not instances of one component; there are no text or color styles (styled: 0), only the Tab and bookmark icon are components",
+            "points": 6
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "Featured article card",
+            "what": "the image, scrim, action buttons and summary are positioned absolutely inside a 380x414 'Card' frame (28 absolute layers), so the summary does not reflow against the image",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "Every text, icon, badge dot, logo and the article photo with its 39 % veil are present at the reference positions, with the measured colors (#3366cc tab, #e8f0ff pill, #eaecf0 banner)",
+          "Clear named hierarchy (Header, Tab bar, Community banner, Section header, Featured article card, Bottom navigation) with auto-layout on 33 of 42 frames",
+          "Real text and real vector icons from the app's assets, no screenshot pasted",
+          "Every text, icon, badge dot and color of the reference is present and correct, including the EN language button, the red 'new' dots and the #e8f0ff Home pill",
+          "The real app icons and the Wikipedia wordmark are kept as vectors, and the article photo is a real image fill with the 39 % veil",
+          "Clear named hierarchy (Header, Tab bar, Community banner, Section header, Featured article card, Bottom navigation) with auto-layout on bars, lists and rows"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-android",
+      "pipeline": "saymock",
+      "repeat": 1,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 1.3965218000000004,
+      "minutes": 4.590883333333333,
+      "apiMinutes": 4.2463,
+      "turns": 25,
+      "tokens": {
+        "input": 40,
+        "cacheRead": 1041549,
+        "cacheWrite": 79429,
+        "output": 27631,
+        "total": 1148649
+      },
+      "toolCalls": {
+        "Read": 1,
+        "Bash": 7,
+        "ToolSearch": 2,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__inspect_reference": 1,
+        "mcp__saymock__edit_html": 3,
+        "mcp__saymock__compare_to_reference": 4,
+        "mcp__saymock__update_nodes": 3
+      },
+      "toolCallsTotal": 24,
+      "toolErrors": 1,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "qf2u5cf9zv",
+        "frameId": "vultoi3t0t"
+      },
+      "date": "2026-11-12T18:49:58.209Z",
+      "key": "wikipedia-android/saymock-1",
+      "score": {
+        "candidate": "74c87c",
+        "verdict": "A very close, well-built rebuild of the Wikipedia home screen whose main gaps are body text set without Roboto's 0.25 letter spacing (changing the extract's truncation) and a 28 px card radius instead of 16 dp; editable with flex flows and a templated bottom bar, though the article card is held together by fixed heights and an absolute offset. / A very close rebuild where every block, icon and color is in place; the visible gaps are the featured-image card's corner radius (about 28 dp instead of 16) and web Roboto's tighter tracking, which shifts the wrapping and the extract's truncation. The structure is clean, named, flex-based HTML with a templated bottom navigation.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 8.593,
+          "pctDiff": 5.051
+        },
+        "scores": {
+          "layout": 12,
+          "typography": 8.5,
+          "color": 5.5,
+          "icons": 9,
+          "content": 9,
+          "pixel": 2,
+          "hierarchy": 9,
+          "layoutPrimitives": 9.5,
+          "reuse": 6.5,
+          "cleanliness": 7
+        },
+        "visual": 46,
+        "editability": 32,
+        "total": 78,
+        "judges": {
+          "a": 79,
+          "b": 77
+        },
+        "spread": 2,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "banner text, module description, article extract, \"Unit of the British Army\"",
+            "what": "14 px body text set with no letter spacing where the reference uses Material bodyMedium's 0.25 sp tracking; lines are about 10-25 px narrower at 2.625x and glyphs are offset all along each line (the heatmap's grid rows 3-4 reach a meanDiff of 13-18)",
+            "points": 3
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "featured article card (image box)",
+            "what": "corner radius of 28 px instead of the reference's 16 dp, a clearly rounder top-left and top-right corner; the summary card is 12 px instead of 8 dp",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "article extract, last line",
+            "what": "the line is cut at \"Cheltenham…\" instead of \"Cheltenham Tr…\" because the text is narrower",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "article summary card and extract",
+            "what": "the extract's lines sit 2-3 px higher than the reference, and the summary card's bottom edge stops about 2 px short",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "\"Community\" / \"For you\" tabs and \"EN\" box",
+            "what": "the labels are slightly larger and heavier than the reference: \"Community\" plus its underline is about 4 px wider, \"For you\" starts about 3 px further right, and the \"EN\" letters are larger",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "summary card divider",
+            "what": "#dcdcdc instead of the measured #d2d2d2",
+            "points": 0
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "Featured article image card",
+            "what": "corners at rounded-[28px] (~74 px at 2.625) instead of 16 dp (~42 px): the top corners are visibly rounder, and red corner wedges show on the heatmap",
+            "points": 2
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "body text (banner, module description, article extract)",
+            "what": "Roboto renders with tighter tracking than the Android reference. 'Content and resources selected by and about' ends ~11 px earlier, and the drift grows along each line, which makes up most of the heatmap's red text doubling",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "article extract, 4th line",
+            "what": "ellipsis lands after 'Cheltenham…' instead of 'Cheltenham Tr…' because of the narrower text",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "article summary card",
+            "what": "the card's lines sit 2-4 px higher than the reference (title, subtitle, divider, extract), and its rounded bottom corners show above the navigation bar where the reference is cut square by it",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "article summary card",
+            "what": "corner radius 12 px instead of 8 dp",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "tabs row and bottom navigation",
+            "what": "the Community underline and 'EN' box sit 1-2 px off, and the nav icons, pill and badges sit ~2 px lower than in the reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole frame",
+            "what": "149 arbitrary values (colors such as #54595d and #202122 repeated, mt-[28.5px] and similar magic offsets) and no tokens; only the nav bar is templated",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "status bar, article image",
+            "what": "hacks: 'gap-[-1px] -space-x-[1px]', inline style for FILL, and the image placed at left-[-47.5px] with max-w-none instead of object-position",
+            "points": 1
+          }
+        ],
+        "strengths": [
+          "Block positions match within 1-3 px everywhere: status bar, wordmark, tabs, banner (#eaecf0, pill shape), date line, heading, image crop and bottom navigation",
+          "Measured colors are reproduced exactly: #202122, #54595d, #3366cc, #e8f0ff pill, #4d4d4e EN box, #b32424 badges, and the 39% black veil on the image",
+          "Real text and the app's own SVG icons and images; the five bottom-nav items come from one data-driven template",
+          "Every element of the reference is present at the right size and color: wordmark, tabs, EN button, banner with globe, featured image with veil, save/share buttons, red 'new' dots, and the pill on the Home tab",
+          "The app's own icons (home, bookmark, search, activity, menu, share, more) are used at 24 px with the right tints (#3366cc, #72777d, #202122)",
+          "Bottom navigation built once as a data-driven template with per-item pill, badge and label class; blocks named Header, Tabs row, Community banner, Featured article card, Article summary"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-android",
+      "pipeline": "saymock",
+      "repeat": 2,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 1.4449404,
+      "minutes": 4.2922,
+      "apiMinutes": 4.065633333333333,
+      "turns": 21,
+      "tokens": {
+        "input": 36,
+        "cacheRead": 1088022,
+        "cacheWrite": 85024,
+        "output": 27350,
+        "total": 1200432
+      },
+      "toolCalls": {
+        "Read": 2,
+        "Bash": 5,
+        "ToolSearch": 2,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__edit_html": 1,
+        "mcp__saymock__compare_to_reference": 4,
+        "mcp__saymock__update_nodes": 3
+      },
+      "toolCallsTotal": 20,
+      "toolErrors": 1,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "x6hpxs7dms",
+        "frameId": "siew7tl061"
+      },
+      "date": "2026-11-12T20:22:42.449Z",
+      "key": "wikipedia-android/saymock-2",
+      "score": {
+        "candidate": "46c40e",
+        "verdict": "A very close, clean rebuild of the Wikipedia Community feed whose main gaps are the article image's slightly different scale and crop and over-tracked body text that moves the extract's truncation, built as well-named flex HTML with a data-driven bottom nav. / A very close, clean rebuild of the Wikipedia Community feed whose main gaps are a 3-4 px upward drift of the tabs, date and article card plus a slightly misregistered badge image, built as well-named flex HTML with a templated bottom nav.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 11.555,
+          "pctDiff": 8.639
+        },
+        "scores": {
+          "layout": 12,
+          "typography": 9.5,
+          "color": 6,
+          "icons": 8.5,
+          "content": 9,
+          "pixel": 1,
+          "hierarchy": 9,
+          "layoutPrimitives": 10.5,
+          "reuse": 6.5,
+          "cleanliness": 7
+        },
+        "visual": 46,
+        "editability": 33,
+        "total": 79,
+        "judges": {
+          "a": 79,
+          "b": 79
+        },
+        "spread": 0,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "article card extract and subtitle",
+            "what": "extra letter-spacing (tracking 0.1–0.12px on Roboto 14) widens every line, so the 4th line truncates at 'Cheltenham…' instead of 'Cheltenham Tr…'; lines visibly longer than the reference's",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "featured article image",
+            "what": "badge image scaled and cropped slightly differently (crown and arms offset ~5–10 px, arms wider at card edges); the grid's image cells reach meanDiff 32–35",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "tabs row, date, section description, banner",
+            "what": "text blocks sit ~2–3 px (about 1 dp) higher than in the reference; tab labels and 'Today - Nov 12, 2026' shifted up",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "red 'new' dots on Saved and Activity",
+            "what": "#d73333 instead of #b32424, and placed ~3 px higher and further right",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "language button",
+            "what": "outline drawn in #202122 at full strength, darker and heavier than the reference's grey stroke; 'EN' box and letters slightly larger",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "status bar",
+            "what": "Material Symbols Wi-Fi and battery glyphs differ slightly in shape and size from the system ones",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "article extract, last line",
+            "what": "truncation point differs ('Cheltenham…' vs 'Cheltenham Tr…')",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "tabs row, date line, featured article card",
+            "what": "Community/For you labels, Today - Nov 12, 2026 and the image card (top edge ~y=1102 vs 1106 px, save/share buttons with it) sit 3-4 px higher than the reference; the Home pill sits ~2 px lower",
+            "points": 2
+          },
+          {
+            "severity": "major",
+            "criterion": "layout",
+            "where": "featured article image",
+            "what": "the badge photo is scaled/offset a few px differently inside the 16 dp card, so its edges misregister everywhere (heatmap cells meanDiff 22-35 over the image area)",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "article summary card over the image",
+            "what": "corner radius 12 dp (31 px) instead of 8 dp (21 px)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "status bar and 'new' dots",
+            "what": "Wi-Fi and battery glyphs darker #444746 and larger than the reference's grey icons; red dots #d73333 instead of #b32424",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "article extract, last line",
+            "what": "ellipsis after a whole word, 'Cheltenham…', instead of the reference's character truncation 'Cheltenham Tr…'",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole frame",
+            "what": "135 arbitrary values (colors like #202122/#54595d/#3366cc repeated as literals, margins like mt-[13px], top-[204px]) instead of shared tokens; tabs not templated",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "status bar icons",
+            "what": "inline style attributes (font-variation-settings) on Material Symbols spans, against the no-inline-style convention; summary panel placed at a magic top-[204px]",
+            "points": 1
+          }
+        ],
+        "strengths": [
+          "Every block and text of the reference present with the right palette (#3366cc tab and Home, #eaecf0 banner, #e8f0ff pill, #54595d secondary text), Noto Serif title and Roboto elsewhere",
+          "Real assets used correctly: wordmark, globe, app icons for save/share/nav, and the article photo under a veil",
+          "Bottom navigation built once as a template with 5 data items; layers named for nearly every element (42/48)",
+          "Every text, the wordmark, globe, badge photo, app icons and both 'new' dots are present with the right content, Roboto and Noto Serif title, and measured colors (#202122, #54595d, #3366cc, #eaecf0, #e8f0ff)",
+          "Bottom navigation built once as a data-driven template (5 items with icon, pill, label and badge variants)",
+          "Readable layer names throughout (Status bar, Tabs row, Community banner, Featured article card, Article summary, Bottom navigation) and flex layout for the flowing parts"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-android",
+      "pipeline": "saymock",
+      "repeat": 3,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 1.5553392,
+      "minutes": 4.940816666666667,
+      "apiMinutes": 4.6463833333333335,
+      "turns": 32,
+      "tokens": {
+        "input": 40,
+        "cacheRead": 1181876,
+        "cacheWrite": 90903,
+        "output": 29579,
+        "total": 1302398
+      },
+      "toolCalls": {
+        "Read": 2,
+        "Bash": 6,
+        "ToolSearch": 1,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__compare_to_reference": 5,
+        "mcp__saymock__inspect_reference": 1,
+        "mcp__saymock__edit_html": 10,
+        "mcp__saymock__get_screenshot": 3
+      },
+      "toolCallsTotal": 31,
+      "toolErrors": 1,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "v6nve39sbt",
+        "frameId": "xfxlkn1e26"
+      },
+      "date": "2026-11-12T21:03:21.872Z",
+      "key": "wikipedia-android/saymock-3",
+      "score": {
+        "candidate": "642983",
+        "verdict": "A near-identical rebuild of the Community feed whose main gaps are the featured photo scaled about 5% larger and a few text details (heavier, larger EN label, a different extract truncation, slightly tighter Roboto spacing); a clean flex structure with a templated bottom navigation. / A very close, well-structured rebuild whose most visible slips are a bold 'Featured article' heading (regular in the reference), body text set without Material's letter spacing, and a featured image cropped a few dp off; editable, with a templated bottom nav but hard-coded values everywhere.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 12.235,
+          "pctDiff": 9.344
+        },
+        "scores": {
+          "layout": 12,
+          "typography": 8.5,
+          "color": 7,
+          "icons": 8,
+          "content": 9,
+          "pixel": 1,
+          "hierarchy": 8,
+          "layoutPrimitives": 10,
+          "reuse": 6.5,
+          "cleanliness": 7
+        },
+        "visual": 45.5,
+        "editability": 31.5,
+        "total": 77,
+        "judges": {
+          "a": 78,
+          "b": 76
+        },
+        "spread": 2,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "icons",
+            "where": "Featured article image",
+            "what": "badge photo is scaled about 5% larger and sits a few px lower: the crown and the frame edges are offset and the grey margin on the right of the badge is gone. The grid cells over the image reach a meanDiff of 24 to 39",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Featured article card and image",
+            "what": "the card is set to h-[444px] with object-cover rather than matching the reference's crop of the photo, so the whole image region drifts. Smaller offsets: the tab labels sit about 1 px high and the language button is 1 to 2 px off",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "Language button \"EN\"",
+            "what": "the label is 12px medium and fills the dark box, where the reference uses a smaller, lighter label (about 10 to 11 dp regular) with visible padding",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "banner text, module description, article extract",
+            "what": "the Roboto glyph spacing is slightly tighter than the reference, so the words drift a few px along each line (they show doubled in the heatmap). The extract uses tracking-[-0.35px] at 15px instead of matching the reference's metrics",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "article extract, 4th line",
+            "what": "the line ends \"Cheltenham…\"; the reference cuts mid-word with \"Cheltenham Tr…\"",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "status bar",
+            "what": "the Wi-Fi and battery glyphs are about 10% larger and heavier than the reference's",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole frame",
+            "what": "136 arbitrary values and no shared tokens: #202122, #54595d and #3366cc are repeated literals. The two round action buttons and the tabs are copy-pasted; only the bottom navigation is a template",
+            "points": 3
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "'Featured article' section title",
+            "what": "set in Roboto bold 24px; the reference uses regular weight (Material headlineSmall, 400), so the title reads much heavier",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "featured article image",
+            "what": "badge crop is shifted and scaled differently (crown top ~4-5 dp lower, edges offset): the heatmap's third row reaches meanDiff 24-39 across the image",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "banner text, module description, card extract",
+            "what": "Roboto body text without the reference's ~0.25px tracking (lines ~5 dp narrower: 'about' ends at 817 vs 831 px); extract even uses -0.35px tracking, so its 4th line truncates at 'Cheltenham…' instead of 'Cheltenham Tr…'",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "language button and status bar",
+            "what": "'EN' letters 12px medium, visibly larger than the reference's ~10.5px; the box border is heavier/darker; Wi-Fi glyph slightly larger than the reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole frame",
+            "what": "136 arbitrary values with the same hex colors (#202122, #54595d, #3366cc) repeated inline instead of tokens; Save and Share buttons are copy-pasted rather than one repeated element",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "featured article card and summary card",
+            "what": "card corner 18px and summary corner 10px vs 16 dp and 8 dp in the reference",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "tabs row",
+            "what": "'Community' and 'For you' labels sit ~1 dp higher than the reference, the indicator ~1 dp higher too",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "bottom navigation",
+            "what": "nav pinned with absolute top-[818px] instead of anchored to the bottom; card overlay positioned at top-[203px] by magic number",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "Every element and text of the reference is present with the measured colors (#202122, #54595d, #3366cc, #eaecf0, #e8f0ff, #b32424), including the red \"new\" dots and the 39% black overlay on the photo",
+          "The bottom navigation is one data-driven template (5 items) with per-item pill, badge and label classes, and it matches the reference closely",
+          "Header, banner, section header and card are flex groups with readable names; the text is real text, and the icons are the app's own SVG assets",
+          "Every block and text of the reference is present with exact wording, colors from the Wikipedia palette (#3366cc tab, #eaecf0 banner, #e8f0ff Home pill, #b32424 dots)",
+          "Real assets for the wordmark, globe, badge and all nav/action icons, with the 39% black veil and translucent summary card reproduced",
+          "Bottom navigation built once as a data-driven template (5 items, pill and badge as fields), with clearly named groups throughout"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-ios",
+      "pipeline": "figma",
+      "repeat": 1,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 4.519575200000002,
+      "minutes": 16.70145,
+      "apiMinutes": 15.358033333333333,
+      "turns": 66,
+      "tokens": {
+        "input": 106,
+        "cacheRead": 5718716,
+        "cacheWrite": 168976,
+        "output": 101180,
+        "total": 5988978
+      },
+      "toolCalls": {
+        "Read": 9,
+        "Bash": 26,
+        "Skill": 1,
+        "ToolSearch": 2,
+        "mcp__figma__create_session": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__use_figma": 18,
+        "mcp__figma__upload_assets": 1,
+        "mcp__figma__get_screenshot": 5
+      },
+      "toolCallsTotal": 64,
+      "toolErrors": 4,
+      "permissionDenials": 0,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "6:2"
+      },
+      "date": "2026-11-12T19:11:42.157Z",
+      "key": "wikipedia-ios/figma-1",
+      "score": {
+        "candidate": "9954e7",
+        "verdict": "A near-exact rebuild of the screen: every block sits within a few pixels, but it is set in Inter instead of SF Pro and the tab bar is an opaque white, so the feed does not show through it; the file is well named, mostly auto-layout, with components for the repeated rows, but no shared styles. / A very close reproduction whose layout and content line up almost everywhere, but it uses Inter instead of SF Pro and an opaque tab bar instead of the translucent glass one; the structure is a clean, well-named auto-layout tree with components for the repeated rows.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 3.978,
+          "pctDiff": 2.353
+        },
+        "scores": {
+          "layout": 13,
+          "typography": 8.5,
+          "color": 6.5,
+          "icons": 8,
+          "content": 9,
+          "pixel": 3,
+          "hierarchy": 9,
+          "layoutPrimitives": 10.5,
+          "reuse": 7,
+          "cleanliness": 7
+        },
+        "visual": 48,
+        "editability": 33.5,
+        "total": 81.5,
+        "judges": {
+          "a": 83,
+          "b": 80
+        },
+        "spread": 3,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "whole screen (Today, card text, section titles, tab labels)",
+            "what": "Inter used throughout instead of SF Pro: different glyph shapes (a, y, t) and widths, and the text sits about 1 pt higher in every line box; the heatmap outlines every text run",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "tab bar (Liquid Glass)",
+            "what": "the reference's translucent capsule shows the blurred row 2 description ('Article de liste de Wikimédia') and the rank circle through it; the candidate's bar is near-opaque white, so that content is lost",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "Top read row 2 title",
+            "what": "the reference clips 'présidentielle' at the card's edge with no ellipsis; the candidate truncates it with '…'",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "top bar, tabs button",
+            "what": "the square.on.square glyph has more rounded corners and a heavier stroke than the reference's sharper squares",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "Top read #1 and #3 thumbnails",
+            "what": "the Pablo Pagis photo is cropped wider (the player looks smaller than in the reference's tighter crop); the Star Academy logo is scaled and cropped differently behind the tab bar",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "status bar, segmented control, tab bar",
+            "what": "offsets of 1–3 px: the clock and battery are shifted, the segment track and the tab-bar capsule edges are slightly off (heatmap rings around the capsules)",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "styles and tab items",
+            "what": "no text or color styles (styled: 0), so #202122, #72777d and #3366cc are repeated as raw values; the four tab items are copied frames rather than instances",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "Feed and card spacing",
+            "what": "magic fractional gaps (62.599998 px, 11.3 px, 15.5 px) and many anonymous 'Vector' layers (including ten 1×1 calendar dots)",
+            "points": 1
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "every text (Today title, feed text, tab labels, status bar clock)",
+            "what": "Inter used instead of SF Pro: wider glyphs and different letter shapes ('Today', 'y', 'a', digits), so the heatmap outlines every word even where sizes and positions match",
+            "points": 4
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "tab bar",
+            "what": "the reference's Liquid Glass bar shows the blurred 'Liste de Wikimédia' text and the blue rank circle through it; the candidate's bar is near-opaque white with nothing showing through",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "status bar, right indicators",
+            "what": "cellular bars and battery about 15-20% smaller than in the reference (battery ~85x38 px vs ~95x42 px at @3x), the bars sitting lower",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "Top read #1 and #3 thumbnails",
+            "what": "Pablo Pagis photo cropped wider (player smaller, more background) than in the reference; the Star Academy thumbnail shows the whole logo where the reference shows a tight crop ('ar / ader' letters)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "Top read #2 title",
+            "what": "the reference clips the title at the card edge ('présidentiell'), the candidate truncates it with an ellipsis ('présidentiel...')",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "top bar, tabs button (square.on.square)",
+            "what": "front square offset differs from the reference glyph (larger overlap, rounder corners)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole file",
+            "what": "no text or color styles/variables (styled: 0); #202122, #72777d, #3366cc and the 15 px sizes are repeated as raw values; the four tab items are not one component",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "status bar, tab bar selection, feed",
+            "what": "status bar and the tab selection capsule are absolutely placed; feed and card gaps are fractional magic numbers (62.6, 11.3) tuned to match pixels",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "Every block (card hidden banner, Games card, Top read list, floating top bar and tab bar) matches the reference's position and size within a few pixels, with exact text, accents and colors (#3366cc links, #72777d subtitles)",
+          "Real vectors for every icon, including the status bar, the Wikipedia W and the filled SF-style tab icons, with the right glyph in each slot",
+          "Section Header, Game Question Row and Top Read Row are components with instances, inside a clearly named auto-layout tree",
+          "Block geometry matches within a few px from status bar to tab bar: segmented control, Card hidden banner, Games card, Top read rows and their thumbnails",
+          "All texts present and exact, French accents included, with the measured Wikipedia colors (#202122, #72777d, #3366cc)",
+          "Section header, game question row and top read row are components with instances, inside a named auto-layout tree"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-ios",
+      "pipeline": "figma",
+      "repeat": 2,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 1.9467362,
+      "minutes": 7.5809,
+      "apiMinutes": 7.025083333333333,
+      "turns": 29,
+      "tokens": {
+        "input": 48,
+        "cacheRead": 1543881,
+        "cacheWrite": 93201,
+        "output": 44608,
+        "total": 1681738
+      },
+      "toolCalls": {
+        "Read": 4,
+        "Bash": 5,
+        "Skill": 1,
+        "ToolSearch": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__create_session": 1,
+        "mcp__figma__use_figma": 13,
+        "mcp__figma__upload_assets": 1
+      },
+      "toolCallsTotal": 27,
+      "toolErrors": 3,
+      "permissionDenials": 0,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "22:2"
+      },
+      "date": "2026-11-12T20:34:43.441Z",
+      "key": "wikipedia-ios/figma-2",
+      "score": {
+        "candidate": "94bfc4",
+        "verdict": "A very close, well-placed rebuild whose main gaps are Inter standing in for SF Pro and card shadows clipped at the feed's edges, built as a cleanly named auto-layout tree with real components but no shared styles and some spacer hacks. / A very close rebuild of the Wikipedia Explore screen with every block, image and SF-style icon in place; the visible gaps are Inter standing in for SF Pro and the card drop shadows clipped to hard-edged rectangles, and the auto-layout structure with section/row components is well organised but has no shared styles and leans on spacer frames.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 6.687,
+          "pctDiff": 3.516
+        },
+        "scores": {
+          "layout": 13,
+          "typography": 8,
+          "color": 5,
+          "icons": 8,
+          "content": 9,
+          "pixel": 2,
+          "hierarchy": 8.5,
+          "layoutPrimitives": 9,
+          "reuse": 6,
+          "cleanliness": 6
+        },
+        "visual": 45,
+        "editability": 29.5,
+        "total": 74.5,
+        "judges": {
+          "a": 74,
+          "b": 75
+        },
+        "spread": 1,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "whole screen",
+            "what": "Inter instead of SF Pro: wider glyphs and different shapes everywhere ('Community', 'Footballeur français', 'Card hidden' run 5-10% wider); 'Which came first?' and 'Today' heavier (Inter 700 vs SF semibold/bold)",
+            "points": 4
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "'Card hidden' banner, Games card, Top read card",
+            "what": "soft card shadows are clipped by the 390 px feed frame: hard vertical cut at the cards' left and right edges (x≈57 and x≈1233 px) instead of a shadow that spreads into the margins; grid column 0 meanDiff 6-11",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "tab bar over the Top read card",
+            "what": "glass tab bar too opaque: the blurred 'Page de liste de Wikimédia' and the tinted rank-2 circle showing through it in the reference are almost invisible",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Top read rows and card text",
+            "what": "row 2 title clips at 'présidentie' vs 'présidentiell', row 3 description truncates at 'réalité m…' vs 'réalité mu…'; 1-3 px vertical drifts on rows and 'Community' segment",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "Top read #3 thumbnail, Games card title",
+            "what": "Star Academy logo cropped/scaled differently (whole wordmark vs zoomed 'ar/ader' crop); calendar glyph a little larger and heavier than the reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "styles",
+            "what": "no shared color/text styles or variables (styled: 0): #202122, #72777d, #3366cc repeated as raw values; tab items not a component",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "Game card, Top read row 2",
+            "what": "'Spacer' frames (1×10, 1×20) used instead of padding/gap; row 2 title 488 px wide overflowing its 322 px text frame; 44 vectors all named 'Vector'",
+            "points": 2
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "all text (status bar, Today, section headers, card text, tab labels)",
+            "what": "Inter used instead of SF Pro: wider glyphs and different letterforms (e.g. 'Liste de sondages…' and 'On French Wikipedia' run longer, 'Community' wider in the segmented control); sizes and weights otherwise right",
+            "points": 4
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "Games card and Top read card",
+            "what": "the soft drop shadow around the white cards is clipped by the feed container: no shadow below/right of the card, and a grey square artifact shows outside the rounded bottom-right corner instead of the reference's diffuse shadow",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "Top read #3 thumbnail (behind the tab bar)",
+            "what": "Star Academy logo shown whole and contained; the reference crops it aspect-fill so only 'tar / ader' fragments show",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Top read rows, rank circles and segmented control",
+            "what": "rank circle sits ~3 px lower than the reference, segmented control and labels 1-3 px off; text block extents differ due to the font",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "tab bar, design tokens",
+            "what": "4 tab items are copy-pasted frames, not instances; no text/color styles or variables (styled: 0), colors and sizes repeated as raw values",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "Game card, Top read row 2",
+            "what": "fixed 'Spacer' frames used instead of padding/gap; row 2 title is a 488 px text in a 322 px frame relying on clipping rather than truncation; battery level text floats outside the Battery frame",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "status bar, navigation bar, overlay chrome",
+            "what": "status bar and navigation bar children positioned absolutely rather than with auto-layout; tab 'Selection' rectangle 82 px wide inside a 76 px tab",
+            "points": 3
+          }
+        ],
+        "strengths": [
+          "every element of the reference present with exact text, including status bar (23:11, silent, 39 %), 'Card hidden · Undo' and French content with accents",
+          "geometry very close: blocks within a few px across the whole feed, photos correctly cropped in 40 pt rounded thumbnails",
+          "Section header, Event row and Top read row built as components with instances; feed and cards in auto-layout",
+          "Geometry matches almost to the pixel: header, banner, both section headers, cards, image thumbnails and the floating tab bar sit at the reference positions (grid cells mostly < 6 meanDiff outside text edges)",
+          "Status bar, W logo, nav pill icons, calendar, overflow dots and tab bar glyphs are real vectors closely matching the SF Symbols of the reference, with correct #3366cc link/rank colours and the selected Home capsule",
+          "Clean named hierarchy (Feed > Header / Section – Games / Section – Top read, Tab bar, Segmented control) with components for the section header, event row and top-read row"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-ios",
+      "pipeline": "figma",
+      "repeat": 3,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 2.5777864000000004,
+      "minutes": 9.712833333333334,
+      "apiMinutes": 9.10205,
+      "turns": 29,
+      "tokens": {
+        "input": 48,
+        "cacheRead": 1726492,
+        "cacheWrite": 116087,
+        "output": 65180,
+        "total": 1907807
+      },
+      "toolCalls": {
+        "Read": 2,
+        "Bash": 8,
+        "Skill": 1,
+        "ToolSearch": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__create_session": 1,
+        "mcp__figma__use_figma": 11,
+        "mcp__figma__upload_assets": 1
+      },
+      "toolCallsTotal": 26,
+      "toolErrors": 4,
+      "permissionDenials": 0,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "34:3"
+      },
+      "date": "2026-11-12T21:18:58.408Z",
+      "key": "wikipedia-ios/figma-3",
+      "score": {
+        "candidate": "55df0e",
+        "verdict": "A very close, well-structured rebuild whose main gaps are Inter standing in for SF Pro (with a few px of vertical drift) and an opaque tab bar that loses the reference's blurred, faded feed underneath; editable with components for repeated rows but no shared styles. / A very close, well-structured rebuild whose main gap is the bottom of the screen: the Liquid Glass tab bar is opaque, with no blurred content behind it and no fade on the third Top read row.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 7.502,
+          "pctDiff": 3.885
+        },
+        "scores": {
+          "layout": 12,
+          "typography": 8.5,
+          "color": 6,
+          "icons": 8.5,
+          "content": 9.5,
+          "pixel": 2,
+          "hierarchy": 9,
+          "layoutPrimitives": 11,
+          "reuse": 6.5,
+          "cleanliness": 7
+        },
+        "visual": 46.5,
+        "editability": 33.5,
+        "total": 80,
+        "judges": {
+          "a": 80,
+          "b": 80
+        },
+        "spread": 0,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "whole screen (titles, card text, tab labels)",
+            "what": "Inter instead of SF Pro: wider glyphs and different letterforms, so lines drift to the right along their length (heatmap doubles every text edge; second Top read row truncates at 'mus…' instead of 'mu…'); 'Community' segment heavier than the reference",
+            "points": 4
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "tab bar and the feed behind it",
+            "what": "reference's Liquid Glass bar shows the 'Liste de sondages…' row blurred through it and fades rank 3 to ~30 % opacity; candidate bar is near-opaque white and row 3 (circle, title, description) is drawn at full contrast",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "large title 'Today', card hidden banner, section headers, cards",
+            "what": "content sits about 3–4 px (@3x) lower from the large title downward, about 6 px at the Top read card; horizontal margins and widths match",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "tab bar, styles",
+            "what": "tab items are four copied frames rather than instances, and no color/text styles or variables are used (styled: 0): #202122, #72777d, #3366cc repeated as raw values",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "Top read #3 thumbnail behind the tab bar",
+            "what": "full Star Academy logo shown in black at full contrast; the reference shows a tighter, zoomed crop ('tar / ader') faded under the bar",
+            "points": 1
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "tab bar and the bottom of the feed",
+            "what": "reference tab bar is translucent glass that shows the blurred 'Liste de ... de Wikimedia' text behind it, and the third Top read row fades out to light grey; the candidate's capsule is opaque white and row 3 ('Star Academy', '3', description) is drawn at full contrast",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "\"Today\" large title and the whole feed below it",
+            "what": "\"Today\" sits about 12 px (4 pt) lower than in the reference; the segmented control is about 3 px lower, and the section headers, cards and rows below drift 3-6 px down, so the heatmap doubles almost every text edge",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "all text",
+            "what": "Inter stands in for SF Pro: the glyph shapes and widths differ slightly ('Community' and 'Which came first?' look heavier and wider), the titles are a little bigger, and the description wraps at 'mus...' instead of 'mu...'",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "Top read #3 thumbnail and the card header",
+            "what": "Star Academy logo is shown whole and at full contrast, where the reference shows a faded crop ('tar / ader'); the calendar glyph and the filled Activity clock are bolder than in the reference",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "Every text, icon and photo of the reference is present with correct French content, colors (#3366cc links, #72777d secondary) and card positions/widths",
+          "Status bar, navigation buttons and tab bar icons redrawn as vectors in the right SF Symbol shapes, with the selected Home capsule in blue",
+          "Section header, game event row and top-read row built as components with instances inside auto-layout sections",
+          "Every block and text of the reference is there, including the status bar details (silent bell, 39 % battery), the 'Card hidden · Undo' banner, the real thumbnails and the clipped second Top read title",
+          "Measured colors are respected: #3366cc links and rank circles, #72777d secondary text, #f8f9fa banner, blue selected Home tab on a grey capsule",
+          "Clean, named hierarchy with auto-layout for the feed, sections, cards and rows, plus components for the section header, game event row and Top read row reused as instances"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-ios",
+      "pipeline": "saymock",
+      "repeat": 1,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 3.5871624000000004,
+      "minutes": 17.0601,
+      "apiMinutes": 9.03535,
+      "turns": 85,
+      "tokens": {
+        "input": 134,
+        "cacheRead": 6627952,
+        "cacheWrite": 156412,
+        "output": 50487,
+        "total": 6834985
+      },
+      "toolCalls": {
+        "Read": 3,
+        "Bash": 28,
+        "ToolSearch": 4,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__search_icons": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__compare_to_reference": 9,
+        "mcp__saymock__edit_html": 6,
+        "mcp__saymock__get_screenshot": 8,
+        "mcp__saymock__list_assets": 1,
+        "mcp__saymock__delete_nodes": 1,
+        "mcp__saymock__update_nodes": 11,
+        "mcp__saymock__get_html": 3,
+        "mcp__saymock__inspect_reference": 2,
+        "mcp__saymock__delete_asset": 2,
+        "edit_html": 1
+      },
+      "toolCallsTotal": 83,
+      "toolErrors": 2,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "v1lgam0yxy",
+        "frameId": "atcf1o1vgl"
+      },
+      "date": "2026-11-12T18:45:14.595Z",
+      "key": "wikipedia-ios/saymock-1",
+      "score": {
+        "candidate": "3cfdab",
+        "verdict": "A very close, well-placed rebuild whose worst gaps are uneven letter-spacing in body text and a few wrong glyphs (outlined profile, chimney-less home), on a clean flex structure with templates for the repeated rows. / A very close, well-placed rebuild of the Explore feed whose main weakness is the type rendering (fallback font with loose, uneven letter spacing that widens every line) plus a few off-glyph icons; cleanly structured with flex and templates.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 6.387,
+          "pctDiff": 3.361
+        },
+        "scores": {
+          "layout": 13,
+          "typography": 8.5,
+          "color": 7,
+          "icons": 7,
+          "content": 9,
+          "pixel": 2,
+          "hierarchy": 9,
+          "layoutPrimitives": 10,
+          "reuse": 7.5,
+          "cleanliness": 7
+        },
+        "visual": 46.5,
+        "editability": 33.5,
+        "total": 80,
+        "judges": {
+          "a": 80,
+          "b": 80
+        },
+        "spread": 0,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "card text and Top read rows",
+            "what": "global tracking-[-0.23px] plus per-text tracking makes spacing uneven: 'Foot balleur', 'souter rain', 'pre mier', 'sondages' gaps visible; reference has even SF Pro spacing",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "segmented control and section titles",
+            "what": "'Community', 'Which came first?', 'Games', tab labels set wider/letter-spaced than the reference; event lines sit ~2-3 px lower per line (leading 20.5 px vs ~20 px)",
+            "points": 1
+          },
+          {
+            "severity": "major",
+            "criterion": "icons",
+            "where": "top bar, profile button",
+            "what": "outlined Lucide circle-user-round instead of the filled person-in-circle glyph",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "tab bar Home, card calendar, Star Academy thumbnail",
+            "what": "home glyph without chimney/door cut-out, calendar with rings instead of the flat grid calendar, Star Academy logo cropped differently",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "tab bar and search button",
+            "what": "nearly opaque white capsule (bg-white/95) where the reference's Liquid Glass shows the feed (row 2 description, rank circle) blurred through it, with a light rim",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "Top read rows 2-3 under the tab bar",
+            "what": "row 2 description hidden instead of showing through; row 3 truncates 'réalité m' vs 'réalité mu…'",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "section headers and card shells",
+            "what": "Games and Top read headers/cards copy-pasted with identical arbitrary classes (174 arbitrary values) instead of a shared component",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "overflow dots",
+            "what": "SVG recoloured with a CSS filter chain (invert/sepia/hue-rotate) rather than a coloured icon",
+            "points": 1
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "whole feed (event texts, Top read rows, tab labels, segmented control)",
+            "what": "SF Pro not rendered as in the capture: tracking looser and uneven (gaps in 'Foot balleur', 'souter rain', 'présidentielle'), lines run ~15-20 px (@3x) wider; segmented-control labels and tab labels visibly wider",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "top bar profile button and tab bar",
+            "what": "profile is an outlined circle-user (Lucide) instead of the filled SF person.crop.circle; Home is a rounded Material house without the SF roof/door shape; Saved bookmark squatter than the reference's tall ribbon",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "'Which came first?' header and Top read #3 thumbnail",
+            "what": "calendar is Material calendar_month (rings, rounded) instead of the app's flat calendar glyph; Star Academy logo cropped/scaled differently behind the tab bar",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "'Which came first?' event rows and tab bar",
+            "what": "event text line height ~20.5 pt makes the second line and Nixon row sit ~2-3 pt lower; tab bar icons/labels ~1 pt lower than reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "tab bar",
+            "what": "selected Home uses #3366cc instead of #2975bf; capsule is near-opaque white/95 so the feed (row 2 thumbnail and subtitle) does not show through as in the Liquid Glass reference",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "section header overflow dots",
+            "what": "dots colored by a CSS filter chain (invert/sepia/hue-rotate) on an img rather than a real colored icon; tab selection styling injected through a class string in template data",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "Games and Top read sections",
+            "what": "section header and card shell duplicated by hand with identical arbitrary values (shadow, radius, colors repeated, 174 arbitrary values) instead of one template/component",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "Every block (top bar, segmented control, Today, Card hidden, both sections, tab bar) lands within a few px of the reference",
+          "All reference texts present with accents, plus the real thumbnails and Wikipedia W logo",
+          "Event rows, article rows and tab items are templates with data, inside flex columns that reflow",
+          "Every block of the screen is present at nearly the exact position: status bar, top bar pills, segmented control, Today, Card hidden banner, both cards and the floating tab bar + search button",
+          "Colors follow the measured palette (#202122, #72777d, #3366cc, #f8f9fa, #ececed) and real assets (W logo, map, Nixon, Pagis) are correctly cropped",
+          "Repeated rows (events, top read articles, tab items) are templates with data, inside flex columns that reflow"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-ios",
+      "pipeline": "saymock",
+      "repeat": 2,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 2.2882494,
+      "minutes": 6.946016666666667,
+      "apiMinutes": 6.144216666666667,
+      "turns": 49,
+      "tokens": {
+        "input": 76,
+        "cacheRead": 2912627,
+        "cacheWrite": 122470,
+        "output": 36283,
+        "total": 3071456
+      },
+      "toolCalls": {
+        "Read": 1,
+        "Bash": 16,
+        "ToolSearch": 1,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__search_icons": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__compare_to_reference": 7,
+        "mcp__saymock__get_html": 2,
+        "mcp__saymock__edit_html": 3,
+        "mcp__saymock__update_nodes": 8,
+        "mcp__saymock__get_screenshot": 3,
+        "mcp__saymock__find_nodes": 2
+      },
+      "toolCallsTotal": 47,
+      "toolErrors": 1,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "s5dpvj35x3",
+        "frameId": "t602gscz1z"
+      },
+      "date": "2026-11-12T20:18:22.007Z",
+      "key": "wikipedia-ios/saymock-2",
+      "score": {
+        "candidate": "d05af8",
+        "verdict": "A very close, well-structured rebuild whose biggest miss is the bottom of the screen: the feed under the tab bar is drawn at full contrast instead of fading behind frosted glass, with a few glyph and letter-spacing slips. / A very close rebuild where every block sits within a few pixels and all the content is there; the main gaps are the iOS glass effects (no white fade or frosted blur behind the tab bar, so row 3 and the Star Academy logo show fully) and uneven, too-wide letter spacing; well structured, with templates for every repeated row.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 7.063,
+          "pctDiff": 3.62
+        },
+        "scores": {
+          "layout": 13,
+          "typography": 8.5,
+          "color": 5.5,
+          "icons": 7,
+          "content": 9.5,
+          "pixel": 2,
+          "hierarchy": 9,
+          "layoutPrimitives": 10.5,
+          "reuse": 7,
+          "cleanliness": 6.5
+        },
+        "visual": 45.5,
+        "editability": 33,
+        "total": 78.5,
+        "judges": {
+          "a": 80,
+          "b": 77
+        },
+        "spread": 3,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "Top read card behind the tab bar (y ≈ 2550–2796)",
+            "what": "reference fades the 3rd row (rank 3, 'Star Academy (France)', description) to a pale grey and blurs the 2nd row under translucent glass; candidate draws row 3 at full contrast and the bars are near-opaque white (heatmap cells of the bottom row 8.7–17.8)",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "segmented control, card text, section titles",
+            "what": "uneven letter spacing from the global tracking-[-0.43px] plus per-element tracking: visible gaps in 'Communit y', 'souter rain', 'Which came first?' set wider than the reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "'Today', section titles, 'Which came first?', tab icons",
+            "what": "pure #000000 instead of Wikipedia's #202122 main text color",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "Games card header, Home tab, profile button, status bar",
+            "what": "outlined Material calendar instead of the filled-header SF calendar with dot grid; rounded Material home instead of the house with chimney; outlined account_circle instead of filled person.crop.circle; cellular bars ~2/3 the reference size",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "Top read #3 thumbnail",
+            "what": "Star Academy logo shown whole and small (object-contain) instead of the reference's tight crop filling the 37 pt square",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "status bar and segmented control",
+            "what": "cellular indicator ~10 px narrower at @3x; segmented control lacks the reference's light glass rim and sits ~1 px higher",
+            "points": 2
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "bottom of the feed, behind the tab bar",
+            "what": "the reference fades the feed to white under a frosted Liquid Glass bar: row 3 'Star Academy (France)' is pale grey and its logo is cut and faded, and the text behind the bar is heavily blurred. The render shows row 3 in full black with a full-color rank circle and logo, and the bar is only slightly translucent (bg-white/85 with no fade overlay)",
+            "points": 2
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "game card text, 'Which came first?', segmented control, tab labels",
+            "what": "the tracking overrides (-0.43/-0.23/+0.3 px) give uneven glyph spacing ('premier essai', 'soute rrain'). Bold titles are too wide: 'Which came first?' ends at about x=1880 vs 1870 equivalent and is visibly spaced, and 'Community', 'Activity' and 'Play today's game' are spaced too. Baselines sit 1 to 3 px low",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "nav bar profile button",
+            "what": "an outlined account_circle where the reference has the filled person-in-circle glyph (solid head and shoulders)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "'Which came first?' card header",
+            "what": "a Material calendar_month with binder rings, 20 px; the reference uses a flat, wider calendar with a grid of dots and no rings",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "status bar and tab bar",
+            "what": "the cellular bars are about 25 % smaller than the reference's (10.5 vs about 13 pt tall), and the Home glyph is Material's filled house without the SF chimney and door",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "segmented control and selected Home tab",
+            "what": "the track has no white glass rim or outline (the reference shows a 1 to 2 px light border). The selected Home tab is #3366cc instead of the measured #2975bf",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "tab bar labels and card text",
+            "what": "the tab labels sit about 3 px (1 pt) lower than in the reference, and the card text lines run 1 to 2 px low. The heatmap's bottom row cells reach a meanDiff of 13 to 18",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "section header overflow dots, tab bar template",
+            "what": "the overflow icon is recolored with a CSS filter chain instead of a real colored vector. The template data injects class strings ({{color}}, {{hl}}, {{titleClass}}, {{imgClass}}), and 160 arbitrary values are used",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "Every block (header buttons, segmented control, 'Card hidden' banner, Games card, Top read card, tab bar) sits within a few px of the reference, with matching radii and soft shadows",
+          "All texts exact, including accents and truncation ('présidentiell…', 'Émission française de télé réalité mus…') and the measured palette #3366cc / #72777d / #f8f9fa",
+          "Game rows, article rows and tab items are templates over data, the feed is a flex column, layers carry meaningful names",
+          "Every block (status bar, nav buttons, segmented control, Today, toast, Games and Top read sections, cards, tab bar, search button) is within a few pixels of the reference, and all the text matches exactly, accents and truncation included",
+          "The repeated rows are templates with data: the 2 game options, the 3 top-read rows and the 4 tabs",
+          "The real assets are used and cropped as in the reference: the W logo, the overflow dots, the France map, Nixon, Pablo Pagis and the Star Academy logo"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-ios",
+      "pipeline": "saymock",
+      "repeat": 3,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 1.5368818000000002,
+      "minutes": 4.15735,
+      "apiMinutes": 3.8400833333333333,
+      "turns": 28,
+      "tokens": {
+        "input": 46,
+        "cacheRead": 1510929,
+        "cacheWrite": 97759,
+        "output": 22622,
+        "total": 1631356
+      },
+      "toolCalls": {
+        "Read": 1,
+        "Bash": 3,
+        "ToolSearch": 2,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__search_icons": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__compare_to_reference": 7,
+        "mcp__saymock__get_screenshot": 1,
+        "mcp__saymock__edit_html": 1,
+        "mcp__saymock__get_html": 2,
+        "mcp__saymock__update_nodes": 5
+      },
+      "toolCallsTotal": 26,
+      "toolErrors": 0,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "gd3qmm4xcm",
+        "frameId": "eiz0pna1vi"
+      },
+      "date": "2026-11-12T20:58:22.640Z",
+      "key": "wikipedia-ios/saymock-3",
+      "score": {
+        "candidate": "cf0bac",
+        "verdict": "A close, well-structured rebuild of the Explore feed whose biggest gap is the icon set (Material/Lucide glyphs instead of SF Symbols in the top bar and tab bar) and a fallback font with uneven tracking, while the flex layout and templated rows make it very editable. / A very close rebuild whose layout lands within a few pixels everywhere, let down by loose letter-spacing on every text and by substitute icons in the tab bar and top bar; it is cleanly built with flex and templates, but section headers and cards are copied by hand.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 6.946,
+          "pctDiff": 3.632
+        },
+        "scores": {
+          "layout": 12.5,
+          "typography": 8.5,
+          "color": 7,
+          "icons": 6.5,
+          "content": 9,
+          "pixel": 2,
+          "hierarchy": 8,
+          "layoutPrimitives": 10.5,
+          "reuse": 7.5,
+          "cleanliness": 7
+        },
+        "visual": 45.5,
+        "editability": 33,
+        "total": 78.5,
+        "judges": {
+          "a": 78,
+          "b": 79
+        },
+        "spread": 1,
+        "top_defects": [
+          {
+            "severity": "major",
+            "criterion": "icons",
+            "where": "top bar actions pill and tab bar",
+            "what": "Lucide rounded 'copy' and outlined Material 'account_circle' instead of the square tabs icon and filled-person circle; Material home/bookmark/clock glyphs (rounded house, short bookmark, thick clock hands) instead of the SF Symbols house.fill, bookmark.fill, clock.fill; calendar_month outline instead of the filled-header calendar in 'Which came first?'",
+            "points": 4
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "whole screen (feed text, tab labels)",
+            "what": "SF Pro not resolved: a fallback face with wider, uneven tracking ('Activit y', 'Nixon à', 'Footballeur français' noticeably wider) and heavier tab labels (semibold-looking vs regular 12 pt)",
+            "points": 4
+          },
+          {
+            "severity": "major",
+            "criterion": "color",
+            "where": "tab bar",
+            "what": "opaque white/90 glass with no content visible through it, where the reference shows the second Top read row blurred through the Liquid Glass bar; selected 'Home' is #3366cc instead of #2975bf",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "status bar",
+            "what": "battery and Wi-Fi glyphs smaller than the reference (battery ~28x13 pt vs ~30x14 pt with bolder '39'), bell-slash a filled Material glyph",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Top read card and section headers",
+            "what": "rows and headers drift 2-4 px (Pablo Pagis title ~2 px high, second row title ~2 px high, Games header 1-2 px low); feed bottom cells meanDiff up to 17.5",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "Top read row 2 behind the tab bar",
+            "what": "the row's description ('Article de liste de Wikipédia') that shows through the tab bar in the reference is not visible",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "Games / Top read section headers and cards",
+            "what": "the two section headers and two card shells are copy-pasted rather than one template; 156 arbitrary values (e.g. text-[15px], #72777d, #3366cc repeated) instead of shared tokens",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "section header overflow dots",
+            "what": "dots recoloured with a CSS filter chain (invert/sepia/hue-rotate) on an image instead of a coloured vector; status bar signal/battery hand-built from divs",
+            "points": 1
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "all text (Card hidden, Footballeur français, Activity, Play today's game)",
+            "what": "the fallback font renders with loose, uneven tracking (gaps such as 'hidde n', 'Activit y', 'Footballeur français' set wider than the reference's SF Pro); the lines run several px longer",
+            "points": 3
+          },
+          {
+            "severity": "major",
+            "criterion": "icons",
+            "where": "tab bar",
+            "what": "Material icons stand in for SF Symbols: the home glyph has no roof overhang, the bookmark is rounded with a shallow notch, the clock hands differ",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "top bar actions pill",
+            "what": "the Lucide copy icon and the outlined account_circle replace the reference's tabs icon and filled person-in-circle; strokes are heavier and the shapes differ",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "tab bar and search button",
+            "what": "the glass is nearly opaque white/90: the blurred 'Liste de … Wikipédia' row that shows through in the reference is barely visible",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Top read rows",
+            "what": "the title and description sit about 2–4 px higher than in the reference, and row 3 and its rank circle are a few px off behind the tab bar",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "content",
+            "where": "Top read #3 thumbnail",
+            "what": "the Star Academy logo is cropped and scaled differently: the full logo is shown smaller instead of the reference's tight crop",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "Games / Top read section headers and cards",
+            "what": "the two section headers and the card shells are copied by hand (same classes and magic numbers); the 156 arbitrary values include no shared tokens",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "overflow dots",
+            "what": "the SVG image is recolored with a CSS filter hack (invert/sepia/hue-rotate) to approximate #3366cc instead of using an icon in a real color",
+            "points": 1
+          }
+        ],
+        "strengths": [
+          "All feed content present and exact, including accents, the 'Card hidden · Undo' banner and the faded Star Academy row under the tab bar",
+          "Event rows, Top read rows and tab items are templates driven by data, inside flex columns that reflow",
+          "Measured palette used correctly: #202122 text, #72777d secondary, #3366cc links, #f8f9fa-like banner",
+          "The block geometry (status bar, top bar, segmented control, Today, toast, cards, tab bar) matches the reference to within a few px, at the right size",
+          "The measured palette is used exactly: #202122, #72777d, #3366cc, the toast's #f7f8fa",
+          "Event rows, article rows and tab items each come from a data template, and the feed flows in flex columns"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-web",
+      "pipeline": "figma",
+      "repeat": 1,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 2.6201666000000006,
+      "minutes": 9.249483333333334,
+      "apiMinutes": 8.583666666666666,
+      "turns": 46,
+      "tokens": {
+        "input": 76,
+        "cacheRead": 3007373,
+        "cacheWrite": 114886,
+        "output": 54965,
+        "total": 3177300
+      },
+      "toolCalls": {
+        "Read": 12,
+        "Bash": 13,
+        "Skill": 1,
+        "ToolSearch": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__create_session": 1,
+        "mcp__figma__use_figma": 12,
+        "mcp__figma__upload_assets": 2,
+        "mcp__figma__get_screenshot": 1
+      },
+      "toolCallsTotal": 44,
+      "toolErrors": 5,
+      "permissionDenials": 0,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "14:3"
+      },
+      "date": "2026-11-12T20:11:13.486Z",
+      "key": "wikipedia-web/figma-1",
+      "score": {
+        "candidate": "29c87e",
+        "verdict": "Nearly indistinguishable from the reference at 100 %, with only 1–3 px vertical drifts in the Appearance panel and the lower sections; well-structured auto-layout with components, but no shared styles and a few absolute or leftover layers. / A near-faithful Wikipedia Main Page with every block, photo and link present; the gap is a substitute sans (Arimo instead of the reference's Helvetica) plus 1–3 px vertical drifts, and it is a reasonably editable auto-layout build with four components but no shared styles.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 7.741,
+          "pctDiff": 5.932
+        },
+        "scores": {
+          "layout": 12.5,
+          "typography": 10,
+          "color": 7.5,
+          "icons": 9,
+          "content": 10,
+          "pixel": 2,
+          "hierarchy": 9,
+          "layoutPrimitives": 10,
+          "reuse": 7,
+          "cleanliness": 6.5
+        },
+        "visual": 51,
+        "editability": 32.5,
+        "total": 83.5,
+        "judges": {
+          "a": 86,
+          "b": 81
+        },
+        "spread": 5,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Appearance panel",
+            "what": "rows drift down cumulatively: Text options +1 CSS px, Width options +2 px, Color label and options +3 px (Dark radio at ~y 406 vs ~403)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "In the news and Did you know bodies",
+            "what": "list text 1.5–2 CSS px lower than the reference while the Kimi Antonelli photo sits ~2.5 px higher; Did you know hook ~1.5 px lower",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole file",
+            "what": "no text or color styles/variables (styled: 0): #3366cc, #202122, section fills and borders are repeated raw values; components only for Tab, Radio option, Section heading and List item",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "Page tabs bar, figures, Appearance panel",
+            "what": "Page tabs container and the watchstar dot are absolutely placed, the photo figures float absolutely inside auto-layout bodies (35 absolute layers), so text edits do not reflow around the images",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "Tab instances, wordmark",
+            "what": "hidden Indicator rectangles left at 67×2 in Talk/View source/View history instances (wider than 'Talk'), tab instances 28 px vs 34 px tall; imported logo SVG kept as anonymous 'Clip path group'/'Vector' layers",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "Welcome banner title and body",
+            "what": "Arimo substitute (metric-compatible) instead of the page's sans; title 25.6 px vs 25.92 px; glyph shapes differ subtly at zoom",
+            "points": 1
+          },
+          {
+            "severity": "major",
+            "criterion": "typography",
+            "where": "all UI and body text",
+            "what": "set in Arimo (Arial metrics) instead of the reference's Helvetica: different glyphs (R, G, a, t) on every line, the main source of the text-edge differences in the heatmap; welcome title 25.6 px instead of 25.92 px",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "Appearance panel radio groups",
+            "what": "rows drift down progressively: Small +1 CSS px, Standard (Width) +2 px, Light +3 px vs the reference (section labels 36/41 px tall instead of a consistent rhythm)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "In the news list and Kimi Antonelli photo",
+            "what": "list items 1–2 CSS px lower than the reference while the photo is about 2 px shorter and its caption 1–2 px higher; heatmap grid cells at bottom right reach meanDiff 20",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "search field icon and hamburger",
+            "what": "magnifier drawn darker grey than the reference's mid grey (#72777d-like), hamburger bars slightly heavier/darker",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole file",
+            "what": "no text or color styles/variables (styled: 0); raw values such as 19.200000762939453px, 15.199999809265137px and fractional gaps 8.5/10.5/11.5 repeated per frame",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "Page tabs",
+            "what": "inactive tab instances keep a 67×2 'Indicator' rectangle (hidden leftover, width of 'Main Page'), a gap:-1 overlap hack in the search bar, and the Page tabs bar itself is not auto-layout (Namespaces, Views, watchstar pulse positioned absolutely)",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "header logo",
+            "what": "wordmark and tagline sit about 1 CSS px higher than the reference",
+            "points": 0
+          }
+        ],
+        "strengths": [
+          "Every text, link color, bold run and line break of the reference is present and wraps identically (featured article, help us improve, In the news, Did you know cut at the bottom edge)",
+          "Section heading fills/borders (#cef2e0 / #cedff2), column backgrounds, search field and radio states match the measured values",
+          "Real vector wordmark, tagline and Codex icons plus the three genuine photos correctly cropped; auto-layout throughout with named groups and component instances for tabs, radios, headings and list items",
+          "Content is complete and exact: every link, count (265,650 / 7,260,752), diacritic (Święczkowski, Bartłomiej Sochański), bold/italic run and the blue watchstar dot are present",
+          "Column, banner and section-heading surfaces match the measured colors (#f5fffa/#cef2e0, #f5faff/#cedff2, #f9f9f9) and box sizes (502×36, 590×36)",
+          "Structure is named and mostly auto-layout, with real components for tabs, radio options, section headings and list items (20 instances)"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-web",
+      "pipeline": "figma",
+      "repeat": 2,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 2.0339939999999994,
+      "minutes": 8.124416666666667,
+      "apiMinutes": 7.6048,
+      "turns": 31,
+      "tokens": {
+        "input": 50,
+        "cacheRead": 1577550,
+        "cacheWrite": 98848,
+        "output": 46375,
+        "total": 1722823
+      },
+      "toolCalls": {
+        "Read": 5,
+        "Bash": 11,
+        "Skill": 1,
+        "ToolSearch": 2,
+        "mcp__figma__create_session": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__use_figma": 6,
+        "mcp__figma__upload_assets": 2
+      },
+      "toolCallsTotal": 29,
+      "toolErrors": 3,
+      "permissionDenials": 1,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "29:3"
+      },
+      "date": "2026-11-12T20:54:00.904Z",
+      "key": "wikipedia-web/figma-2",
+      "score": {
+        "candidate": "fe8f3e",
+        "verdict": "A near-faithful Wikipedia Main Page whose every block, icon and string is right, let down by section headings 3 px too tall that push both columns' content 2-5 px down; well built with auto-layout and four components, but has no shared styles and uses fixed-width text blocks. / A near-identical rebuild at a glance with every block, text, icon and photo in place, let down by section headings 3 px too tall that push both columns 3-5 px down and a slightly shifted toolbar, on a clean, componentised auto-layout structure without shared styles.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 15.64,
+          "pctDiff": 10.532
+        },
+        "scores": {
+          "layout": 11,
+          "typography": 10,
+          "color": 7.5,
+          "icons": 9,
+          "content": 10,
+          "pixel": 1,
+          "hierarchy": 9,
+          "layoutPrimitives": 10,
+          "reuse": 7.5,
+          "cleanliness": 7
+        },
+        "visual": 48.5,
+        "editability": 33.5,
+        "total": 82,
+        "judges": {
+          "a": 82,
+          "b": 82
+        },
+        "spread": 0,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "section headings (From today's featured article, Help us improve, In the news, Did you know)",
+            "what": "heading boxes are 39 px tall instead of 36 px, plus slightly larger gaps, so content drifts down: body text ~2 px lower under the first headings, 'In the news' and 'Did you know ...' headings ~3-4 CSS px lower, news items ~4 px lower (grid cells mid-page meanDiff 19-46)",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "whole page",
+            "what": "Arimo instead of the reference's system sans (Helvetica/Arial rendering); metrics match but strokes are slightly lighter and glyph widths differ by a pixel here and there",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "\"Welcome to Wikipedia,\" title and section headings",
+            "what": "title and heading text drawn in #202122 grey instead of #101418 near-black",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "Help us improve intro, In the news items",
+            "what": "the text wrapping around the photos uses fixed-width blocks (Intro 415 px, News items 467 px) and the photo figures are positioned absolutely, so editing the text or the image does not reflow the column",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "Tab instances, box content text",
+            "what": "leftover 67x2 'Indicator' rectangles inside the Talk/View source/View history tabs (wider than 25-77 px tabs); a 'Checked' ellipse in every radio; text layers 500 px wide inside a 498 px content frame and 590 px inside 588 px (overflow)",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole file",
+            "what": "no shared color or text styles (styled: 0): #3366cc, #202122 and the box tints are repeated as raw values",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "box contents",
+            "what": "each long paragraph is a single text layer with inline link styling and no paragraph structure; 53 absolute layers next to 67 auto-layouts",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "section headings (From today's featured article, Help us improve, In the news, Did you know)",
+            "what": "heading boxes 39 px tall instead of 36 px and inset ~1-2 px differently; every line below drifts 3-5 CSS px down (body starts ~y 278 vs 275, In the news items ~4 px lower), which drives most of the grid's 20-46 meanDiff cells",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "page toolbar (Read / View source / View history / bookmark / more)",
+            "what": "the views group sits ~5 CSS px left of the reference (Read at x~746 vs ~751), bookmark and ellipsis ~2 px left; user links (Donate...) ~2 px left",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "whole page",
+            "what": "Arimo instead of the reference's Arial/Helvetica: same metrics but visibly different glyph rendering at zoom; Appearance 'hide' label drawn at 14 px where the reference's is ~12-13 px",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "pixel",
+            "where": "columns (grid rows 2-4)",
+            "what": "meanDiff 15.64, pctDiff 10.5 %: text lines offset by a few pixels across the two columns",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole structure",
+            "what": "no shared color or text styles/variables (styled: 0): #3366cc, #202122, box fills and borders repeated as raw values",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "box contents and figures",
+            "what": "53 absolute layers; the floated figures (frozen yogurt, Kimi Antonelli, Aracelio Iglesias) are placed outside the flow, and text nodes are wider than their parents (Summary 500 in a 498 frame, Footer links 590 in 588)",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "All content is present and exact, including counts, links, captions, the onboarding dot and the cut-off Did you know item",
+          "Logo, tagline and toolbar icons are real vectors from the provided SVGs, with correct sizes; the three photos are correctly cropped",
+          "Tab, Box heading, List item and Radio option are components with 20 instances; frames are named after the UI (Header, Page tabs, Welcome banner, Appearance panel)",
+          "Every text of the reference is present and exact, including the bold/blue link runs, accents (Święczkowski, Bartłomiej Sochański) and the line wrapping of each paragraph",
+          "Real logo, menu, search, bookmark and ellipsis vectors, the onboarding dot and the three photos correctly cropped at their sizes",
+          "Tab, Box heading, List item and Radio option components with 20 instances, clearly named groups (Header, Page tabs, Welcome banner, Main columns, Appearance panel)"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-web",
+      "pipeline": "figma",
+      "repeat": 3,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "figma:connected"
+      ],
+      "costUsd": 3.0578578000000003,
+      "minutes": 10.541266666666667,
+      "apiMinutes": 9.839316666666667,
+      "turns": 50,
+      "tokens": {
+        "input": 78,
+        "cacheRead": 3412509,
+        "cacheWrite": 128268,
+        "output": 67445,
+        "total": 3608300
+      },
+      "toolCalls": {
+        "Read": 12,
+        "Bash": 17,
+        "Skill": 1,
+        "ToolSearch": 1,
+        "ReadMcpResourceTool": 1,
+        "mcp__figma__create_session": 1,
+        "mcp__figma__use_figma": 10,
+        "mcp__figma__upload_assets": 2,
+        "mcp__figma__get_screenshot": 3
+      },
+      "toolCallsTotal": 48,
+      "toolErrors": 6,
+      "permissionDenials": 0,
+      "result": {
+        "fileKey": "<figma-file-key>",
+        "nodeId": "38:3"
+      },
+      "date": "2026-11-12T21:40:26.950Z",
+      "key": "wikipedia-web/figma-3",
+      "score": {
+        "candidate": "b692dd",
+        "verdict": "A near-identical rebuild of the Wikipedia main page whose only visible gaps are Arimo standing in for the page's Arial/Helvetica and a 1-3 px vertical drift in the column content; it is a well-named, component-based Figma tree but with absolute top-level placement, spacer frames and no shared styles. / A very close rebuild where every block, text, icon and photo is in place; it loses points to a 1-3 px vertical drift that builds up down the columns, a slightly lighter title and hamburger, and a structure that mixes auto-layout with absolute bars, spacer frames and no shared styles.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 14.015,
+          "pctDiff": 9.72
+        },
+        "scores": {
+          "layout": 12.5,
+          "typography": 10,
+          "color": 7.5,
+          "icons": 9,
+          "content": 10,
+          "pixel": 1,
+          "hierarchy": 9,
+          "layoutPrimitives": 9,
+          "reuse": 7.5,
+          "cleanliness": 7
+        },
+        "visual": 50,
+        "editability": 32.5,
+        "total": 82.5,
+        "judges": {
+          "a": 83,
+          "b": 82
+        },
+        "spread": 1,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "whole page (headings, body, tabs)",
+            "what": "Arimo substituted for the reference's Arial/Helvetica sans-serif: the glyph shapes differ slightly, and the bold 19.2 px section headings ('From today's featured article', 'In the news') render a little wider and heavier than in the reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "left and right columns, section headings and bodies",
+            "what": "the heading boxes start about 1 CSS px right of and below the reference (500 px wide inner boxes instead of 502/590 with their border), and the body text drifts down by 1-3 CSS px toward the bottom ('Did you know' bullet, 'In the news' items, Kimi Antonelli caption). These sub-pixel text offsets are what push the grid meanDiff to 20-40 in the lower cells",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "pixel",
+            "where": "whole render",
+            "what": "meanDiff 14.0 and pctDiff 9.7 % even though nothing looks misplaced at a glance: text anti-aliasing and the small vertical drift account for most of it",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole file",
+            "what": "no text or color styles or variables (styled: 0): #3366cc, #202122 and the heading greens and blues are repeated as raw values, and footer link rows and figures are not components",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "root frame, Header, Page toolbar, figures",
+            "what": "the root, Header and Page toolbar are not auto-layout (63 absolute layers): the header items, columns and Appearance menu sit at fixed coordinates, and the photo Figures are placed absolutely inside auto-layout bodies",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "Welcome banner, Appearance menu, Tab instances",
+            "what": "1 px wide 'Spacer' frames are used for spacing instead of gap or padding, and the unselected Tab instances (Talk, View source, View history) keep a 67x2 'Selected indicator' layer that a variant should handle",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "left and right columns, from the section headings down to Did you know / In the news",
+            "what": "content drifts lower as it goes down: about 1 CSS px at the first headings, about 3 CSS px by the Did you know bullet and In the news list; the tagline sits about 1-2 px higher under the wordmark, and View history is shifted sideways a little (strong outline on the heatmap)",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "Welcome banner title and body text",
+            "what": "Arimo stands in for the page's Arial-metric sans: same metrics but lighter strokes; 'Welcome to' is drawn about #202122 instead of #101418, so the title looks greyer",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "header: main menu icon and Search button label",
+            "what": "hamburger drawn near-black (#202122) where the reference is a lighter grey; Search button label a little darker than the reference",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "pixel",
+            "where": "whole frame",
+            "what": "meanDiff 14.0 and pctDiff 9.7 %, mostly from text edges offset by 1-3 px in the content columns (grid cells 16-42)",
+            "points": 4
+          },
+          {
+            "severity": "major",
+            "criterion": "layoutPrimitives",
+            "where": "root frame, Header, Page toolbar, figures",
+            "what": "63 absolute layers: the header, page toolbar and the two columns are positioned by hand rather than in auto-layout rows, the Frozen yogurt figure is placed absolutely inside a vertical auto-layout Body, and the columns have a fixed 700 px height; vertical rhythm relies on 1-8 px 'Spacer' frames",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "whole file",
+            "what": "good components (Tab, Section heading, List item, Radio option, 20 instances), but no color or text styles or variables (styled: 0): #3366cc, #202122 and the section fills are repeated as literal values",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "Every block (header, toolbar with the onboarding dot, welcome banner, both columns, Appearance panel) is present at its measured position and size, with exact surface colors (#f9f9f9, #f5fffa/#cef2e0, #f5faff/#cedff2)",
+          "All text is exact, line breaks included (Świeczkowski, 'Eunos / MRT station', 'Blueberry-flavored frozen / yogurt'), and the three photos are correctly cropped",
+          "Real vector logo and icons, and meaningful components (Tab, Section heading, List item, Radio option) with 20 instances and readable layer names",
+          "Every text, link, bullet, caption and the three photos of the reference are present and correctly cropped, and the real wordmark, tagline, search, bookmark, ellipsis and menu SVGs are used, with the blue onboarding dot",
+          "Section headings, list items, tabs and radio options are built as components and reused as instances, with layers named after the UI (Welcome banner, Left column, Appearance menu)",
+          "The panel colours match the measured values: green and blue column fills and borders, the #f9f9f9 banner, the selected radios in #3366cc"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-web",
+      "pipeline": "saymock",
+      "repeat": 1,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 1.3788088000000003,
+      "minutes": 4.767733333333333,
+      "apiMinutes": 4.356316666666666,
+      "turns": 30,
+      "tokens": {
+        "input": 42,
+        "cacheRead": 1172204,
+        "cacheWrite": 77800,
+        "output": 26090,
+        "total": 1276136
+      },
+      "toolCalls": {
+        "Read": 1,
+        "Bash": 4,
+        "ToolSearch": 2,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__compare_to_reference": 6,
+        "mcp__saymock__inspect_reference": 1,
+        "mcp__saymock__get_screenshot": 3,
+        "mcp__saymock__update_nodes": 7,
+        "mcp__saymock__get_html": 1
+      },
+      "toolCallsTotal": 28,
+      "toolErrors": 2,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "il5okrs6c2",
+        "frameId": "gggfphasx5"
+      },
+      "date": "2026-11-12T18:54:52.060Z",
+      "key": "wikipedia-web/saymock-1",
+      "score": {
+        "candidate": "c4ff23",
+        "verdict": "A very close, complete rebuild of the Main Page whose worst gaps are the wrong greys on the search border and tab underline plus a page-wide 1-2 px drift in text lines; it is editable, built from flex sections, but the shell is absolutely positioned and the colors are hard-coded. / A near-faithful rebuild where every block, text and photo sits where it should, held back by systematic sub-pixel text drift, icons drawn pure black instead of Wikipedia's grey and a few off greys, built as reasonably named flex HTML but with copy-pasted heading/link styles and absolutely placed top-level blocks.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 8.714,
+          "pctDiff": 6.548
+        },
+        "scores": {
+          "layout": 12.5,
+          "typography": 10.5,
+          "color": 6.5,
+          "icons": 8,
+          "content": 10,
+          "pixel": 2,
+          "hierarchy": 8,
+          "layoutPrimitives": 8.5,
+          "reuse": 5,
+          "cleanliness": 7
+        },
+        "visual": 49.5,
+        "editability": 28.5,
+        "total": 78,
+        "judges": {
+          "a": 77,
+          "b": 79
+        },
+        "spread": 2,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "body text of both columns, section headings, Appearance panel",
+            "what": "nearly every text line and heading sits about 1 CSS px higher than the reference (the heatmap outlines all the text; grid cells 10-22 meanDiff across the columns); the welcome h1 uses a 32 px line height instead of 35.64 px and makes up for it with margins",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "search field",
+            "what": "border #a2a9b1 instead of #72777d, so the field reads lighter and flatter than the reference",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "page tabs bottom rule, left column border",
+            "what": "the tab underline is darker than the reference's light grey (#a2a9b1, ref about #c8ccd1); the left column border is #c6e9d4, ref #cef2e0",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "header: main menu and search magnifier",
+            "what": "the hamburger draws pure black, ref #202122/grey; the magnifier is darker than the reference's grey glyph",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "In the news photo (Kimi Antonelli)",
+            "what": "photo box 118x167.4 and its caption sit about 2 px lower and taller than the reference, so the caption baseline drifts",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "section headings and column panels",
+            "what": "the four section headings and the two column panels are copy-pasted with the same long class strings; 261 arbitrary values and every color is a literal hex, with no tokens",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "header, page tabs, main and Appearance aside",
+            "what": "the shell blocks are placed with absolute left/top (9 absolute layers), and both columns are fixed h-[640px] overflow-hidden, so adding content does not reflow the page",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "column bodies, section headings and Appearance panel",
+            "what": "text baselines drift 0.5-1 CSS px (1-2 device px) up throughout (e.g. 'From today's featured article', body lines, 'Text'/'Color' labels), outlining every glyph in the heatmap; Kimi Antonelli photo and caption ~1-2 px lower, 'hide' chip ~2 px right",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "welcome banner and section text",
+            "what": "line heights changed to fit (h1 32 px instead of 35.64, subtitle 22 px instead of 24.7) and compensated with margins, so lines land close but not exact; Appearance labels render slightly lighter than the reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "header hamburger, bookmark and More icons",
+            "what": "icons rendered pure black instead of the reference's #202122 (visibly lighter/greyer), search magnifier darker via opacity 0.6 hack; bookmark-dot halo slightly smaller",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "page tabs underline and search field",
+            "what": "tab bar bottom border #a2a9b1 noticeably darker than the reference's light grey; search field border #a2a9b1 instead of #72777d; left column border #c6e9d4 instead of #cef2e0",
+            "points": 1
+          },
+          {
+            "severity": "major",
+            "criterion": "reuse",
+            "where": "section headings, links, Appearance radio groups",
+            "what": "four h2 headings and ~60 link spans repeat the same arbitrary classes (bg-[#cef2e0] border-[#a3bfb1]…, text-[#36c]) with no shared style; three separate templates duplicate identical radio markup; 261 arbitrary values",
+            "points": 5
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "header, page tabs, main, Appearance aside",
+            "what": "top-level blocks and the header's menu, logo, search and user links are absolutely positioned; columns have a fixed h-[640px] overflow-hidden",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "hierarchy",
+            "where": "content paragraphs and Appearance rows",
+            "what": "22 of 144 layers named; paragraphs, figures and row groups are anonymous",
+            "points": 2
+          }
+        ],
+        "strengths": [
+          "Every text of the reference is present and exact, accents included (Święczkowski, Sochański), with the same wrapping on every line",
+          "Measured surfaces match SOURCES: banner #f9f9f9/#dddddd, headings #cef2e0/#a3bfb1 and #cedff2/#a3b0bf, 18 px radios with #3366cc selected",
+          "The user links and the Appearance radio groups are templates driven by data, and the main blocks are named (Header, Search, Page tabs, Welcome banner, Left/Right column, Appearance menu)",
+          "Every text of the reference is present and exact, including wraps (\"non-/deductive\", \"Korwin-\"), accents (Święczkowski, Sochański) and counts",
+          "Box geometry matches the measured sources: banner 44,139 1131x117, columns 519/607 wide with the right green/blue fills and heading borders",
+          "Real text throughout, provided wordmark/icons/photos used as assets, and templates for user links and radio options"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-web",
+      "pipeline": "saymock",
+      "repeat": 2,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 1.3781512000000005,
+      "minutes": 4.313283333333334,
+      "apiMinutes": 3.9943833333333334,
+      "turns": 28,
+      "tokens": {
+        "input": 44,
+        "cacheRead": 1277036,
+        "cacheWrite": 79866,
+        "output": 24182,
+        "total": 1381128
+      },
+      "toolCalls": {
+        "Read": 1,
+        "Bash": 3,
+        "ToolSearch": 2,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__compare_to_reference": 5,
+        "mcp__saymock__get_screenshot": 2,
+        "mcp__saymock__get_html": 2,
+        "mcp__saymock__update_nodes": 6,
+        "mcp__saymock__make_template": 2
+      },
+      "toolCallsTotal": 26,
+      "toolErrors": 1,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "a60dij4lws",
+        "frameId": "x6qnuwbir7"
+      },
+      "date": "2026-11-12T20:27:04.831Z",
+      "key": "wikipedia-web/saymock-2",
+      "score": {
+        "candidate": "c24ad4",
+        "verdict": "A near-identical rebuild of the Main Page, with every block, wrap and image in place; the worst gap is a different sans-serif face plus 1–3 px vertical drift that rasterizes as edge noise everywhere, and it is well structured with templates, though the top-level regions are absolutely placed. / A near-faithful rebuild of the Wikipedia main page with every block, text and photo in place; the gaps are 1-3 px vertical drifts and lighter greys on borders, and it is a reasonably editable page with flowing columns and templated menus but an absolutely positioned header and few named groups.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 10.408,
+          "pctDiff": 7.473
+        },
+        "scores": {
+          "layout": 12.5,
+          "typography": 10.5,
+          "color": 6.5,
+          "icons": 9,
+          "content": 10,
+          "pixel": 1,
+          "hierarchy": 8,
+          "layoutPrimitives": 9,
+          "reuse": 7,
+          "cleanliness": 7
+        },
+        "visual": 49.5,
+        "editability": 31,
+        "total": 80.5,
+        "judges": {
+          "a": 82,
+          "b": 79
+        },
+        "spread": 3,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "whole page text",
+            "what": "font-['Helvetica',Arial] renders a slightly different sans face than the reference's: glyph shapes and advances differ a little, so the heatmap outlines every word, even where lines wrap identically",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "right column, \"In the news\" block and Kimi Antonelli photo",
+            "what": "heading band and bullets sit about 1.5 CSS px higher, the photo about 3 CSS px higher (starts at y≈1146 vs 1152 device px at display scale); the \"Did you know ...\" heading sits about 1 px lower; page tabs text is 1 px lower",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "search field",
+            "what": "border #a2a9b1, but the reference's input border is #72777d (measured), so the field reads lighter",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "pixel",
+            "where": "metrics grid, bottom rows",
+            "what": "meanDiff 10.4 (cells up to 24.9 in the lower right) comes from text anti-aliasing offsets and the photos shifted by a few pixels",
+            "points": 4
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "Header, Page tabs, Main page content, Appearance menu",
+            "what": "the four top-level regions and the header's children (menu, logo, search, user links) are absolutely positioned with pixel offsets instead of a flex header and a page grid; the content inside each region does flow",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "section headings and links",
+            "what": "the four section headings (h2) repeat the same long class string, about 60 links repeat text-[#3366cc], and 237 arbitrary values stand in for tokens",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "whole page, text lines and photos",
+            "what": "vertical drift of 1-3 CSS px: wordmark ~2 px higher than reference, 'Welcome to Wikipedia,' ~1-2 px lower, 'In the news' photo ~3 px higher and its bullet lines 1-2 px off; enough to light up the whole heatmap (bottom-right cells meanDiff 22-25)",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "search field and borders",
+            "what": "search field border #a2a9b1 instead of #72777d (visibly lighter), welcome banner border #c8ccd1 instead of #dddddd, tab bar rule darker than reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "hierarchy",
+            "where": "left and right columns",
+            "what": "sections (featured article, Did you know, Help us improve, In the news) are loose h2 + paragraphs inside the column, not named section groups; only 14 of 130 layers named",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "header and appearance menu",
+            "what": "menu icon, logo, search and user links each absolutely placed inside the header; tabs, main and aside also absolute on the frame rather than a page grid",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "section headings and links",
+            "what": "the four section headings copy the same h2 classes (h-[37px], border colors, padding) by hand, link color #3366cc repeated ~60 times as an arbitrary value; 237 arbitrary values, no shared tokens",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "headings",
+            "what": "section headings and welcome title use #202122 instead of #101418, headings 19 px instead of 19.2 px; tiny line-height offsets in banner subtitle (22 px vs 24.7)",
+            "points": 1
+          }
+        ],
+        "strengths": [
+          "Every text of the reference is present with identical line breaks (featured article, Help us improve, In the news, Appearance panel), including the diacritics in Święczkowski and Sochański",
+          "Box colors match the measured values: #f5fffa/#cef2e0 and #f5faff/#cedff2 columns, #cef2e0/#a3bfb1 and #cee0f2/#a3b0bf headings, #f9f9f9 banner; it uses the real wordmark, tagline, Codex icons, the three cropped photos and the blue new-feature dot",
+          "Templates drive the user links, view tabs, appearance groups and radio options (nested data), and the regions carry semantic tags and data-name labels",
+          "Every text of the reference present with identical wrapping, links, bold and italics, including the truncated 'Did you know' line and 'Anna Korwin-' cut at the bottom",
+          "Correct geometry of the banner and the two colored columns (#f5fffa / #f5faff, heading fills #cef2e0 / #cedff2 with their darker borders)",
+          "Appearance menu and user links / view tabs built as templates with data, radios drawn in HTML with the selected #3366cc state"
+        ]
+      }
+    },
+    {
+      "screen": "wikipedia-web",
+      "pipeline": "saymock",
+      "repeat": 3,
+      "status": "ok",
+      "model": "claude-opus-5-5",
+      "claudeCodeVersion": "2.1.311",
+      "mcpServers": [
+        "saymock:connected"
+      ],
+      "costUsd": 1.7596436,
+      "minutes": 5.7771333333333335,
+      "apiMinutes": 5.36255,
+      "turns": 35,
+      "tokens": {
+        "input": 46,
+        "cacheRead": 1607878,
+        "cacheWrite": 98613,
+        "output": 32449,
+        "total": 1738986
+      },
+      "toolCalls": {
+        "Read": 1,
+        "Bash": 4,
+        "ToolSearch": 2,
+        "mcp__saymock__create_file": 1,
+        "mcp__saymock__get_upload_url": 1,
+        "mcp__saymock__create_frame": 1,
+        "mcp__saymock__compare_to_reference": 10,
+        "mcp__saymock__update_nodes": 8,
+        "mcp__saymock__edit_html": 2,
+        "mcp__saymock__make_template": 1,
+        "mcp__saymock__get_screenshot": 2
+      },
+      "toolCallsTotal": 33,
+      "toolErrors": 1,
+      "permissionDenials": 0,
+      "result": {
+        "fileId": "c1wf9b0r1p",
+        "frameId": "r6ykr34jdg"
+      },
+      "date": "2026-11-12T21:09:12.201Z",
+      "key": "wikipedia-web/saymock-3",
+      "score": {
+        "candidate": "eb32dc",
+        "verdict": "A near-identical rebuild of the Wikipedia main page with exact content and line breaks, let down mainly by greys that are too dark or too blue (banner border, tab underline, search field) and 1–2 px vertical drifts; editable real HTML with flex inside blocks but an absolutely placed shell, fixed column heights and little reuse beyond the Appearance options template. / A near-identical rebuild of the Wikipedia main page where only greys and 1-2 px offsets give it away (banner and search borders too dark, section heading text 1-2 px high); cleanly named flex layout, but little reuse beyond the Appearance panel template.",
+        "metrics": {
+          "sizeMatch": true,
+          "meanDiff": 4.066,
+          "pctDiff": 3.619
+        },
+        "scores": {
+          "layout": 13,
+          "typography": 11,
+          "color": 6,
+          "icons": 8.5,
+          "content": 10,
+          "pixel": 3,
+          "hierarchy": 8,
+          "layoutPrimitives": 9,
+          "reuse": 5,
+          "cleanliness": 7
+        },
+        "visual": 51.5,
+        "editability": 29,
+        "total": 80.5,
+        "judges": {
+          "a": 81,
+          "b": 80
+        },
+        "spread": 1,
+        "top_defects": [
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "welcome banner and page tabs underline",
+            "what": "banner border #a2a9b1 instead of light #dddddd and fill #f8f9fa (bluish) instead of #f9f9f9; tabs bottom rule also a darker grey than the reference, so the banner frame reads noticeably heavier",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "section headings and body text in both columns",
+            "what": "heading text sits ~2 px higher inside its green/blue bar; 'Did you know ...' bar ~2 px higher, 'In the news' bullets drift 1–2 px down; Appearance group labels 1–2 px low; heatmap cells 5–7 meanDiff across the body come from these offsets",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "header: hamburger menu and search magnifier",
+            "what": "hamburger drawn pure black instead of #202122-grey, magnifier dark grey at 0.65 opacity where the reference is a lighter grey; search field border #a2a9b1 instead of #72777d",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "pixel",
+            "where": "whole screen",
+            "what": "meanDiff 4.07 (band < 6 → 3/5), mostly text antialiasing offsets",
+            "points": 2
+          },
+          {
+            "severity": "major",
+            "criterion": "layoutPrimitives",
+            "where": "page shell: header, main, Appearance panel",
+            "what": "header children (menu, logo, search, user links), main and the Appearance aside are all absolute with pixel coordinates; both columns have a fixed h-[700px], so adding content does not grow them",
+            "points": 3
+          },
+          {
+            "severity": "major",
+            "criterion": "reuse",
+            "where": "section boxes and headings",
+            "what": "the four section headings and two column boxes are copy-pasted class strings (h-[36px] px-[8px] border-[#a3bfb1] bg-[#cef2e0]…) with 237 arbitrary values; no component for a portal box or tab item; only the Appearance radio groups use a template",
+            "points": 5
+          },
+          {
+            "severity": "minor",
+            "criterion": "cleanliness",
+            "where": "figures and tabs",
+            "what": "negative-margin nudges (mt-[-2px], mt-[-1px], ml-[-5px], mr-[-2px]) to match pixels; links are plain spans rather than anchors",
+            "points": 1
+          },
+          {
+            "severity": "minor",
+            "criterion": "hierarchy",
+            "where": "body text",
+            "what": "30 of 139 layers named; paragraphs, link lists and footers of each section unnamed",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "color",
+            "where": "Welcome banner and search field",
+            "what": "banner border #a2a9b1 and fill #f8f9fa instead of #dddddd / #f9f9f9 (border visibly darker); search field border #a2a9b1 instead of #72777d (lighter)",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "layout",
+            "where": "section headings (From today's featured article, Help us improve, Did you know)",
+            "what": "heading text sits about 1-2 CSS px higher inside its 36 px bar; 'In the news' bar and the news list sit about 1-2 px lower than the reference, the main source of the 5-7 meanDiff grid cells",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "icons",
+            "where": "header and page toolbar",
+            "what": "hamburger drawn pure black instead of #202122-grey, search magnifier darker than the reference's grey, bookmark outline heavier/blacker than the reference",
+            "points": 2
+          },
+          {
+            "severity": "minor",
+            "criterion": "reuse",
+            "where": "section headings, link spans, footers",
+            "what": "four section headings and ~60 link spans repeat the same arbitrary classes (bg-[#cef2e0], text-[#36c], text-[19.2px]) instead of a shared component/template or tokens; 237 arbitrary values",
+            "points": 5
+          },
+          {
+            "severity": "minor",
+            "criterion": "layoutPrimitives",
+            "where": "header, page, Appearance panel, columns",
+            "what": "header children, the main page block and the Appearance panel are absolutely positioned; both columns have a fixed h-[700px], so adding content does not grow them",
+            "points": 3
+          },
+          {
+            "severity": "minor",
+            "criterion": "typography",
+            "where": "featured article, '(Full article...)'",
+            "what": "parentheses rendered upright regular instead of italic as in the reference; otherwise family, sizes, weights and wrapping match line for line",
+            "points": 1
+          }
+        ],
+        "strengths": [
+          "Every text of the reference present with identical wrapping, bold/italic links and accents (Święczkowski, Bartłomiej Sochański), and the photos correctly cropped with captions",
+          "Measured surfaces matched: column fills #f5fffa/#f5faff with #cef2e0/#cedff2 borders, heading bars with #a3bfb1/#a3b0bf borders, radio buttons and the blue hint dot under the bookmark",
+          "Appearance panel built from a nested data template (groups → options), so options are edited as data",
+          "Every paragraph wraps on exactly the same words as the reference in both columns, with correct sizes (16/26 body, 19.2 bold headings, 15.2 and 13.6 banner lines)",
+          "Column fills and heading bars use the measured colors (#f5fffa/#cef2e0/#a3bfb1, #f5faff/#cedff2/#a3b0bf), photos correctly cropped and placed with captions",
+          "Appearance panel built from a nested data template (groups x options) with real radio rings, and named groups (Header, Tabs, Welcome banner, Columns)"
+        ]
+      }
+    }
+  ]
+}

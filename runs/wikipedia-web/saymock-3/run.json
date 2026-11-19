@@ -1,0 +1,43 @@
+{
+  "screen": "wikipedia-web",
+  "pipeline": "saymock",
+  "repeat": 3,
+  "status": "ok",
+  "model": "claude-opus-5-5",
+  "claudeCodeVersion": "2.1.311",
+  "mcpServers": [
+    "saymock:connected"
+  ],
+  "costUsd": 1.7596436,
+  "minutes": 5.7771333333333335,
+  "apiMinutes": 5.36255,
+  "turns": 35,
+  "tokens": {
+    "input": 46,
+    "cacheRead": 1607878,
+    "cacheWrite": 98613,
+    "output": 32449,
+    "total": 1738986
+  },
+  "toolCalls": {
+    "Read": 1,
+    "Bash": 4,
+    "ToolSearch": 2,
+    "mcp__saymock__create_file": 1,
+    "mcp__saymock__get_upload_url": 1,
+    "mcp__saymock__create_frame": 1,
+    "mcp__saymock__compare_to_reference": 10,
+    "mcp__saymock__update_nodes": 8,
+    "mcp__saymock__edit_html": 2,
+    "mcp__saymock__make_template": 1,
+    "mcp__saymock__get_screenshot": 2
+  },
+  "toolCallsTotal": 33,
+  "toolErrors": 1,
+  "permissionDenials": 0,
+  "result": {
+    "fileId": "c1wf9b0r1p",
+    "frameId": "r6ykr34jdg"
+  },
+  "date": "2026-11-12T21:09:12.201Z"
+}

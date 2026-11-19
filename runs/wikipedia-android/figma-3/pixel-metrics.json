@@ -1,0 +1,51 @@
+{
+ "sizeMatch": true,
+ "referenceSize": [
+  1079,
+  2423
+ ],
+ "candidateSize": [
+  1079,
+  2423
+ ],
+ "meanDiff": 5.683,
+ "pctDiff": 3.676,
+ "grid": {
+  "note": "6×4 cells, row-major from top-left; meanDiff per cell",
+  "cells": [
+   [
+    1.62,
+    2.07,
+    1.46,
+    0.7,
+    0.73,
+    2.14
+   ],
+   [
+    4.37,
+    6.9,
+    5.79,
+    2.91,
+    2.52,
+    2.4
+   ],
+   [
+    4.04,
+    6.76,
+    10.98,
+    11.81,
+    10.96,
+    6.27
+   ],
+   [
+    3.34,
+    11.23,
+    11.6,
+    12.01,
+    11.44,
+    2.32
+   ]
+  ]
+ },
+ "outDir": "~/Developer/saymock-bench/2026-11-12-wikipedia/wikipedia-android/figma-3/compare"
+}

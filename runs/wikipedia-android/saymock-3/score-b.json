@@ -1,0 +1,83 @@
+{
+  "candidate": "642983",
+  "verdict": "A very close, well-structured rebuild whose most visible slips are a bold 'Featured article' heading (regular in the reference), body text set without Material's letter spacing, and a featured image cropped a few dp off; editable, with a templated bottom nav but hard-coded values everywhere.",
+  "metrics": { "sizeMatch": true, "meanDiff": 12.235, "pctDiff": 9.344 },
+  "scores": {
+    "layout": 12,
+    "typography": 8,
+    "color": 7,
+    "icons": 8,
+    "content": 9,
+    "pixel": 1,
+    "hierarchy": 8,
+    "layoutPrimitives": 10,
+    "reuse": 6,
+    "cleanliness": 7
+  },
+  "visual": 45,
+  "editability": 31,
+  "total": 76,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "'Featured article' section title",
+      "what": "set in Roboto bold 24px; the reference uses regular weight (Material headlineSmall, 400), so the title reads much heavier",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "featured article image",
+      "what": "badge crop is shifted and scaled differently (crown top ~4-5 dp lower, edges offset): the heatmap's third row reaches meanDiff 24-39 across the image",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "banner text, module description, card extract",
+      "what": "Roboto body text without the reference's ~0.25px tracking (lines ~5 dp narrower: 'about' ends at 817 vs 831 px); extract even uses -0.35px tracking, so its 4th line truncates at 'Cheltenham…' instead of 'Cheltenham Tr…'",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "language button and status bar",
+      "what": "'EN' letters 12px medium, visibly larger than the reference's ~10.5px; the box border is heavier/darker; Wi-Fi glyph slightly larger than the reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole frame",
+      "what": "136 arbitrary values with the same hex colors (#202122, #54595d, #3366cc) repeated inline instead of tokens; Save and Share buttons are copy-pasted rather than one repeated element",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "featured article card and summary card",
+      "what": "card corner 18px and summary corner 10px vs 16 dp and 8 dp in the reference",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "tabs row",
+      "what": "'Community' and 'For you' labels sit ~1 dp higher than the reference, the indicator ~1 dp higher too",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "bottom navigation",
+      "what": "nav pinned with absolute top-[818px] instead of anchored to the bottom; card overlay positioned at top-[203px] by magic number",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every block and text of the reference is present with exact wording, colors from the Wikipedia palette (#3366cc tab, #eaecf0 banner, #e8f0ff Home pill, #b32424 dots)",
+    "Real assets for the wordmark, globe, badge and all nav/action icons, with the 39% black veil and translucent summary card reproduced",
+    "Bottom navigation built once as a data-driven template (5 items, pill and badge as fields), with clearly named groups throughout"
+  ]
+}

@@ -1,0 +1,143 @@
+FRAME "Explore – Today" 430×932
+  FRAME "Scroll Content" 430×962 auto-layout:vertical gap:0
+    FRAME "Navigation" 398×105 auto-layout:vertical gap:26
+      FRAME "Top Bar" 398×44 auto-layout:horizontal gap:0
+        FRAME "Wikipedia Button" 44×44 auto-layout:horizontal gap:0
+          FRAME "Wikipedia W" 26×18
+            VECTOR "Vector" 25×16
+        FRAME "Actions" 99×44 auto-layout:horizontal gap:34
+          FRAME "Tabs (square.on.square)" 20×20
+            VECTOR "Vector" 13×13
+            VECTOR "Vector" 13×13
+          FRAME "Profile (person.crop.circle)" 20×20
+            VECTOR "Vector" 18×18
+            VECTOR "Vector" 7×7
+            VECTOR "Vector" 12×6
+      FRAME "Segmented Control" 180×35 auto-layout:horizontal gap:0
+        FRAME "Segment / Community" 86×28 auto-layout:horizontal gap:0
+          TEXT "Label" 71×16 "Community" Inter 500 13px
+        FRAME "Segment / For You" 90×28 auto-layout:horizontal gap:0
+          TEXT "Label" 46×16 "For You" Inter 400 13px
+    FRAME "Large Title" 398×60 auto-layout:vertical gap:0
+      TEXT "Title" 80×34 "Today" Inter 700 28px
+    FRAME "Feed" 398×797 auto-layout:vertical gap:62.599998474121094
+      FRAME "Hidden Card Slot" 390×70 auto-layout:vertical gap:0
+        FRAME "Card Hidden Banner" 390×50 auto-layout:horizontal gap:0
+          TEXT "Message" 85×20 "Card hidden" Inter 400 15px
+          TEXT "Undo" 38×20 "Undo" Inter 400 15px
+      FRAME "Games Section" 390×270 auto-layout:vertical gap:18
+        COMPONENT "Section Header" 390×44 auto-layout:horizontal gap:0
+          FRAME "Titles" 383×44 auto-layout:vertical gap:0
+            TEXT "Title" 50×22 "Games" Inter 600 15px
+            TEXT "Subtitle" 142×22 "On French Wikipedia" Inter 400 15px
+          FRAME "More Button" 7×27 auto-layout:vertical gap:0
+            FRAME "More (overflow)" 3×17
+              VECTOR "Vector" 3×17
+        FRAME "Which Came First Card" 390×208 auto-layout:vertical gap:11.300000190734863
+          FRAME "Card Header" 159×20 auto-layout:horizontal gap:10
+            FRAME "Calendar" 17×16
+              VECTOR "Vector" 17×16
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+              VECTOR "Vector" 1×1
+            TEXT "Title" 132×20 "Which came first?" Inter 700 15px
+          FRAME "Events" 358×96 auto-layout:vertical gap:16
+            COMPONENT "Game Question Row" 358×40 auto-layout:horizontal gap:12
+              TEXT "Event" 306×40 "la France réalise son premier essai nucléaire souterrain." Inter 400 15px
+              RECTANGLE "Thumbnail" 40×40
+            INSTANCE "Game Question Row" 358×40 auto-layout:horizontal gap:12
+              TEXT "Event" 306×40 "réélection de Richard Nixon à la présidence des États-Unis." Inter 400 15px
+              RECTANGLE "Thumbnail" 40×40
+          FRAME "Footer" 129×29 auto-layout:vertical gap:0
+            TEXT "Play Link" 129×20 "Play today's game" Inter 500 15px
+      FRAME "Top Read Section" 390×332 auto-layout:vertical gap:18
+        INSTANCE "Section Header" 390×44 auto-layout:horizontal gap:0
+          FRAME "Titles" 383×44 auto-layout:vertical gap:0
+            TEXT "Title" 62×22 "Top read" Inter 600 15px
+            TEXT "Subtitle" 142×22 "On French Wikipedia" Inter 400 15px
+          FRAME "More Button" 7×27 auto-layout:vertical gap:0
+            FRAME "More (overflow)" 3×17
+              VECTOR "Vector" 3×17
+        FRAME "Top Read Card" 390×270 auto-layout:vertical gap:0
+          COMPONENT "Top Read Row" 360×62 auto-layout:horizontal gap:15.5
+            FRAME "Rank Badge" 22×22 auto-layout:horizontal gap:0
+              TEXT "Rank" 7×16 "1" Inter 400 13px
+            FRAME "Text" 267×43 auto-layout:vertical gap:2
+              TEXT "Title" 267×21 "Pablo Pagis" Inter 400 16px
+              TEXT "Description" 267×20 "Footballeur français" Inter 400 15px
+            RECTANGLE "Thumbnail" 40×40
+          INSTANCE "Top Read Row" 360×62 auto-layout:horizontal gap:15.5
+            FRAME "Rank Badge" 22×22 auto-layout:horizontal gap:0
+              TEXT "Rank" 8×16 "2" Inter 400 13px
+            FRAME "Text" 323×43 auto-layout:vertical gap:2
+              TEXT "Title" 323×21 "Liste de sondages sur l'élection présidentielle française de" Inter 400 16px
+              TEXT "Description" 323×20 "Article de liste de Wikimédia" Inter 400 15px
+            RECTANGLE "Thumbnail" 40×40
+          INSTANCE "Top Read Row" 360×62 auto-layout:horizontal gap:15.5
+            FRAME "Rank Badge" 22×22 auto-layout:horizontal gap:0
+              TEXT "Rank" 9×16 "3" Inter 400 13px
+            FRAME "Text" 267×43 auto-layout:vertical gap:2
+              TEXT "Title" 267×21 "Star Academy (France)" Inter 400 16px
+              TEXT "Description" 267×20 "Émission française de télé réalité musicale" Inter 400 15px
+            RECTANGLE "Thumbnail" 40×40
+          INSTANCE "Top Read Row" 360×62 auto-layout:horizontal gap:15.5
+            FRAME "Rank Badge" 22×22 auto-layout:horizontal gap:0
+              TEXT "Rank" 9×16 "4" Inter 400 13px
+            FRAME "Text" 323×43 auto-layout:vertical gap:2
+              TEXT "Title" 323×21 "Pierre Bellemare" Inter 400 16px
+              TEXT "Description" 323×20 "Animateur de radio et de télévision français" Inter 400 15px
+            RECTANGLE "Thumbnail" 40×40
+  RECTANGLE "Scroll Edge Fade" 430×116
+  FRAME "Tab Bar" 388×62 auto-layout:horizontal gap:8
+    FRAME "Tabs" 318×62 auto-layout:horizontal gap:0
+      RECTANGLE "Selection" 83×54
+      FRAME "Tab / Home" 76×40 auto-layout:vertical gap:2
+        FRAME "house.fill" 24×24
+          VECTOR "Vector" 3×5
+          VECTOR "Vector" 19×8
+          VECTOR "Vector" 14×15
+        TEXT "Label" 34×14 "Home" Inter 400 12px
+      FRAME "Tab / Places" 76×40 auto-layout:vertical gap:2
+        FRAME "tabbar-nearby" 24×24
+          VECTOR "Vector" 18×22
+        TEXT "Label" 37×14 "Places" Inter 400 12px
+      FRAME "Tab / Saved" 76×40 auto-layout:vertical gap:2
+        FRAME "bookmark.fill" 24×24
+          VECTOR "Vector" 17×23
+        TEXT "Label" 35×14 "Saved" Inter 400 12px
+      FRAME "Tab / Activity" 76×40 auto-layout:vertical gap:2
+        FRAME "clock.fill" 24×24
+          VECTOR "Vector" 23×23
+          VECTOR "Vector" 4×10
+        TEXT "Label" 42×14 "Activity" Inter 400 12px
+    FRAME "Search Button" 62×62 auto-layout:horizontal gap:0
+      FRAME "magnifyingglass" 24×24
+        VECTOR "Vector" 15×15
+        VECTOR "Vector" 6×6
+  FRAME "Status Bar" 430×54
+    FRAME "Time" 60×22 auto-layout:horizontal gap:3
+      TEXT "Clock" 43×22 "23:11" Inter 600 17px
+      FRAME "bell.slash.fill" 14×15
+        VECTOR "Vector" 11×13
+        VECTOR "Vector" 12×13
+        VECTOR "Vector" 12×13
+    FRAME "Indicators" 87×14 auto-layout:horizontal gap:8
+      FRAME "Cellular" 22×12
+        VECTOR "Vector" 4×4
+        VECTOR "Vector" 4×7
+        VECTOR "Vector" 4×9
+        VECTOR "Vector" 4×12
+      FRAME "Wi-Fi" 19×14
+        VECTOR "Vector" 18×13
+      FRAME "Battery" 30×13
+        RECTANGLE "Body" 27×13
+        RECTANGLE "Level" 15×13
+        RECTANGLE "Cap" 2×4
+        TEXT "Percentage" 27×13 "39" Inter 700 12px

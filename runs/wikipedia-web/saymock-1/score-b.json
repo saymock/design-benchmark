@@ -1,0 +1,76 @@
+{
+  "candidate": "c4ff23",
+  "verdict": "A near-faithful rebuild where every block, text and photo sits where it should, held back by systematic sub-pixel text drift, icons drawn pure black instead of Wikipedia's grey and a few off greys, built as reasonably named flex HTML but with copy-pasted heading/link styles and absolutely placed top-level blocks.",
+  "metrics": { "sizeMatch": true, "meanDiff": 8.714, "pctDiff": 6.548 },
+  "scores": {
+    "layout": 13,
+    "typography": 10,
+    "color": 7,
+    "icons": 8,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 8,
+    "layoutPrimitives": 9,
+    "reuse": 5,
+    "cleanliness": 7
+  },
+  "visual": 50,
+  "editability": 29,
+  "total": 79,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "column bodies, section headings and Appearance panel",
+      "what": "text baselines drift 0.5-1 CSS px (1-2 device px) up throughout (e.g. 'From today's featured article', body lines, 'Text'/'Color' labels), outlining every glyph in the heatmap; Kimi Antonelli photo and caption ~1-2 px lower, 'hide' chip ~2 px right",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "welcome banner and section text",
+      "what": "line heights changed to fit (h1 32 px instead of 35.64, subtitle 22 px instead of 24.7) and compensated with margins, so lines land close but not exact; Appearance labels render slightly lighter than the reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "header hamburger, bookmark and More icons",
+      "what": "icons rendered pure black instead of the reference's #202122 (visibly lighter/greyer), search magnifier darker via opacity 0.6 hack; bookmark-dot halo slightly smaller",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "page tabs underline and search field",
+      "what": "tab bar bottom border #a2a9b1 noticeably darker than the reference's light grey; search field border #a2a9b1 instead of #72777d; left column border #c6e9d4 instead of #cef2e0",
+      "points": 1
+    },
+    {
+      "severity": "major",
+      "criterion": "reuse",
+      "where": "section headings, links, Appearance radio groups",
+      "what": "four h2 headings and ~60 link spans repeat the same arbitrary classes (bg-[#cef2e0] border-[#a3bfb1]…, text-[#36c]) with no shared style; three separate templates duplicate identical radio markup; 261 arbitrary values",
+      "points": 5
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "header, page tabs, main, Appearance aside",
+      "what": "top-level blocks and the header's menu, logo, search and user links are absolutely positioned; columns have a fixed h-[640px] overflow-hidden",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "hierarchy",
+      "where": "content paragraphs and Appearance rows",
+      "what": "22 of 144 layers named; paragraphs, figures and row groups are anonymous",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every text of the reference is present and exact, including wraps (\"non-/deductive\", \"Korwin-\"), accents (Święczkowski, Sochański) and counts",
+    "Box geometry matches the measured sources: banner 44,139 1131x117, columns 519/607 wide with the right green/blue fills and heading borders",
+    "Real text throughout, provided wordmark/icons/photos used as assets, and templates for user links and radio options"
+  ]
+}

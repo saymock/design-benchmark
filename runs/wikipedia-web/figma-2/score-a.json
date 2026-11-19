@@ -1,0 +1,76 @@
+{
+  "candidate": "fe8f3e",
+  "verdict": "A near-faithful Wikipedia Main Page whose every block, icon and string is right, let down by section headings 3 px too tall that push both columns' content 2-5 px down; well built with auto-layout and four components, but has no shared styles and uses fixed-width text blocks.",
+  "metrics": { "sizeMatch": true, "meanDiff": 15.64, "pctDiff": 10.532 },
+  "scores": {
+    "layout": 11,
+    "typography": 10,
+    "color": 7,
+    "icons": 9,
+    "content": 10,
+    "pixel": 1,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 8,
+    "cleanliness": 7
+  },
+  "visual": 48,
+  "editability": 34,
+  "total": 82,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "section headings (From today's featured article, Help us improve, In the news, Did you know)",
+      "what": "heading boxes are 39 px tall instead of 36 px, plus slightly larger gaps, so content drifts down: body text ~2 px lower under the first headings, 'In the news' and 'Did you know ...' headings ~3-4 CSS px lower, news items ~4 px lower (grid cells mid-page meanDiff 19-46)",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "whole page",
+      "what": "Arimo instead of the reference's system sans (Helvetica/Arial rendering); metrics match but strokes are slightly lighter and glyph widths differ by a pixel here and there",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "\"Welcome to Wikipedia,\" title and section headings",
+      "what": "title and heading text drawn in #202122 grey instead of #101418 near-black",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "Help us improve intro, In the news items",
+      "what": "the text wrapping around the photos uses fixed-width blocks (Intro 415 px, News items 467 px) and the photo figures are positioned absolutely, so editing the text or the image does not reflow the column",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "Tab instances, box content text",
+      "what": "leftover 67x2 'Indicator' rectangles inside the Talk/View source/View history tabs (wider than 25-77 px tabs); a 'Checked' ellipse in every radio; text layers 500 px wide inside a 498 px content frame and 590 px inside 588 px (overflow)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole file",
+      "what": "no shared color or text styles (styled: 0): #3366cc, #202122 and the box tints are repeated as raw values",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "box contents",
+      "what": "each long paragraph is a single text layer with inline link styling and no paragraph structure; 53 absolute layers next to 67 auto-layouts",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "All content is present and exact, including counts, links, captions, the onboarding dot and the cut-off Did you know item",
+    "Logo, tagline and toolbar icons are real vectors from the provided SVGs, with correct sizes; the three photos are correctly cropped",
+    "Tab, Box heading, List item and Radio option are components with 20 instances; frames are named after the UI (Header, Page tabs, Welcome banner, Appearance panel)"
+  ]
+}

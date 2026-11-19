@@ -1,0 +1,41 @@
+{
+  "screen": "wikipedia-android",
+  "pipeline": "figma",
+  "repeat": 1,
+  "status": "ok",
+  "model": "claude-opus-5-5",
+  "claudeCodeVersion": "2.1.311",
+  "mcpServers": [
+    "figma:connected"
+  ],
+  "costUsd": 2.3037403999999997,
+  "minutes": 9.406983333333333,
+  "apiMinutes": 8.650983333333333,
+  "turns": 33,
+  "tokens": {
+    "input": 60,
+    "cacheRead": 2411542,
+    "cacheWrite": 97869,
+    "output": 51912,
+    "total": 2561383
+  },
+  "toolCalls": {
+    "Read": 4,
+    "Bash": 11,
+    "Skill": 1,
+    "ToolSearch": 1,
+    "ReadMcpResourceTool": 1,
+    "mcp__figma__create_session": 1,
+    "mcp__figma__use_figma": 8,
+    "mcp__figma__upload_assets": 2,
+    "mcp__figma__get_screenshot": 3
+  },
+  "toolCallsTotal": 32,
+  "toolErrors": 3,
+  "permissionDenials": 0,
+  "result": {
+    "fileKey": "<figma-file-key>",
+    "nodeId": "11:36"
+  },
+  "date": "2026-11-12T20:01:46.567Z"
+}

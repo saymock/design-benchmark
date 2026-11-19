@@ -1,0 +1,73 @@
+{
+  "candidate": "eb32dc",
+  "verdict": "A near-identical rebuild of the Wikipedia main page where only greys and 1-2 px offsets give it away (banner and search borders too dark, section heading text 1-2 px high); cleanly named flex layout, but little reuse beyond the Appearance panel template.",
+  "metrics": {
+    "sizeMatch": true,
+    "meanDiff": 4.066,
+    "pctDiff": 3.619
+  },
+  "scores": {
+    "layout": 13,
+    "typography": 11,
+    "color": 6,
+    "icons": 8,
+    "content": 10,
+    "pixel": 3,
+    "hierarchy": 8,
+    "layoutPrimitives": 9,
+    "reuse": 5,
+    "cleanliness": 7
+  },
+  "visual": 51,
+  "editability": 29,
+  "total": 80,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "Welcome banner and search field",
+      "what": "banner border #a2a9b1 and fill #f8f9fa instead of #dddddd / #f9f9f9 (border visibly darker); search field border #a2a9b1 instead of #72777d (lighter)",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "section headings (From today's featured article, Help us improve, Did you know)",
+      "what": "heading text sits about 1-2 CSS px higher inside its 36 px bar; 'In the news' bar and the news list sit about 1-2 px lower than the reference, the main source of the 5-7 meanDiff grid cells",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "header and page toolbar",
+      "what": "hamburger drawn pure black instead of #202122-grey, search magnifier darker than the reference's grey, bookmark outline heavier/blacker than the reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "section headings, link spans, footers",
+      "what": "four section headings and ~60 link spans repeat the same arbitrary classes (bg-[#cef2e0], text-[#36c], text-[19.2px]) instead of a shared component/template or tokens; 237 arbitrary values",
+      "points": 5
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "header, page, Appearance panel, columns",
+      "what": "header children, the main page block and the Appearance panel are absolutely positioned; both columns have a fixed h-[700px], so adding content does not grow them",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "featured article, '(Full article...)'",
+      "what": "parentheses rendered upright regular instead of italic as in the reference; otherwise family, sizes, weights and wrapping match line for line",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every paragraph wraps on exactly the same words as the reference in both columns, with correct sizes (16/26 body, 19.2 bold headings, 15.2 and 13.6 banner lines)",
+    "Column fills and heading bars use the measured colors (#f5fffa/#cef2e0/#a3bfb1, #f5faff/#cedff2/#a3b0bf), photos correctly cropped and placed with captions",
+    "Appearance panel built from a nested data template (groups x options) with real radio rings, and named groups (Header, Tabs, Welcome banner, Columns)"
+  ]
+}

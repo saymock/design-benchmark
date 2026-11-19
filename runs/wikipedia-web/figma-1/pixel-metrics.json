@@ -1,0 +1,51 @@
+{
+ "sizeMatch": true,
+ "referenceSize": [
+  2880,
+  1800
+ ],
+ "candidateSize": [
+  2880,
+  1800
+ ],
+ "meanDiff": 7.741,
+ "pctDiff": 5.932,
+ "grid": {
+  "note": "6×4 cells, row-major from top-left; meanDiff per cell",
+  "cells": [
+   [
+    3.02,
+    1.48,
+    4.39,
+    1.44,
+    1.36,
+    2.94
+   ],
+   [
+    8.65,
+    10.36,
+    9.77,
+    6.11,
+    4.27,
+    4.94
+   ],
+   [
+    9.63,
+    15.94,
+    9.11,
+    7.59,
+    7.03,
+    3.13
+   ],
+   [
+    10.91,
+    10.67,
+    12.83,
+    19.93,
+    20.28,
+    0
+   ]
+  ]
+ },
+ "outDir": "~/Developer/saymock-bench/2026-11-12-wikipedia/wikipedia-web/figma-1/compare"
+}

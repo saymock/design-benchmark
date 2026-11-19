@@ -1,0 +1,76 @@
+{
+  "candidate": "eeccbf",
+  "verdict": "A near-identical rebuild with every element, icon and line wrap in place; the main slips are the image action buttons pushed about 8 dp right and over-rounded corners, and the structure is a well-named auto-layout tree with instances but no shared styles.",
+  "metrics": { "sizeMatch": true, "meanDiff": 6.202, "pctDiff": 4.381 },
+  "scores": {
+    "layout": 11,
+    "typography": 11,
+    "color": 6,
+    "icons": 9,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 49,
+  "editability": 33,
+  "total": 82,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "save and share buttons on the featured image",
+      "what": "both circles about 22 px (8 dp) too far right: share button ends ~18 px from the image edge instead of ~40 px (15 dp)",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "featured image and article summary card corners",
+      "what": "corner radii visibly larger than the reference's 16 dp image box and 8 dp summary card (rounder top corners, red arcs in the heatmap)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "language button (EN)",
+      "what": "outer outline drawn as a full pill instead of the reference's rounded rectangle (~10 dp radius)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "bottom navigation and card bottom",
+      "what": "navigation top edge, icons and the card's cut-off bottom sit about 3-4 px higher than in the reference",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole structure",
+      "what": "no colour or text styles/variables (styled: 0): #202122, #54595d, #3366cc etc. repeated as raw values; component masters not in the frame",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "module description, article title and extract",
+      "what": "sub-pixel glyph drift accumulating along lines (heatmap red on the second half of lines), otherwise same Roboto/Noto Serif sizes and wraps",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "tabs and bottom navigation",
+      "what": "leftover parts: a 73 px indicator inside the 47 px \"For you\" tab and a badge ellipse in every nav item (Home, Search, More) presumably hidden",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every text, line wrap and ellipsis matches the reference exactly, in Roboto and Noto Serif at the right sizes and colours",
+    "Icons, wordmark and globe come from the app's own drawables as vectors/images, red badges on Saved and Activity included",
+    "Clear named hierarchy (Status bar, App bar, Tabs row, Community banner, Featured article card, Bottom navigation) with auto-layout and instances for tabs, nav items and buttons"
+  ]
+}

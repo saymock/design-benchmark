@@ -1,0 +1,69 @@
+{
+  "candidate": "29c87e",
+  "verdict": "Nearly indistinguishable from the reference at 100 %, with only 1–3 px vertical drifts in the Appearance panel and the lower sections; well-structured auto-layout with components, but no shared styles and a few absolute or leftover layers.",
+  "metrics": { "sizeMatch": true, "meanDiff": 7.741, "pctDiff": 5.932 },
+  "scores": {
+    "layout": 13,
+    "typography": 11,
+    "color": 8,
+    "icons": 9,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 53,
+  "editability": 33,
+  "total": 86,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Appearance panel",
+      "what": "rows drift down cumulatively: Text options +1 CSS px, Width options +2 px, Color label and options +3 px (Dark radio at ~y 406 vs ~403)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "In the news and Did you know bodies",
+      "what": "list text 1.5–2 CSS px lower than the reference while the Kimi Antonelli photo sits ~2.5 px higher; Did you know hook ~1.5 px lower",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole file",
+      "what": "no text or color styles/variables (styled: 0): #3366cc, #202122, section fills and borders are repeated raw values; components only for Tab, Radio option, Section heading and List item",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "Page tabs bar, figures, Appearance panel",
+      "what": "Page tabs container and the watchstar dot are absolutely placed, the photo figures float absolutely inside auto-layout bodies (35 absolute layers), so text edits do not reflow around the images",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "Tab instances, wordmark",
+      "what": "hidden Indicator rectangles left at 67×2 in Talk/View source/View history instances (wider than 'Talk'), tab instances 28 px vs 34 px tall; imported logo SVG kept as anonymous 'Clip path group'/'Vector' layers",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "Welcome banner title and body",
+      "what": "Arimo substitute (metric-compatible) instead of the page's sans; title 25.6 px vs 25.92 px; glyph shapes differ subtly at zoom",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every text, link color, bold run and line break of the reference is present and wraps identically (featured article, help us improve, In the news, Did you know cut at the bottom edge)",
+    "Section heading fills/borders (#cef2e0 / #cedff2), column backgrounds, search field and radio states match the measured values",
+    "Real vector wordmark, tagline and Codex icons plus the three genuine photos correctly cropped; auto-layout throughout with named groups and component instances for tabs, radios, headings and list items"
+  ]
+}

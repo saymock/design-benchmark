@@ -1,0 +1,55 @@
+{
+  "candidate": "55df0e",
+  "verdict": "A very close, well-structured rebuild whose main gap is the bottom of the screen: the Liquid Glass tab bar is opaque, with no blurred content behind it and no fade on the third Top read row.",
+  "metrics": { "sizeMatch": true, "meanDiff": 7.502, "pctDiff": 3.885 },
+  "scores": {
+    "layout": 12,
+    "typography": 9,
+    "color": 6,
+    "icons": 8,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 11,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 46,
+  "editability": 34,
+  "total": 80,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "tab bar and the bottom of the feed",
+      "what": "reference tab bar is translucent glass that shows the blurred 'Liste de ... de Wikimedia' text behind it, and the third Top read row fades out to light grey; the candidate's capsule is opaque white and row 3 ('Star Academy', '3', description) is drawn at full contrast",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "\"Today\" large title and the whole feed below it",
+      "what": "\"Today\" sits about 12 px (4 pt) lower than in the reference; the segmented control is about 3 px lower, and the section headers, cards and rows below drift 3-6 px down, so the heatmap doubles almost every text edge",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "all text",
+      "what": "Inter stands in for SF Pro: the glyph shapes and widths differ slightly ('Community' and 'Which came first?' look heavier and wider), the titles are a little bigger, and the description wraps at 'mus...' instead of 'mu...'",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "Top read #3 thumbnail and the card header",
+      "what": "Star Academy logo is shown whole and at full contrast, where the reference shows a faded crop ('tar / ader'); the calendar glyph and the filled Activity clock are bolder than in the reference",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every block and text of the reference is there, including the status bar details (silent bell, 39 % battery), the 'Card hidden · Undo' banner, the real thumbnails and the clipped second Top read title",
+    "Measured colors are respected: #3366cc links and rank circles, #72777d secondary text, #f8f9fa banner, blue selected Home tab on a grey capsule",
+    "Clean, named hierarchy with auto-layout for the feed, sections, cards and rows, plus components for the section header, game event row and Top read row reused as instances"
+  ]
+}

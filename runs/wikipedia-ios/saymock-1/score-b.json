@@ -1,0 +1,76 @@
+{
+  "candidate": "3cfdab",
+  "verdict": "A very close, well-placed rebuild of the Explore feed whose main weakness is the type rendering (fallback font with loose, uneven letter spacing that widens every line) plus a few off-glyph icons; cleanly structured with flex and templates.",
+  "metrics": { "sizeMatch": true, "meanDiff": 6.387, "pctDiff": 3.361 },
+  "scores": {
+    "layout": 13,
+    "typography": 8,
+    "color": 7,
+    "icons": 7,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 8,
+    "cleanliness": 7
+  },
+  "visual": 46,
+  "editability": 34,
+  "total": 80,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "whole feed (event texts, Top read rows, tab labels, segmented control)",
+      "what": "SF Pro not rendered as in the capture: tracking looser and uneven (gaps in 'Foot balleur', 'souter rain', 'présidentielle'), lines run ~15-20 px (@3x) wider; segmented-control labels and tab labels visibly wider",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "top bar profile button and tab bar",
+      "what": "profile is an outlined circle-user (Lucide) instead of the filled SF person.crop.circle; Home is a rounded Material house without the SF roof/door shape; Saved bookmark squatter than the reference's tall ribbon",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "'Which came first?' header and Top read #3 thumbnail",
+      "what": "calendar is Material calendar_month (rings, rounded) instead of the app's flat calendar glyph; Star Academy logo cropped/scaled differently behind the tab bar",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "'Which came first?' event rows and tab bar",
+      "what": "event text line height ~20.5 pt makes the second line and Nixon row sit ~2-3 pt lower; tab bar icons/labels ~1 pt lower than reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "tab bar",
+      "what": "selected Home uses #3366cc instead of #2975bf; capsule is near-opaque white/95 so the feed (row 2 thumbnail and subtitle) does not show through as in the Liquid Glass reference",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "section header overflow dots",
+      "what": "dots colored by a CSS filter chain (invert/sepia/hue-rotate) on an img rather than a real colored icon; tab selection styling injected through a class string in template data",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "Games and Top read sections",
+      "what": "section header and card shell duplicated by hand with identical arbitrary values (shadow, radius, colors repeated, 174 arbitrary values) instead of one template/component",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every block of the screen is present at nearly the exact position: status bar, top bar pills, segmented control, Today, Card hidden banner, both cards and the floating tab bar + search button",
+    "Colors follow the measured palette (#202122, #72777d, #3366cc, #f8f9fa, #ececed) and real assets (W logo, map, Nixon, Pagis) are correctly cropped",
+    "Repeated rows (events, top read articles, tab items) are templates with data, inside flex columns that reflow"
+  ]
+}

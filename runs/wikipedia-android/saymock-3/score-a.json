@@ -1,0 +1,76 @@
+{
+  "candidate": "642983",
+  "verdict": "A near-identical rebuild of the Community feed whose main gaps are the featured photo scaled about 5% larger and a few text details (heavier, larger EN label, a different extract truncation, slightly tighter Roboto spacing); a clean flex structure with a templated bottom navigation.",
+  "metrics": { "sizeMatch": true, "meanDiff": 12.235, "pctDiff": 9.344 },
+  "scores": {
+    "layout": 12,
+    "typography": 9,
+    "color": 7,
+    "icons": 8,
+    "content": 9,
+    "pixel": 1,
+    "hierarchy": 8,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 46,
+  "editability": 32,
+  "total": 78,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "icons",
+      "where": "Featured article image",
+      "what": "badge photo is scaled about 5% larger and sits a few px lower: the crown and the frame edges are offset and the grey margin on the right of the badge is gone. The grid cells over the image reach a meanDiff of 24 to 39",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Featured article card and image",
+      "what": "the card is set to h-[444px] with object-cover rather than matching the reference's crop of the photo, so the whole image region drifts. Smaller offsets: the tab labels sit about 1 px high and the language button is 1 to 2 px off",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "Language button \"EN\"",
+      "what": "the label is 12px medium and fills the dark box, where the reference uses a smaller, lighter label (about 10 to 11 dp regular) with visible padding",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "banner text, module description, article extract",
+      "what": "the Roboto glyph spacing is slightly tighter than the reference, so the words drift a few px along each line (they show doubled in the heatmap). The extract uses tracking-[-0.35px] at 15px instead of matching the reference's metrics",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "article extract, 4th line",
+      "what": "the line ends \"Cheltenham…\"; the reference cuts mid-word with \"Cheltenham Tr…\"",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "status bar",
+      "what": "the Wi-Fi and battery glyphs are about 10% larger and heavier than the reference's",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole frame",
+      "what": "136 arbitrary values and no shared tokens: #202122, #54595d and #3366cc are repeated literals. The two round action buttons and the tabs are copy-pasted; only the bottom navigation is a template",
+      "points": 3
+    }
+  ],
+  "strengths": [
+    "Every element and text of the reference is present with the measured colors (#202122, #54595d, #3366cc, #eaecf0, #e8f0ff, #b32424), including the red \"new\" dots and the 39% black overlay on the photo",
+    "The bottom navigation is one data-driven template (5 items) with per-item pill, badge and label classes, and it matches the reference closely",
+    "Header, banner, section header and card are flex groups with readable names; the text is real text, and the icons are the app's own SVG assets"
+  ]
+}

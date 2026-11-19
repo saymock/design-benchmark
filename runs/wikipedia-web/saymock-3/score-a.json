@@ -1,0 +1,83 @@
+{
+  "candidate": "eb32dc",
+  "verdict": "A near-identical rebuild of the Wikipedia main page with exact content and line breaks, let down mainly by greys that are too dark or too blue (banner border, tab underline, search field) and 1–2 px vertical drifts; editable real HTML with flex inside blocks but an absolutely placed shell, fixed column heights and little reuse beyond the Appearance options template.",
+  "metrics": { "sizeMatch": true, "meanDiff": 4.066, "pctDiff": 3.619 },
+  "scores": {
+    "layout": 13,
+    "typography": 11,
+    "color": 6,
+    "icons": 9,
+    "content": 10,
+    "pixel": 3,
+    "hierarchy": 8,
+    "layoutPrimitives": 9,
+    "reuse": 5,
+    "cleanliness": 7
+  },
+  "visual": 52,
+  "editability": 29,
+  "total": 81,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "welcome banner and page tabs underline",
+      "what": "banner border #a2a9b1 instead of light #dddddd and fill #f8f9fa (bluish) instead of #f9f9f9; tabs bottom rule also a darker grey than the reference, so the banner frame reads noticeably heavier",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "section headings and body text in both columns",
+      "what": "heading text sits ~2 px higher inside its green/blue bar; 'Did you know ...' bar ~2 px higher, 'In the news' bullets drift 1–2 px down; Appearance group labels 1–2 px low; heatmap cells 5–7 meanDiff across the body come from these offsets",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "header: hamburger menu and search magnifier",
+      "what": "hamburger drawn pure black instead of #202122-grey, magnifier dark grey at 0.65 opacity where the reference is a lighter grey; search field border #a2a9b1 instead of #72777d",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "pixel",
+      "where": "whole screen",
+      "what": "meanDiff 4.07 (band < 6 → 3/5), mostly text antialiasing offsets",
+      "points": 2
+    },
+    {
+      "severity": "major",
+      "criterion": "layoutPrimitives",
+      "where": "page shell: header, main, Appearance panel",
+      "what": "header children (menu, logo, search, user links), main and the Appearance aside are all absolute with pixel coordinates; both columns have a fixed h-[700px], so adding content does not grow them",
+      "points": 3
+    },
+    {
+      "severity": "major",
+      "criterion": "reuse",
+      "where": "section boxes and headings",
+      "what": "the four section headings and two column boxes are copy-pasted class strings (h-[36px] px-[8px] border-[#a3bfb1] bg-[#cef2e0]…) with 237 arbitrary values; no component for a portal box or tab item; only the Appearance radio groups use a template",
+      "points": 5
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "figures and tabs",
+      "what": "negative-margin nudges (mt-[-2px], mt-[-1px], ml-[-5px], mr-[-2px]) to match pixels; links are plain spans rather than anchors",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "hierarchy",
+      "where": "body text",
+      "what": "30 of 139 layers named; paragraphs, link lists and footers of each section unnamed",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every text of the reference present with identical wrapping, bold/italic links and accents (Święczkowski, Bartłomiej Sochański), and the photos correctly cropped with captions",
+    "Measured surfaces matched: column fills #f5fffa/#f5faff with #cef2e0/#cedff2 borders, heading bars with #a3bfb1/#a3b0bf borders, radio buttons and the blue hint dot under the bookmark",
+    "Appearance panel built from a nested data template (groups → options), so options are edited as data"
+  ]
+}

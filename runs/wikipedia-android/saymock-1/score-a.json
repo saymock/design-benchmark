@@ -1,0 +1,69 @@
+{
+  "candidate": "74c87c",
+  "verdict": "A very close, well-built rebuild of the Wikipedia home screen whose main gaps are body text set without Roboto's 0.25 letter spacing (changing the extract's truncation) and a 28 px card radius instead of 16 dp; editable with flex flows and a templated bottom bar, though the article card is held together by fixed heights and an absolute offset.",
+  "metrics": { "sizeMatch": true, "meanDiff": 8.593, "pctDiff": 5.051 },
+  "scores": {
+    "layout": 13,
+    "typography": 8,
+    "color": 6,
+    "icons": 9,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 9,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 47,
+  "editability": 32,
+  "total": 79,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "banner text, module description, article extract, \"Unit of the British Army\"",
+      "what": "14 px body text set with no letter spacing where the reference uses Material bodyMedium's 0.25 sp tracking; lines are about 10-25 px narrower at 2.625x and glyphs are offset all along each line (the heatmap's grid rows 3-4 reach a meanDiff of 13-18)",
+      "points": 3
+    },
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "featured article card (image box)",
+      "what": "corner radius of 28 px instead of the reference's 16 dp, a clearly rounder top-left and top-right corner; the summary card is 12 px instead of 8 dp",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "article extract, last line",
+      "what": "the line is cut at \"Cheltenham…\" instead of \"Cheltenham Tr…\" because the text is narrower",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "article summary card and extract",
+      "what": "the extract's lines sit 2-3 px higher than the reference, and the summary card's bottom edge stops about 2 px short",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "\"Community\" / \"For you\" tabs and \"EN\" box",
+      "what": "the labels are slightly larger and heavier than the reference: \"Community\" plus its underline is about 4 px wider, \"For you\" starts about 3 px further right, and the \"EN\" letters are larger",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "summary card divider",
+      "what": "#dcdcdc instead of the measured #d2d2d2",
+      "points": 0
+    }
+  ],
+  "strengths": [
+    "Block positions match within 1-3 px everywhere: status bar, wordmark, tabs, banner (#eaecf0, pill shape), date line, heading, image crop and bottom navigation",
+    "Measured colors are reproduced exactly: #202122, #54595d, #3366cc, #e8f0ff pill, #4d4d4e EN box, #b32424 badges, and the 39% black veil on the image",
+    "Real text and the app's own SVG icons and images; the five bottom-nav items come from one data-driven template"
+  ]
+}

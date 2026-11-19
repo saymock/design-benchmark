@@ -1,0 +1,69 @@
+{
+  "candidate": "b692dd",
+  "verdict": "A very close rebuild where every block, text, icon and photo is in place; it loses points to a 1-3 px vertical drift that builds up down the columns, a slightly lighter title and hamburger, and a structure that mixes auto-layout with absolute bars, spacer frames and no shared styles.",
+  "metrics": { "sizeMatch": true, "meanDiff": 14.015, "pctDiff": 9.72 },
+  "scores": {
+    "layout": 12,
+    "typography": 10,
+    "color": 7,
+    "icons": 9,
+    "content": 10,
+    "pixel": 1,
+    "hierarchy": 9,
+    "layoutPrimitives": 9,
+    "reuse": 8,
+    "cleanliness": 7
+  },
+  "visual": 49,
+  "editability": 33,
+  "total": 82,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "left and right columns, from the section headings down to Did you know / In the news",
+      "what": "content drifts lower as it goes down: about 1 CSS px at the first headings, about 3 CSS px by the Did you know bullet and In the news list; the tagline sits about 1-2 px higher under the wordmark, and View history is shifted sideways a little (strong outline on the heatmap)",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "Welcome banner title and body text",
+      "what": "Arimo stands in for the page's Arial-metric sans: same metrics but lighter strokes; 'Welcome to' is drawn about #202122 instead of #101418, so the title looks greyer",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "header: main menu icon and Search button label",
+      "what": "hamburger drawn near-black (#202122) where the reference is a lighter grey; Search button label a little darker than the reference",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "pixel",
+      "where": "whole frame",
+      "what": "meanDiff 14.0 and pctDiff 9.7 %, mostly from text edges offset by 1-3 px in the content columns (grid cells 16-42)",
+      "points": 4
+    },
+    {
+      "severity": "major",
+      "criterion": "layoutPrimitives",
+      "where": "root frame, Header, Page toolbar, figures",
+      "what": "63 absolute layers: the header, page toolbar and the two columns are positioned by hand rather than in auto-layout rows, the Frozen yogurt figure is placed absolutely inside a vertical auto-layout Body, and the columns have a fixed 700 px height; vertical rhythm relies on 1-8 px 'Spacer' frames",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole file",
+      "what": "good components (Tab, Section heading, List item, Radio option, 20 instances), but no color or text styles or variables (styled: 0): #3366cc, #202122 and the section fills are repeated as literal values",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every text, link, bullet, caption and the three photos of the reference are present and correctly cropped, and the real wordmark, tagline, search, bookmark, ellipsis and menu SVGs are used, with the blue onboarding dot",
+    "Section headings, list items, tabs and radio options are built as components and reused as instances, with layers named after the UI (Welcome banner, Left column, Appearance menu)",
+    "The panel colours match the measured values: green and blue column fills and borders, the #f9f9f9 banner, the selected radios in #3366cc"
+  ]
+}

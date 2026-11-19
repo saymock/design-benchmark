@@ -1,0 +1,80 @@
+{
+  "candidate": "16e819",
+  "verdict": "A near-faithful rebuild where every block, icon and string is in place and colors match; the residual gaps are sub-pixel drifts (image crop, card, badges, a wider tab indicator, a bigger EN label), and the structure is well named with auto-layout and instanced nav items but no styles or variables and fractional magic spacings.",
+  "metrics": {
+    "sizeMatch": true,
+    "meanDiff": 8.939,
+    "pctDiff": 5.927
+  },
+  "scores": {
+    "layout": 13,
+    "typography": 11,
+    "color": 8,
+    "icons": 9,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 6,
+    "cleanliness": 7
+  },
+  "visual": 53,
+  "editability": 32,
+  "total": 85,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Featured article card image and summary card",
+      "what": "badge photo scaled/cropped slightly differently and card edges 1-2 px off: the heatmap's hottest band (grid row 3, meanDiff up to 27) is the whole image outlined, not a missing element",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole frame",
+      "what": "no text styles, color styles or variables (styled 0) and fractional hand-measured gaps (36.2, 24.4, 4.3, 8.35, 12.2) instead of consistent spacing tokens",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "bottom navigation, tabs",
+      "what": "items are instances but the file holds no local components (components 0), so the repeated nav item and tab cannot be edited from one main component here",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "Featured article card, root frame",
+      "what": "38 absolute layers; image, scrim, actions and summary stacked absolutely inside an auto-layout card, and the status bar placed after Content in the layer order",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "Language button",
+      "what": "\"EN\" set at 12 px 500, visibly larger and heavier than the reference's label inside the #4d4d4e box",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "bottom navigation, Saved and Activity",
+      "what": "red \"new\" dots offset by ~2-4 px (Saved dot lower/left of the reference's)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "bottom navigation",
+      "what": "every nav item carries a Badge ellipse, including Home, Search and More where none shows (hidden leftovers)",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "All content present and exact, including the truncated extract, date line and red hint dots",
+    "Correct app icons (wordmark, bookmark, share, home-filled, activity) as real vectors with the reference colors #3366cc, #72777d, #e8f0ff, #eaecf0",
+    "Clear, readable layer names (Header, Tabs bar, Language button, Featured article card, Nav item – Home…) with auto-layout on bars and rows"
+  ]
+}

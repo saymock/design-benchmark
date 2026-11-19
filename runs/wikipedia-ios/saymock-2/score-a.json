@@ -1,0 +1,69 @@
+{
+  "candidate": "d05af8",
+  "verdict": "A very close, well-structured rebuild whose biggest miss is the bottom of the screen: the feed under the tab bar is drawn at full contrast instead of fading behind frosted glass, with a few glyph and letter-spacing slips.",
+  "metrics": { "sizeMatch": true, "meanDiff": 7.063, "pctDiff": 3.62 },
+  "scores": {
+    "layout": 13,
+    "typography": 9,
+    "color": 6,
+    "icons": 7,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 11,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 46,
+  "editability": 34,
+  "total": 80,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "Top read card behind the tab bar (y ≈ 2550–2796)",
+      "what": "reference fades the 3rd row (rank 3, 'Star Academy (France)', description) to a pale grey and blurs the 2nd row under translucent glass; candidate draws row 3 at full contrast and the bars are near-opaque white (heatmap cells of the bottom row 8.7–17.8)",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "segmented control, card text, section titles",
+      "what": "uneven letter spacing from the global tracking-[-0.43px] plus per-element tracking: visible gaps in 'Communit y', 'souter rain', 'Which came first?' set wider than the reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "'Today', section titles, 'Which came first?', tab icons",
+      "what": "pure #000000 instead of Wikipedia's #202122 main text color",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "Games card header, Home tab, profile button, status bar",
+      "what": "outlined Material calendar instead of the filled-header SF calendar with dot grid; rounded Material home instead of the house with chimney; outlined account_circle instead of filled person.crop.circle; cellular bars ~2/3 the reference size",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "Top read #3 thumbnail",
+      "what": "Star Academy logo shown whole and small (object-contain) instead of the reference's tight crop filling the 37 pt square",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "status bar and segmented control",
+      "what": "cellular indicator ~10 px narrower at @3x; segmented control lacks the reference's light glass rim and sits ~1 px higher",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every block (header buttons, segmented control, 'Card hidden' banner, Games card, Top read card, tab bar) sits within a few px of the reference, with matching radii and soft shadows",
+    "All texts exact, including accents and truncation ('présidentiell…', 'Émission française de télé réalité mus…') and the measured palette #3366cc / #72777d / #f8f9fa",
+    "Game rows, article rows and tab items are templates over data, the feed is a flex column, layers carry meaningful names"
+  ]
+}

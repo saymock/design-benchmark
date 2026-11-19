@@ -1,0 +1,69 @@
+{
+  "candidate": "eeccbf",
+  "verdict": "A near pixel-faithful rebuild with every text, icon and image in place; the clearest gaps are the save/share buttons sitting ~8 dp too far right and a rounder image card, and it is a well-named auto-layout tree with instanced tabs and nav items but no shared styles or variables.",
+  "metrics": { "sizeMatch": true, "meanDiff": 6.202, "pctDiff": 4.381 },
+  "scores": {
+    "layout": 11,
+    "typography": 11,
+    "color": 7,
+    "icons": 10,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 11,
+    "reuse": 8,
+    "cleanliness": 7
+  },
+  "visual": 51,
+  "editability": 35,
+  "total": 86,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Save and share buttons on the featured image",
+      "what": "both circles about 22 px (~8 dp) further right than the reference (bookmark centre x~829 vs ~807 px), leaving a tighter right inset than the reference's 16 dp",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "Featured article image card",
+      "what": "corner radius about 24 dp instead of the reference's 16 dp (top-right curve spans ~67 px vs ~40 px)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Bottom navigation and the article card above it",
+      "what": "the bar starts ~3-4 px higher; the summary card ends with rounded bottom corners above the bar, whereas in the reference it runs on and is clipped under it",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Language button",
+      "what": "outline drawn as a full pill and the dark EN box slightly larger (~58 vs ~52 px wide) than the reference's rounded rectangle",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "Module description, article title and last extract line",
+      "what": "same wrapping but glyphs drift by 1-2 px toward the line ends (heatmap red on the second half of 'the highest-quality articles on' and 'Hussars'), a small advance/letter-spacing mismatch",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Featured image (crown and badge)",
+      "what": "badge image offset/scaled by a pixel or two: every edge of the photo shows in the heatmap (grid row 3 meanDiff 10-14)",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every text of the reference present and exact, with identical wrapping and the 'Tr…' truncation; Roboto and Noto Serif at the right sizes and weights",
+    "All icons are the right glyphs at the right size and color, including the red 'new' dots on Saved and Activity, the Wikipedia wordmark as vectors and the globe",
+    "Clear named hierarchy (Status bar, App bar, Tabs row, Community banner, Featured article card, Bottom navigation) built with auto-layout, tabs and nav items as instances"
+  ]
+}

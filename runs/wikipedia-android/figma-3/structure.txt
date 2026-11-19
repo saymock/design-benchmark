@@ -1,0 +1,91 @@
+FRAME "Explore – Community" 411×923
+  FRAME "Content" 411×781 auto-layout:vertical gap:0
+    FRAME "Header" 411×34 auto-layout:horizontal gap:0
+      FRAME "Wikipedia wordmark" 128×19
+        VECTOR "Vector" 19×19
+        VECTOR "Vector" 6×13
+        VECTOR "Vector" 14×13
+        VECTOR "Vector" 11×14
+        VECTOR "Vector" 11×13
+        VECTOR "Vector" 6×13
+        VECTOR "Vector" 13×13
+        VECTOR "Vector" 6×13
+        VECTOR "Vector" 28×19
+    FRAME "Tab bar" 411×65 auto-layout:horizontal gap:0
+      FRAME "Tabs" 143×28 auto-layout:horizontal gap:23
+        COMPONENT "Tab" 73×26 auto-layout:vertical gap:6.5
+          TEXT "Label" 73×16 "Community" Roboto 500 14px
+          RECTANGLE "Indicator" 73×3
+        INSTANCE "Tab" 47×16 auto-layout:vertical gap:6.5
+          TEXT "Label" 47×16 "For you" Roboto 500 14px
+          RECTANGLE "Indicator" 73×3
+      FRAME "Language button" 45×29 auto-layout:horizontal gap:0
+        FRAME "Language code" 21×20 auto-layout:horizontal gap:0
+          TEXT "EN" 13×12 "EN" Roboto 500 10px
+        FRAME "icon/arrow-down" 16×16
+          VECTOR "Vector" 8×5
+    FRAME "Community banner" 411×109 auto-layout:vertical gap:0
+      FRAME "Banner" 379×77 auto-layout:horizontal gap:12
+        TEXT "Description" 290×41 "Content and resources selected by and about the Wikimedia co" Roboto 400 14px
+        RECTANGLE "Wikipedia globe" 45×45
+    FRAME "Section header" 411×145 auto-layout:vertical gap:0
+      TEXT "Date" 131×16 "Today - Nov 12, 2026" Roboto 700 14px
+      FRAME "Title row" 384×55 auto-layout:horizontal gap:0
+        TEXT "Title" 169×28 "Featured article" Roboto 500 24px
+        FRAME "icon/more-vertical" 24×24
+          VECTOR "Vector" 4×16
+      TEXT "Description" 379×42 "Featured articles are some of the highest-quality articles o" Roboto 400 14px
+    FRAME "Featured article card" 411×429 auto-layout:vertical gap:0
+      FRAME "Card" 380×414 auto-layout:vertical gap:0
+        RECTANGLE "Article image" 380×414
+        RECTANGLE "Scrim" 380×414
+        FRAME "Actions" 92×40 auto-layout:horizontal gap:12
+          FRAME "Save button" 40×40 auto-layout:horizontal gap:0
+            COMPONENT "icon/bookmark-outline" 24×24
+              VECTOR "Vector" 14×18
+          FRAME "Share button" 40×40 auto-layout:horizontal gap:0
+            FRAME "icon/share" 24×24
+              VECTOR "Vector" 18×20
+        FRAME "Article summary" 348×195 auto-layout:vertical gap:11.600000381469727
+          FRAME "Title group" 316×57 auto-layout:vertical gap:6.400000095367432
+            TEXT "Title" 316×30 "Royal Gloucestershire Hussars" Noto Serif 400 22px
+            TEXT "Description" 316×21 "Unit of the British Army" Roboto 400 14px
+          RECTANGLE "Divider" 48×1
+          TEXT "Extract" 316×81 "The Royal Gloucestershire Hussars was a volunteer yeomanry r" Roboto 400 14px
+  FRAME "Status bar" 411×54 auto-layout:horizontal gap:0
+    TEXT "Time" 28×16 "9:41" Roboto 400 14px
+    FRAME "System icons" 29×15 auto-layout:horizontal gap:5.800000190734863
+      FRAME "icon/signal_wifi_4_bar" 15×15
+        VECTOR "Vector" 15×12
+      FRAME "icon/battery_full" 8×13
+        VECTOR "Vector" 8×13
+  FRAME "Bottom navigation" 411×104 auto-layout:vertical gap:0
+    FRAME "Nav items" 411×52 auto-layout:horizontal gap:0
+      FRAME "Nav item / Home" 82×52 auto-layout:vertical gap:3.5
+        FRAME "Active indicator" 64×32 auto-layout:horizontal gap:0
+          FRAME "icon/home-filled" 24×24
+            VECTOR "Vector" 16×18
+        TEXT "Label" 31×16 "Home" Roboto 700 12px
+      FRAME "Nav item / Saved" 82×52 auto-layout:vertical gap:3.5
+        FRAME "Active indicator" 64×32 auto-layout:horizontal gap:0
+          INSTANCE "icon/bookmark-outline" 24×24
+            VECTOR "Vector" 14×18
+          ELLIPSE "Badge" 6×6
+        TEXT "Label" 32×16 "Saved" Roboto 500 12px
+      FRAME "Nav item / Search" 82×52 auto-layout:vertical gap:3.5
+        FRAME "Active indicator" 64×32 auto-layout:horizontal gap:0
+          FRAME "icon/search" 24×24
+            VECTOR "Vector" 17×17
+        TEXT "Label" 36×16 "Search" Roboto 500 12px
+      FRAME "Nav item / Activity" 82×52 auto-layout:vertical gap:3.5
+        FRAME "Active indicator" 64×32 auto-layout:horizontal gap:0
+          FRAME "icon/activity" 24×24
+            VECTOR "Vector" 20×20
+          ELLIPSE "Badge" 6×6
+        TEXT "Label" 38×16 "Activity" Roboto 500 12px
+      FRAME "Nav item / More" 82×52 auto-layout:vertical gap:3.5
+        FRAME "Active indicator" 64×32 auto-layout:horizontal gap:0
+          FRAME "icon/menu" 24×24
+            VECTOR "Vector" 18×12
+        TEXT "Label" 27×16 "More" Roboto 500 12px
+  RECTANGLE "Gesture handle" 108×4

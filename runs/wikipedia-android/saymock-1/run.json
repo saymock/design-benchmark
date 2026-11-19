@@ -1,0 +1,42 @@
+{
+  "screen": "wikipedia-android",
+  "pipeline": "saymock",
+  "repeat": 1,
+  "status": "ok",
+  "model": "claude-opus-5-5",
+  "claudeCodeVersion": "2.1.311",
+  "mcpServers": [
+    "saymock:connected"
+  ],
+  "costUsd": 1.3965218000000004,
+  "minutes": 4.590883333333333,
+  "apiMinutes": 4.2463,
+  "turns": 25,
+  "tokens": {
+    "input": 40,
+    "cacheRead": 1041549,
+    "cacheWrite": 79429,
+    "output": 27631,
+    "total": 1148649
+  },
+  "toolCalls": {
+    "Read": 1,
+    "Bash": 7,
+    "ToolSearch": 2,
+    "mcp__saymock__create_file": 1,
+    "mcp__saymock__get_upload_url": 1,
+    "mcp__saymock__create_frame": 1,
+    "mcp__saymock__inspect_reference": 1,
+    "mcp__saymock__edit_html": 3,
+    "mcp__saymock__compare_to_reference": 4,
+    "mcp__saymock__update_nodes": 3
+  },
+  "toolCallsTotal": 24,
+  "toolErrors": 1,
+  "permissionDenials": 0,
+  "result": {
+    "fileId": "qf2u5cf9zv",
+    "frameId": "vultoi3t0t"
+  },
+  "date": "2026-11-12T18:49:58.209Z"
+}

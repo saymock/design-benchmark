@@ -1,0 +1,83 @@
+{
+  "candidate": "74c87c",
+  "verdict": "A very close rebuild where every block, icon and color is in place; the visible gaps are the featured-image card's corner radius (about 28 dp instead of 16) and web Roboto's tighter tracking, which shifts the wrapping and the extract's truncation. The structure is clean, named, flex-based HTML with a templated bottom navigation.",
+  "metrics": { "sizeMatch": true, "meanDiff": 8.593, "pctDiff": 5.051 },
+  "scores": {
+    "layout": 11,
+    "typography": 9,
+    "color": 5,
+    "icons": 9,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 6,
+    "cleanliness": 7
+  },
+  "visual": 45,
+  "editability": 32,
+  "total": 77,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "Featured article image card",
+      "what": "corners at rounded-[28px] (~74 px at 2.625) instead of 16 dp (~42 px): the top corners are visibly rounder, and red corner wedges show on the heatmap",
+      "points": 2
+    },
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "body text (banner, module description, article extract)",
+      "what": "Roboto renders with tighter tracking than the Android reference. 'Content and resources selected by and about' ends ~11 px earlier, and the drift grows along each line, which makes up most of the heatmap's red text doubling",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "article extract, 4th line",
+      "what": "ellipsis lands after 'Cheltenham…' instead of 'Cheltenham Tr…' because of the narrower text",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "article summary card",
+      "what": "the card's lines sit 2-4 px higher than the reference (title, subtitle, divider, extract), and its rounded bottom corners show above the navigation bar where the reference is cut square by it",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "article summary card",
+      "what": "corner radius 12 px instead of 8 dp",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "tabs row and bottom navigation",
+      "what": "the Community underline and 'EN' box sit 1-2 px off, and the nav icons, pill and badges sit ~2 px lower than in the reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole frame",
+      "what": "149 arbitrary values (colors such as #54595d and #202122 repeated, mt-[28.5px] and similar magic offsets) and no tokens; only the nav bar is templated",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "status bar, article image",
+      "what": "hacks: 'gap-[-1px] -space-x-[1px]', inline style for FILL, and the image placed at left-[-47.5px] with max-w-none instead of object-position",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every element of the reference is present at the right size and color: wordmark, tabs, EN button, banner with globe, featured image with veil, save/share buttons, red 'new' dots, and the pill on the Home tab",
+    "The app's own icons (home, bookmark, search, activity, menu, share, more) are used at 24 px with the right tints (#3366cc, #72777d, #202122)",
+    "Bottom navigation built once as a data-driven template with per-item pill, badge and label class; blocks named Header, Tabs row, Community banner, Featured article card, Article summary"
+  ]
+}

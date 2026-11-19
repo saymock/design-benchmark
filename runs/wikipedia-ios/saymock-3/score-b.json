@@ -1,0 +1,83 @@
+{
+  "candidate": "cf0bac",
+  "verdict": "A very close rebuild whose layout lands within a few pixels everywhere, let down by loose letter-spacing on every text and by substitute icons in the tab bar and top bar; it is cleanly built with flex and templates, but section headers and cards are copied by hand.",
+  "metrics": { "sizeMatch": true, "meanDiff": 6.946, "pctDiff": 3.632 },
+  "scores": {
+    "layout": 13,
+    "typography": 9,
+    "color": 7,
+    "icons": 7,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 8,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 47,
+  "editability": 32,
+  "total": 79,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "all text (Card hidden, Footballeur français, Activity, Play today's game)",
+      "what": "the fallback font renders with loose, uneven tracking (gaps such as 'hidde n', 'Activit y', 'Footballeur français' set wider than the reference's SF Pro); the lines run several px longer",
+      "points": 3
+    },
+    {
+      "severity": "major",
+      "criterion": "icons",
+      "where": "tab bar",
+      "what": "Material icons stand in for SF Symbols: the home glyph has no roof overhang, the bookmark is rounded with a shallow notch, the clock hands differ",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "top bar actions pill",
+      "what": "the Lucide copy icon and the outlined account_circle replace the reference's tabs icon and filled person-in-circle; strokes are heavier and the shapes differ",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "tab bar and search button",
+      "what": "the glass is nearly opaque white/90: the blurred 'Liste de … Wikipédia' row that shows through in the reference is barely visible",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Top read rows",
+      "what": "the title and description sit about 2–4 px higher than in the reference, and row 3 and its rank circle are a few px off behind the tab bar",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "Top read #3 thumbnail",
+      "what": "the Star Academy logo is cropped and scaled differently: the full logo is shown smaller instead of the reference's tight crop",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "Games / Top read section headers and cards",
+      "what": "the two section headers and the card shells are copied by hand (same classes and magic numbers); the 156 arbitrary values include no shared tokens",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "overflow dots",
+      "what": "the SVG image is recolored with a CSS filter hack (invert/sepia/hue-rotate) to approximate #3366cc instead of using an icon in a real color",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "The block geometry (status bar, top bar, segmented control, Today, toast, cards, tab bar) matches the reference to within a few px, at the right size",
+    "The measured palette is used exactly: #202122, #72777d, #3366cc, the toast's #f7f8fa",
+    "Event rows, article rows and tab items each come from a data template, and the feed flows in flex columns"
+  ]
+}

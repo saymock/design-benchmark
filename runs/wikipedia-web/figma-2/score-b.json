@@ -1,0 +1,69 @@
+{
+  "candidate": "fe8f3e",
+  "verdict": "A near-identical rebuild at a glance with every block, text, icon and photo in place, let down by section headings 3 px too tall that push both columns 3-5 px down and a slightly shifted toolbar, on a clean, componentised auto-layout structure without shared styles.",
+  "metrics": { "sizeMatch": true, "meanDiff": 15.64, "pctDiff": 10.532 },
+  "scores": {
+    "layout": 11,
+    "typography": 10,
+    "color": 8,
+    "icons": 9,
+    "content": 10,
+    "pixel": 1,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 49,
+  "editability": 33,
+  "total": 82,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "section headings (From today's featured article, Help us improve, In the news, Did you know)",
+      "what": "heading boxes 39 px tall instead of 36 px and inset ~1-2 px differently; every line below drifts 3-5 CSS px down (body starts ~y 278 vs 275, In the news items ~4 px lower), which drives most of the grid's 20-46 meanDiff cells",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "page toolbar (Read / View source / View history / bookmark / more)",
+      "what": "the views group sits ~5 CSS px left of the reference (Read at x~746 vs ~751), bookmark and ellipsis ~2 px left; user links (Donate...) ~2 px left",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "whole page",
+      "what": "Arimo instead of the reference's Arial/Helvetica: same metrics but visibly different glyph rendering at zoom; Appearance 'hide' label drawn at 14 px where the reference's is ~12-13 px",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "pixel",
+      "where": "columns (grid rows 2-4)",
+      "what": "meanDiff 15.64, pctDiff 10.5 %: text lines offset by a few pixels across the two columns",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole structure",
+      "what": "no shared color or text styles/variables (styled: 0): #3366cc, #202122, box fills and borders repeated as raw values",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "box contents and figures",
+      "what": "53 absolute layers; the floated figures (frozen yogurt, Kimi Antonelli, Aracelio Iglesias) are placed outside the flow, and text nodes are wider than their parents (Summary 500 in a 498 frame, Footer links 590 in 588)",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every text of the reference is present and exact, including the bold/blue link runs, accents (Święczkowski, Bartłomiej Sochański) and the line wrapping of each paragraph",
+    "Real logo, menu, search, bookmark and ellipsis vectors, the onboarding dot and the three photos correctly cropped at their sizes",
+    "Tab, Box heading, List item and Radio option components with 20 instances, clearly named groups (Header, Page tabs, Welcome banner, Main columns, Appearance panel)"
+  ]
+}

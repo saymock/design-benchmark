@@ -1,0 +1,174 @@
+FRAME "Wikipedia — Main Page" 1440×900
+  FRAME "Header" 1440×66 auto-layout:horizontal gap:0
+    FRAME "Header start" 696×40 auto-layout:horizontal gap:42
+      FRAME "Brand" 180×40 auto-layout:horizontal gap:20
+        FRAME "Icon / menu" 20×20
+          VECTOR "Vector" 18×14
+        FRAME "Logo" 140×40
+          FRAME "Wordmark" 140×22
+            GROUP "Clip path group" 140×21
+              GROUP "a" 140×21
+                VECTOR "Vector" 140×21
+              GROUP "Group" 140×21
+                VECTOR "Vector" 21×21
+                VECTOR "Vector" 117×17
+          FRAME "Tagline" 140×11
+            GROUP "Clip path group" 140×10
+              GROUP "a" 140×10
+                VECTOR "Vector" 140×10
+              GROUP "Group" 139×10
+                VECTOR "Vector" 71×10
+                VECTOR "Vector" 68×10
+      FRAME "Search" 474×32 auto-layout:horizontal gap:-1
+        FRAME "Search input" 404×32 auto-layout:horizontal gap:6
+          FRAME "Icon / search" 20×20
+            VECTOR "Vector" 18×18
+          TEXT "Placeholder" 110×20 "Search Wikipedia" Arimo 400 14px
+        FRAME "Search button" 71×32 auto-layout:horizontal gap:0
+          TEXT "Label" 47×20 "Search" Arimo 700 14px
+    FRAME "User links" 197×20 auto-layout:horizontal gap:8
+      TEXT "Donate" 46×20 "Donate" Arimo 400 14px
+      TEXT "Create account" 96×20 "Create account" Arimo 400 14px
+      TEXT "Log in" 39×20 "Log in" Arimo 400 14px
+  FRAME "Page tabs" 1132×35
+    FRAME "Namespaces" 108×34 auto-layout:horizontal gap:16
+      COMPONENT "Tab" 67×34 auto-layout:vertical gap:4
+        TEXT "Label" 67×20 "Main Page" Arimo 400 14px
+        RECTANGLE "Indicator" 67×2
+      INSTANCE "Tab" 25×28 auto-layout:vertical gap:4
+        TEXT "Label" 25×20 "Talk" Arimo 400 14px
+        RECTANGLE "Indicator" 67×2
+    FRAME "Views" 285×34 auto-layout:horizontal gap:14
+      FRAME "View tabs" 219×34 auto-layout:horizontal gap:16
+        INSTANCE "Tab" 34×34 auto-layout:vertical gap:4
+          TEXT "Label" 34×20 "Read" Arimo 400 14px
+          RECTANGLE "Indicator" 34×2
+        INSTANCE "Tab" 77×28 auto-layout:vertical gap:4
+          TEXT "Label" 77×20 "View source" Arimo 400 14px
+          RECTANGLE "Indicator" 67×2
+        INSTANCE "Tab" 76×28 auto-layout:vertical gap:4
+          TEXT "Label" 76×20 "View history" Arimo 400 14px
+          RECTANGLE "Indicator" 67×2
+      FRAME "Page tools" 52×28 auto-layout:horizontal gap:12
+        FRAME "Icon / bookmark" 20×20
+          VECTOR "Vector" 14×18
+        FRAME "Icon / more" 20×20
+          VECTOR "Vector" 3×18
+    FRAME "Watchstar pulse" 17×17
+      ELLIPSE "Halo" 17×17
+      ELLIPSE "Dot" 12×12
+  FRAME "Appearance" 164×425 auto-layout:vertical gap:0
+    FRAME "Heading" 164×30 auto-layout:horizontal gap:12
+      TEXT "Appearance" 81×20 "Appearance" Arimo 700 14px
+      FRAME "Hide button" 39×22 auto-layout:horizontal gap:0
+        TEXT "hide" 23×14 "hide" Arimo 400 12px
+    FRAME "Text" 164×139 auto-layout:vertical gap:7
+      FRAME "Section label" 164×36 auto-layout:horizontal gap:0
+        TEXT "Text" 26×20 "Text" Arimo 400 14px
+      FRAME "Options" 81×96 auto-layout:vertical gap:0
+        COMPONENT "Radio option" 60×32 auto-layout:horizontal gap:6
+          ELLIPSE "Radio" 18×18
+          TEXT "Label" 36×20 "Small" Arimo 400 14px
+        INSTANCE "Radio option" 81×32 auto-layout:horizontal gap:6
+          ELLIPSE "Radio" 18×18
+          TEXT "Label" 57×20 "Standard" Arimo 400 14px
+        INSTANCE "Radio option" 60×32 auto-layout:horizontal gap:6
+          ELLIPSE "Radio" 18×18
+          TEXT "Label" 36×20 "Large" Arimo 400 14px
+    FRAME "Width" 164×112 auto-layout:vertical gap:7
+      FRAME "Section label" 164×41 auto-layout:horizontal gap:0
+        TEXT "Width" 36×20 "Width" Arimo 400 14px
+      FRAME "Options" 81×64 auto-layout:vertical gap:0
+        INSTANCE "Radio option" 81×32 auto-layout:horizontal gap:6
+          ELLIPSE "Radio" 18×18
+          TEXT "Label" 57×20 "Standard" Arimo 400 14px
+        INSTANCE "Radio option" 56×32 auto-layout:horizontal gap:6
+          ELLIPSE "Radio" 18×18
+          TEXT "Label" 32×20 "Wide" Arimo 400 14px
+    FRAME "Color" 164×144 auto-layout:vertical gap:7
+      FRAME "Section label" 164×41 auto-layout:horizontal gap:0
+        TEXT "Color" 34×20 "Color" Arimo 400 14px
+      FRAME "Options" 87×96 auto-layout:vertical gap:0
+        INSTANCE "Radio option" 87×32 auto-layout:horizontal gap:6
+          ELLIPSE "Radio" 18×18
+          TEXT "Label" 63×20 "Automatic" Arimo 400 14px
+        INSTANCE "Radio option" 55×32 auto-layout:horizontal gap:6
+          ELLIPSE "Radio" 18×18
+          TEXT "Label" 31×20 "Light" Arimo 400 14px
+        INSTANCE "Radio option" 54×32 auto-layout:horizontal gap:6
+          ELLIPSE "Radio" 18×18
+          TEXT "Label" 30×20 "Dark" Arimo 400 14px
+  FRAME "Main page content" 1132×925 auto-layout:vertical gap:4
+    FRAME "Welcome banner" 1132×117 auto-layout:vertical gap:4
+      TEXT "Title" 261×42 "Welcome to Wikipedia," Arimo 400 25.600000381469727px
+      FRAME "Tagline" 316×44 auto-layout:vertical gap:0
+        TEXT "Subtitle" 291×22 "the free encyclopedia that anyone can edit." Arimo 400 15.199999809265137px
+        TEXT "Article count" 316×22 "265,650 active editors · 7,260,752 articles in English" Arimo 400 13.600000381469727px
+    FRAME "Columns" 1132×804 auto-layout:horizontal gap:4
+      FRAME "Left column" 520×804 auto-layout:vertical gap:10.5
+        FRAME "From today's featured article" 502×540 auto-layout:vertical gap:8.5
+          COMPONENT "Section heading" 502×37 auto-layout:horizontal gap:0
+            TEXT "Title" 264×25 "From today's featured article" Arimo 700 19.200000762939453px
+          FRAME "Body" 502×494 auto-layout:vertical gap:0
+            TEXT "Summary" 502×416 "Premises are true or false statements that act as the starti" Arimo 400 16px
+            TEXT "Recently featured" 502×52 "Recently featured: Bill Madden (soldier) · Nikolai Kulikovsk" Arimo 400 16px
+            TEXT "Footer links" 502×26 "Archive · By email · More featured articles · About" Arimo 400 16px
+        FRAME "Did you know" 502×233 auto-layout:vertical gap:8.5
+          INSTANCE "Section heading" 502×37 auto-layout:horizontal gap:0
+            TEXT "Title" 147×25 "Did you know ..." Arimo 700 19.200000762939453px
+          FRAME "Body" 502×187 auto-layout:horizontal gap:12
+            FRAME "Hooks" 370×52 auto-layout:vertical gap:1.5
+              INSTANCE "List item" 370×52 auto-layout:horizontal gap:11.5
+                FRAME "Bullet" 5×26
+                  ELLIPSE "Dot" 5×5
+                TEXT "Text" 344×52 "... that Aracelio Iglesias (pictured) was called the "Red Cz" Arimo 400 16px
+            FRAME "Figure" 120×187 auto-layout:vertical gap:3
+              RECTANGLE "Image" 120×165
+              TEXT "Caption" 120×19 "Aracelio Iglesias" Arimo 400 14px
+      FRAME "Right column" 608×672 auto-layout:vertical gap:10.5
+        FRAME "Help us improve this article" 590×357 auto-layout:vertical gap:8.5
+          INSTANCE "Section heading" 590×37 auto-layout:horizontal gap:0
+            TEXT "Title" 258×25 "Help us improve this article!" Arimo 700 19.200000762939453px
+          FRAME "Body" 590×311 auto-layout:vertical gap:0
+            TEXT "Intro" 420×78 "This week's article for improvement is frozen yogurt, a dess" Arimo 400 16px
+            FRAME "List intro" 241×34 auto-layout:vertical gap:0
+              TEXT "Text" 241×26 "You can improve this article by:" Arimo 700 16px
+            FRAME "Suggestions" 590×105 auto-layout:vertical gap:1.5
+              COMPONENT "List item" 590×26 auto-layout:horizontal gap:11.5
+                FRAME "Bullet" 5×26
+                  ELLIPSE "Dot" 5×5
+                TEXT "Text" 564×26 "Expanding the sections of the article" Arimo 400 16px
+              INSTANCE "List item" 590×26 auto-layout:horizontal gap:11.5
+                FRAME "Bullet" 5×26
+                  ELLIPSE "Dot" 5×5
+                TEXT "Text" 564×26 "Finding reliable sources about production" Arimo 400 16px
+              INSTANCE "List item" 590×26 auto-layout:horizontal gap:11.5
+                FRAME "Bullet" 5×26
+                  ELLIPSE "Dot" 5×5
+                TEXT "Text" 564×26 "Adding examples and perspectives to represent a worldwide vi" Arimo 400 16px
+            TEXT "Call to action" 590×52 "You can be bold and start editing the article. Have question" Arimo 400 16px
+            FRAME "Footer" 590×42 auto-layout:vertical gap:0
+              TEXT "Footer links" 590×26 "For new editors · Archive · What is this?" Arimo 400 16px
+            FRAME "Figure" 162×163 auto-layout:vertical gap:3
+              RECTANGLE "Image" 162×122
+              TEXT "Caption" 162×38 "Blueberry-flavored frozen yogurt" Arimo 400 14px
+        FRAME "In the news" 590×284 auto-layout:vertical gap:9.5
+          INSTANCE "Section heading" 590×37 auto-layout:horizontal gap:0
+            TEXT "Title" 105×25 "In the news" Arimo 700 19.200000762939453px
+          FRAME "Body" 590×237 auto-layout:horizontal gap:8
+            FRAME "Stories" 464×237 auto-layout:vertical gap:1.5
+              INSTANCE "List item" 464×78 auto-layout:horizontal gap:11.5
+                FRAME "Bullet" 5×26
+                  ELLIPSE "Dot" 5×5
+                TEXT "Text" 438×78 "In the United States, the Democratic Party wins a majority i" Arimo 400 16px
+              INSTANCE "List item" 464×52 auto-layout:horizontal gap:11.5
+                FRAME "Bullet" 5×26
+                  ELLIPSE "Dot" 5×5
+                TEXT "Text" 438×52 "In motorsport, Kimi Antonelli (pictured) becomes the younges" Arimo 400 16px
+              INSTANCE "List item" 464×104 auto-layout:horizontal gap:11.5
+                FRAME "Bullet" 5×26
+                  ELLIPSE "Dot" 5×5
+                TEXT "Text" 438×104 "The Polish Constitutional Tribunal crisis escalates with the" Arimo 400 16px
+            FRAME "Figure" 118×190 auto-layout:vertical gap:3
+              RECTANGLE "Image" 118×168
+              TEXT "Caption" 118×19 "Kimi Antonelli" Arimo 400 14px

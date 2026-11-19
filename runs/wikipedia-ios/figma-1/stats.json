@@ -1,0 +1,20 @@
+{
+  "layers": 143,
+  "text": 31,
+  "autoLayout": 48,
+  "absolute": 47,
+  "named": 72,
+  "reuse": 5,
+  "components": 3,
+  "images": 6,
+  "vectors": 36,
+  "styled": 0,
+  "byType": {
+    "FRAME": 57,
+    "VECTOR": 36,
+    "TEXT": 31,
+    "COMPONENT": 3,
+    "RECTANGLE": 11,
+    "INSTANCE": 5
+  }
+}

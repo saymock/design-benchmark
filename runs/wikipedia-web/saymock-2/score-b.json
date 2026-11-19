@@ -1,0 +1,69 @@
+{
+  "candidate": "c24ad4",
+  "verdict": "A near-faithful rebuild of the Wikipedia main page with every block, text and photo in place; the gaps are 1-3 px vertical drifts and lighter greys on borders, and it is a reasonably editable page with flowing columns and templated menus but an absolutely positioned header and few named groups.",
+  "metrics": { "sizeMatch": true, "meanDiff": 10.408, "pctDiff": 7.473 },
+  "scores": {
+    "layout": 12,
+    "typography": 11,
+    "color": 6,
+    "icons": 9,
+    "content": 10,
+    "pixel": 1,
+    "hierarchy": 7,
+    "layoutPrimitives": 9,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 49,
+  "editability": 30,
+  "total": 79,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "whole page, text lines and photos",
+      "what": "vertical drift of 1-3 CSS px: wordmark ~2 px higher than reference, 'Welcome to Wikipedia,' ~1-2 px lower, 'In the news' photo ~3 px higher and its bullet lines 1-2 px off; enough to light up the whole heatmap (bottom-right cells meanDiff 22-25)",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "search field and borders",
+      "what": "search field border #a2a9b1 instead of #72777d (visibly lighter), welcome banner border #c8ccd1 instead of #dddddd, tab bar rule darker than reference",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "hierarchy",
+      "where": "left and right columns",
+      "what": "sections (featured article, Did you know, Help us improve, In the news) are loose h2 + paragraphs inside the column, not named section groups; only 14 of 130 layers named",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "header and appearance menu",
+      "what": "menu icon, logo, search and user links each absolutely placed inside the header; tabs, main and aside also absolute on the frame rather than a page grid",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "section headings and links",
+      "what": "the four section headings copy the same h2 classes (h-[37px], border colors, padding) by hand, link color #3366cc repeated ~60 times as an arbitrary value; 237 arbitrary values, no shared tokens",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "headings",
+      "what": "section headings and welcome title use #202122 instead of #101418, headings 19 px instead of 19.2 px; tiny line-height offsets in banner subtitle (22 px vs 24.7)",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every text of the reference present with identical wrapping, links, bold and italics, including the truncated 'Did you know' line and 'Anna Korwin-' cut at the bottom",
+    "Correct geometry of the banner and the two colored columns (#f5fffa / #f5faff, heading fills #cef2e0 / #cedff2 with their darker borders)",
+    "Appearance menu and user links / view tabs built as templates with data, radios drawn in HTML with the selected #3366cc state"
+  ]
+}

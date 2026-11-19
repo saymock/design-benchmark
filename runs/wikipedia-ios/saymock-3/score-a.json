@@ -1,0 +1,83 @@
+{
+  "candidate": "cf0bac",
+  "verdict": "A close, well-structured rebuild of the Explore feed whose biggest gap is the icon set (Material/Lucide glyphs instead of SF Symbols in the top bar and tab bar) and a fallback font with uneven tracking, while the flex layout and templated rows make it very editable.",
+  "metrics": { "sizeMatch": true, "meanDiff": 6.946, "pctDiff": 3.632 },
+  "scores": {
+    "layout": 12,
+    "typography": 8,
+    "color": 7,
+    "icons": 6,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 8,
+    "layoutPrimitives": 11,
+    "reuse": 8,
+    "cleanliness": 7
+  },
+  "visual": 44,
+  "editability": 34,
+  "total": 78,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "icons",
+      "where": "top bar actions pill and tab bar",
+      "what": "Lucide rounded 'copy' and outlined Material 'account_circle' instead of the square tabs icon and filled-person circle; Material home/bookmark/clock glyphs (rounded house, short bookmark, thick clock hands) instead of the SF Symbols house.fill, bookmark.fill, clock.fill; calendar_month outline instead of the filled-header calendar in 'Which came first?'",
+      "points": 4
+    },
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "whole screen (feed text, tab labels)",
+      "what": "SF Pro not resolved: a fallback face with wider, uneven tracking ('Activit y', 'Nixon à', 'Footballeur français' noticeably wider) and heavier tab labels (semibold-looking vs regular 12 pt)",
+      "points": 4
+    },
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "tab bar",
+      "what": "opaque white/90 glass with no content visible through it, where the reference shows the second Top read row blurred through the Liquid Glass bar; selected 'Home' is #3366cc instead of #2975bf",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "status bar",
+      "what": "battery and Wi-Fi glyphs smaller than the reference (battery ~28x13 pt vs ~30x14 pt with bolder '39'), bell-slash a filled Material glyph",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Top read card and section headers",
+      "what": "rows and headers drift 2-4 px (Pablo Pagis title ~2 px high, second row title ~2 px high, Games header 1-2 px low); feed bottom cells meanDiff up to 17.5",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "Top read row 2 behind the tab bar",
+      "what": "the row's description ('Article de liste de Wikipédia') that shows through the tab bar in the reference is not visible",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "Games / Top read section headers and cards",
+      "what": "the two section headers and two card shells are copy-pasted rather than one template; 156 arbitrary values (e.g. text-[15px], #72777d, #3366cc repeated) instead of shared tokens",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "section header overflow dots",
+      "what": "dots recoloured with a CSS filter chain (invert/sepia/hue-rotate) on an image instead of a coloured vector; status bar signal/battery hand-built from divs",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "All feed content present and exact, including accents, the 'Card hidden · Undo' banner and the faded Star Academy row under the tab bar",
+    "Event rows, Top read rows and tab items are templates driven by data, inside flex columns that reflow",
+    "Measured palette used correctly: #202122 text, #72777d secondary, #3366cc links, #f8f9fa-like banner"
+  ]
+}

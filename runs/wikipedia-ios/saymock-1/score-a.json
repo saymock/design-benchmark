@@ -1,0 +1,83 @@
+{
+  "candidate": "3cfdab",
+  "verdict": "A very close, well-placed rebuild whose worst gaps are uneven letter-spacing in body text and a few wrong glyphs (outlined profile, chimney-less home), on a clean flex structure with templates for the repeated rows.",
+  "metrics": { "sizeMatch": true, "meanDiff": 6.387, "pctDiff": 3.361 },
+  "scores": {
+    "layout": 13,
+    "typography": 9,
+    "color": 7,
+    "icons": 7,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 47,
+  "editability": 33,
+  "total": 80,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "card text and Top read rows",
+      "what": "global tracking-[-0.23px] plus per-text tracking makes spacing uneven: 'Foot balleur', 'souter rain', 'pre mier', 'sondages' gaps visible; reference has even SF Pro spacing",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "segmented control and section titles",
+      "what": "'Community', 'Which came first?', 'Games', tab labels set wider/letter-spaced than the reference; event lines sit ~2-3 px lower per line (leading 20.5 px vs ~20 px)",
+      "points": 1
+    },
+    {
+      "severity": "major",
+      "criterion": "icons",
+      "where": "top bar, profile button",
+      "what": "outlined Lucide circle-user-round instead of the filled person-in-circle glyph",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "tab bar Home, card calendar, Star Academy thumbnail",
+      "what": "home glyph without chimney/door cut-out, calendar with rings instead of the flat grid calendar, Star Academy logo cropped differently",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "tab bar and search button",
+      "what": "nearly opaque white capsule (bg-white/95) where the reference's Liquid Glass shows the feed (row 2 description, rank circle) blurred through it, with a light rim",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "Top read rows 2-3 under the tab bar",
+      "what": "row 2 description hidden instead of showing through; row 3 truncates 'réalité m' vs 'réalité mu…'",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "section headers and card shells",
+      "what": "Games and Top read headers/cards copy-pasted with identical arbitrary classes (174 arbitrary values) instead of a shared component",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "overflow dots",
+      "what": "SVG recoloured with a CSS filter chain (invert/sepia/hue-rotate) rather than a coloured icon",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every block (top bar, segmented control, Today, Card hidden, both sections, tab bar) lands within a few px of the reference",
+    "All reference texts present with accents, plus the real thumbnails and Wikipedia W logo",
+    "Event rows, article rows and tab items are templates with data, inside flex columns that reflow"
+  ]
+}

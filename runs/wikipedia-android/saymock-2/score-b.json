@@ -1,0 +1,76 @@
+{
+  "candidate": "46c40e",
+  "verdict": "A very close, clean rebuild of the Wikipedia Community feed whose main gaps are a 3-4 px upward drift of the tabs, date and article card plus a slightly misregistered badge image, built as well-named flex HTML with a templated bottom nav.",
+  "metrics": { "sizeMatch": true, "meanDiff": 11.555, "pctDiff": 8.639 },
+  "scores": {
+    "layout": 11,
+    "typography": 10,
+    "color": 6,
+    "icons": 9,
+    "content": 9,
+    "pixel": 1,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 46,
+  "editability": 33,
+  "total": 79,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "tabs row, date line, featured article card",
+      "what": "Community/For you labels, Today - Nov 12, 2026 and the image card (top edge ~y=1102 vs 1106 px, save/share buttons with it) sit 3-4 px higher than the reference; the Home pill sits ~2 px lower",
+      "points": 2
+    },
+    {
+      "severity": "major",
+      "criterion": "layout",
+      "where": "featured article image",
+      "what": "the badge photo is scaled/offset a few px differently inside the 16 dp card, so its edges misregister everywhere (heatmap cells meanDiff 22-35 over the image area)",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "article summary card over the image",
+      "what": "corner radius 12 dp (31 px) instead of 8 dp (21 px)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "status bar and 'new' dots",
+      "what": "Wi-Fi and battery glyphs darker #444746 and larger than the reference's grey icons; red dots #d73333 instead of #b32424",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "article extract, last line",
+      "what": "ellipsis after a whole word, 'Cheltenham…', instead of the reference's character truncation 'Cheltenham Tr…'",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole frame",
+      "what": "135 arbitrary values (colors like #202122/#54595d/#3366cc repeated as literals, margins like mt-[13px], top-[204px]) instead of shared tokens; tabs not templated",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "status bar icons",
+      "what": "inline style attributes (font-variation-settings) on Material Symbols spans, against the no-inline-style convention; summary panel placed at a magic top-[204px]",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every text, the wordmark, globe, badge photo, app icons and both 'new' dots are present with the right content, Roboto and Noto Serif title, and measured colors (#202122, #54595d, #3366cc, #eaecf0, #e8f0ff)",
+    "Bottom navigation built once as a data-driven template (5 items with icon, pill, label and badge variants)",
+    "Readable layer names throughout (Status bar, Tabs row, Community banner, Featured article card, Article summary, Bottom navigation) and flex layout for the flowing parts"
+  ]
+}

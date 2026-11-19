@@ -1,0 +1,59 @@
+{
+  "candidate": "7530b7",
+  "verdict": "A near-identical rebuild of the Wikipedia Community home whose worst gaps are a too-round featured image card and 1-3 px drifts in the card text and nav labels; well-named auto-layout structure, but repeated nav items and styles are not reused.",
+  "metrics": {
+    "sizeMatch": true,
+    "meanDiff": 5.683,
+    "pctDiff": 3.676
+  },
+  "scores": {
+    "layout": 13,
+    "typography": 10,
+    "color": 7,
+    "icons": 10,
+    "content": 10,
+    "pixel": 3,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 4,
+    "cleanliness": 7
+  },
+  "visual": 53,
+  "editability": 30,
+  "total": 83,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "featured article image card, top corners",
+      "what": "corner radius about 24 dp (about 62 px) where the reference shows about 16 dp (about 40 px); the heatmap lights up both top corners",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "article extract in the summary card and the bottom navigation labels",
+      "what": "extract lines start 2-3 px higher with a slightly tighter line pitch; the nav labels (Saved, Search, Activity, More) render a little heavier and about 1 px lower than the reference; with the date line and other 1-2 px vertical offsets this costs 2 layout points too",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "bottom navigation",
+      "what": "the five nav items are separate frames, not instances of one component; there are no text or color styles (styled: 0), only the Tab and bookmark icon are components",
+      "points": 6
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "Featured article card",
+      "what": "the image, scrim, action buttons and summary are positioned absolutely inside a 380x414 'Card' frame (28 absolute layers), so the summary does not reflow against the image",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every text, icon, badge dot and color of the reference is present and correct, including the EN language button, the red 'new' dots and the #e8f0ff Home pill",
+    "The real app icons and the Wikipedia wordmark are kept as vectors, and the article photo is a real image fill with the 39 % veil",
+    "Clear named hierarchy (Header, Tab bar, Community banner, Section header, Featured article card, Bottom navigation) with auto-layout on bars, lists and rows"
+  ]
+}

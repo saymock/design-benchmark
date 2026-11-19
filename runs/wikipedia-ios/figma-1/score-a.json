@@ -1,0 +1,83 @@
+{
+  "candidate": "9954e7",
+  "verdict": "A near-exact rebuild of the screen: every block sits within a few pixels, but it is set in Inter instead of SF Pro and the tab bar is an opaque white, so the feed does not show through it; the file is well named, mostly auto-layout, with components for the repeated rows, but no shared styles.",
+  "metrics": { "sizeMatch": true, "meanDiff": 3.978, "pctDiff": 2.353 },
+  "scores": {
+    "layout": 13,
+    "typography": 9,
+    "color": 7,
+    "icons": 8,
+    "content": 9,
+    "pixel": 3,
+    "hierarchy": 9,
+    "layoutPrimitives": 11,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 49,
+  "editability": 34,
+  "total": 83,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "whole screen (Today, card text, section titles, tab labels)",
+      "what": "Inter used throughout instead of SF Pro: different glyph shapes (a, y, t) and widths, and the text sits about 1 pt higher in every line box; the heatmap outlines every text run",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "tab bar (Liquid Glass)",
+      "what": "the reference's translucent capsule shows the blurred row 2 description ('Article de liste de Wikimédia') and the rank circle through it; the candidate's bar is near-opaque white, so that content is lost",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "Top read row 2 title",
+      "what": "the reference clips 'présidentielle' at the card's edge with no ellipsis; the candidate truncates it with '…'",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "top bar, tabs button",
+      "what": "the square.on.square glyph has more rounded corners and a heavier stroke than the reference's sharper squares",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "Top read #1 and #3 thumbnails",
+      "what": "the Pablo Pagis photo is cropped wider (the player looks smaller than in the reference's tighter crop); the Star Academy logo is scaled and cropped differently behind the tab bar",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "status bar, segmented control, tab bar",
+      "what": "offsets of 1–3 px: the clock and battery are shifted, the segment track and the tab-bar capsule edges are slightly off (heatmap rings around the capsules)",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "styles and tab items",
+      "what": "no text or color styles (styled: 0), so #202122, #72777d and #3366cc are repeated as raw values; the four tab items are copied frames rather than instances",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "Feed and card spacing",
+      "what": "magic fractional gaps (62.599998 px, 11.3 px, 15.5 px) and many anonymous 'Vector' layers (including ten 1×1 calendar dots)",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every block (card hidden banner, Games card, Top read list, floating top bar and tab bar) matches the reference's position and size within a few pixels, with exact text, accents and colors (#3366cc links, #72777d subtitles)",
+    "Real vectors for every icon, including the status bar, the Wikipedia W and the filled SF-style tab icons, with the right glyph in each slot",
+    "Section Header, Game Question Row and Top Read Row are components with instances, inside a clearly named auto-layout tree"
+  ]
+}

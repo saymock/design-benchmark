@@ -1,0 +1,62 @@
+{
+  "candidate": "55df0e",
+  "verdict": "A very close, well-structured rebuild whose main gaps are Inter standing in for SF Pro (with a few px of vertical drift) and an opaque tab bar that loses the reference's blurred, faded feed underneath; editable with components for repeated rows but no shared styles.",
+  "metrics": { "sizeMatch": true, "meanDiff": 7.502, "pctDiff": 3.885 },
+  "scores": {
+    "layout": 12,
+    "typography": 8,
+    "color": 6,
+    "icons": 9,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 11,
+    "reuse": 6,
+    "cleanliness": 7
+  },
+  "visual": 47,
+  "editability": 33,
+  "total": 80,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "whole screen (titles, card text, tab labels)",
+      "what": "Inter instead of SF Pro: wider glyphs and different letterforms, so lines drift to the right along their length (heatmap doubles every text edge; second Top read row truncates at 'mus…' instead of 'mu…'); 'Community' segment heavier than the reference",
+      "points": 4
+    },
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "tab bar and the feed behind it",
+      "what": "reference's Liquid Glass bar shows the 'Liste de sondages…' row blurred through it and fades rank 3 to ~30 % opacity; candidate bar is near-opaque white and row 3 (circle, title, description) is drawn at full contrast",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "large title 'Today', card hidden banner, section headers, cards",
+      "what": "content sits about 3–4 px (@3x) lower from the large title downward, about 6 px at the Top read card; horizontal margins and widths match",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "tab bar, styles",
+      "what": "tab items are four copied frames rather than instances, and no color/text styles or variables are used (styled: 0): #202122, #72777d, #3366cc repeated as raw values",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "Top read #3 thumbnail behind the tab bar",
+      "what": "full Star Academy logo shown in black at full contrast; the reference shows a tighter, zoomed crop ('tar / ader') faded under the bar",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every text, icon and photo of the reference is present with correct French content, colors (#3366cc links, #72777d secondary) and card positions/widths",
+    "Status bar, navigation buttons and tab bar icons redrawn as vectors in the right SF Symbol shapes, with the selected Home capsule in blue",
+    "Section header, game event row and top-read row built as components with instances inside auto-layout sections"
+  ]
+}

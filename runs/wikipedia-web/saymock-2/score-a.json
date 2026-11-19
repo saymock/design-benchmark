@@ -1,0 +1,69 @@
+{
+  "candidate": "c24ad4",
+  "verdict": "A near-identical rebuild of the Main Page, with every block, wrap and image in place; the worst gap is a different sans-serif face plus 1–3 px vertical drift that rasterizes as edge noise everywhere, and it is well structured with templates, though the top-level regions are absolutely placed.",
+  "metrics": { "sizeMatch": true, "meanDiff": 10.408, "pctDiff": 7.473 },
+  "scores": {
+    "layout": 13,
+    "typography": 10,
+    "color": 7,
+    "icons": 9,
+    "content": 10,
+    "pixel": 1,
+    "hierarchy": 9,
+    "layoutPrimitives": 9,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 50,
+  "editability": 32,
+  "total": 82,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "whole page text",
+      "what": "font-['Helvetica',Arial] renders a slightly different sans face than the reference's: glyph shapes and advances differ a little, so the heatmap outlines every word, even where lines wrap identically",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "right column, \"In the news\" block and Kimi Antonelli photo",
+      "what": "heading band and bullets sit about 1.5 CSS px higher, the photo about 3 CSS px higher (starts at y≈1146 vs 1152 device px at display scale); the \"Did you know ...\" heading sits about 1 px lower; page tabs text is 1 px lower",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "search field",
+      "what": "border #a2a9b1, but the reference's input border is #72777d (measured), so the field reads lighter",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "pixel",
+      "where": "metrics grid, bottom rows",
+      "what": "meanDiff 10.4 (cells up to 24.9 in the lower right) comes from text anti-aliasing offsets and the photos shifted by a few pixels",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "Header, Page tabs, Main page content, Appearance menu",
+      "what": "the four top-level regions and the header's children (menu, logo, search, user links) are absolutely positioned with pixel offsets instead of a flex header and a page grid; the content inside each region does flow",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "section headings and links",
+      "what": "the four section headings (h2) repeat the same long class string, about 60 links repeat text-[#3366cc], and 237 arbitrary values stand in for tokens",
+      "points": 3
+    }
+  ],
+  "strengths": [
+    "Every text of the reference is present with identical line breaks (featured article, Help us improve, In the news, Appearance panel), including the diacritics in Święczkowski and Sochański",
+    "Box colors match the measured values: #f5fffa/#cef2e0 and #f5faff/#cedff2 columns, #cef2e0/#a3bfb1 and #cee0f2/#a3b0bf headings, #f9f9f9 banner; it uses the real wordmark, tagline, Codex icons, the three cropped photos and the blue new-feature dot",
+    "Templates drive the user links, view tabs, appearance groups and radio options (nested data), and the regions carry semantic tags and data-name labels"
+  ]
+}

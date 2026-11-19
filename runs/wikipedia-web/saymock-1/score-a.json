@@ -1,0 +1,76 @@
+{
+  "candidate": "c4ff23",
+  "verdict": "A very close, complete rebuild of the Main Page whose worst gaps are the wrong greys on the search border and tab underline plus a page-wide 1-2 px drift in text lines; it is editable, built from flex sections, but the shell is absolutely positioned and the colors are hard-coded.",
+  "metrics": { "sizeMatch": true, "meanDiff": 8.714, "pctDiff": 6.548 },
+  "scores": {
+    "layout": 12,
+    "typography": 11,
+    "color": 6,
+    "icons": 8,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 8,
+    "layoutPrimitives": 8,
+    "reuse": 5,
+    "cleanliness": 7
+  },
+  "visual": 49,
+  "editability": 28,
+  "total": 77,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "body text of both columns, section headings, Appearance panel",
+      "what": "nearly every text line and heading sits about 1 CSS px higher than the reference (the heatmap outlines all the text; grid cells 10-22 meanDiff across the columns); the welcome h1 uses a 32 px line height instead of 35.64 px and makes up for it with margins",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "search field",
+      "what": "border #a2a9b1 instead of #72777d, so the field reads lighter and flatter than the reference",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "page tabs bottom rule, left column border",
+      "what": "the tab underline is darker than the reference's light grey (#a2a9b1, ref about #c8ccd1); the left column border is #c6e9d4, ref #cef2e0",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "header: main menu and search magnifier",
+      "what": "the hamburger draws pure black, ref #202122/grey; the magnifier is darker than the reference's grey glyph",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "In the news photo (Kimi Antonelli)",
+      "what": "photo box 118x167.4 and its caption sit about 2 px lower and taller than the reference, so the caption baseline drifts",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "section headings and column panels",
+      "what": "the four section headings and the two column panels are copy-pasted with the same long class strings; 261 arbitrary values and every color is a literal hex, with no tokens",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "header, page tabs, main and Appearance aside",
+      "what": "the shell blocks are placed with absolute left/top (9 absolute layers), and both columns are fixed h-[640px] overflow-hidden, so adding content does not reflow the page",
+      "points": 3
+    }
+  ],
+  "strengths": [
+    "Every text of the reference is present and exact, accents included (Święczkowski, Sochański), with the same wrapping on every line",
+    "Measured surfaces match SOURCES: banner #f9f9f9/#dddddd, headings #cef2e0/#a3bfb1 and #cedff2/#a3b0bf, 18 px radios with #3366cc selected",
+    "The user links and the Appearance radio groups are templates driven by data, and the main blocks are named (Header, Search, Page tabs, Welcome banner, Left/Right column, Appearance menu)"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "candidate": "29c87e",
+  "verdict": "A near-faithful Wikipedia Main Page with every block, photo and link present; the gap is a substitute sans (Arimo instead of the reference's Helvetica) plus 1–3 px vertical drifts, and it is a reasonably editable auto-layout build with four components but no shared styles.",
+  "metrics": { "sizeMatch": true, "meanDiff": 7.741, "pctDiff": 5.932 },
+  "scores": {
+    "layout": 12,
+    "typography": 9,
+    "color": 7,
+    "icons": 9,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 6
+  },
+  "visual": 49,
+  "editability": 32,
+  "total": 81,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "all UI and body text",
+      "what": "set in Arimo (Arial metrics) instead of the reference's Helvetica: different glyphs (R, G, a, t) on every line, the main source of the text-edge differences in the heatmap; welcome title 25.6 px instead of 25.92 px",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Appearance panel radio groups",
+      "what": "rows drift down progressively: Small +1 CSS px, Standard (Width) +2 px, Light +3 px vs the reference (section labels 36/41 px tall instead of a consistent rhythm)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "In the news list and Kimi Antonelli photo",
+      "what": "list items 1–2 CSS px lower than the reference while the photo is about 2 px shorter and its caption 1–2 px higher; heatmap grid cells at bottom right reach meanDiff 20",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "search field icon and hamburger",
+      "what": "magnifier drawn darker grey than the reference's mid grey (#72777d-like), hamburger bars slightly heavier/darker",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole file",
+      "what": "no text or color styles/variables (styled: 0); raw values such as 19.200000762939453px, 15.199999809265137px and fractional gaps 8.5/10.5/11.5 repeated per frame",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "Page tabs",
+      "what": "inactive tab instances keep a 67×2 'Indicator' rectangle (hidden leftover, width of 'Main Page'), a gap:-1 overlap hack in the search bar, and the Page tabs bar itself is not auto-layout (Namespaces, Views, watchstar pulse positioned absolutely)",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "header logo",
+      "what": "wordmark and tagline sit about 1 CSS px higher than the reference",
+      "points": 0
+    }
+  ],
+  "strengths": [
+    "Content is complete and exact: every link, count (265,650 / 7,260,752), diacritic (Święczkowski, Bartłomiej Sochański), bold/italic run and the blue watchstar dot are present",
+    "Column, banner and section-heading surfaces match the measured colors (#f5fffa/#cef2e0, #f5faff/#cedff2, #f9f9f9) and box sizes (502×36, 590×36)",
+    "Structure is named and mostly auto-layout, with real components for tabs, radio options, section headings and list items (20 instances)"
+  ]
+}

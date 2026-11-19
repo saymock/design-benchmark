@@ -1,0 +1,83 @@
+{
+  "candidate": "d05af8",
+  "verdict": "A very close rebuild where every block sits within a few pixels and all the content is there; the main gaps are the iOS glass effects (no white fade or frosted blur behind the tab bar, so row 3 and the Star Academy logo show fully) and uneven, too-wide letter spacing; well structured, with templates for every repeated row.",
+  "metrics": { "sizeMatch": true, "meanDiff": 7.063, "pctDiff": 3.62 },
+  "scores": {
+    "layout": 13,
+    "typography": 8,
+    "color": 5,
+    "icons": 7,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 6
+  },
+  "visual": 45,
+  "editability": 32,
+  "total": 77,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "bottom of the feed, behind the tab bar",
+      "what": "the reference fades the feed to white under a frosted Liquid Glass bar: row 3 'Star Academy (France)' is pale grey and its logo is cut and faded, and the text behind the bar is heavily blurred. The render shows row 3 in full black with a full-color rank circle and logo, and the bar is only slightly translucent (bg-white/85 with no fade overlay)",
+      "points": 2
+    },
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "game card text, 'Which came first?', segmented control, tab labels",
+      "what": "the tracking overrides (-0.43/-0.23/+0.3 px) give uneven glyph spacing ('premier essai', 'soute rrain'). Bold titles are too wide: 'Which came first?' ends at about x=1880 vs 1870 equivalent and is visibly spaced, and 'Community', 'Activity' and 'Play today's game' are spaced too. Baselines sit 1 to 3 px low",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "nav bar profile button",
+      "what": "an outlined account_circle where the reference has the filled person-in-circle glyph (solid head and shoulders)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "'Which came first?' card header",
+      "what": "a Material calendar_month with binder rings, 20 px; the reference uses a flat, wider calendar with a grid of dots and no rings",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "status bar and tab bar",
+      "what": "the cellular bars are about 25 % smaller than the reference's (10.5 vs about 13 pt tall), and the Home glyph is Material's filled house without the SF chimney and door",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "segmented control and selected Home tab",
+      "what": "the track has no white glass rim or outline (the reference shows a 1 to 2 px light border). The selected Home tab is #3366cc instead of the measured #2975bf",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "tab bar labels and card text",
+      "what": "the tab labels sit about 3 px (1 pt) lower than in the reference, and the card text lines run 1 to 2 px low. The heatmap's bottom row cells reach a meanDiff of 13 to 18",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "section header overflow dots, tab bar template",
+      "what": "the overflow icon is recolored with a CSS filter chain instead of a real colored vector. The template data injects class strings ({{color}}, {{hl}}, {{titleClass}}, {{imgClass}}), and 160 arbitrary values are used",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every block (status bar, nav buttons, segmented control, Today, toast, Games and Top read sections, cards, tab bar, search button) is within a few pixels of the reference, and all the text matches exactly, accents and truncation included",
+    "The repeated rows are templates with data: the 2 game options, the 3 top-read rows and the 4 tabs",
+    "The real assets are used and cropped as in the reference: the W logo, the overflow dots, the France map, Nixon, Pablo Pagis and the Star Academy logo"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "candidate": "94bfc4",
+  "verdict": "A very close rebuild of the Wikipedia Explore screen with every block, image and SF-style icon in place; the visible gaps are Inter standing in for SF Pro and the card drop shadows clipped to hard-edged rectangles, and the auto-layout structure with section/row components is well organised but has no shared styles and leans on spacer frames.",
+  "metrics": { "sizeMatch": true, "meanDiff": 6.687, "pctDiff": 3.516 },
+  "scores": {
+    "layout": 13,
+    "typography": 8,
+    "color": 5,
+    "icons": 8,
+    "content": 9,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 9,
+    "reuse": 6,
+    "cleanliness": 6
+  },
+  "visual": 45,
+  "editability": 30,
+  "total": 75,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "all text (status bar, Today, section headers, card text, tab labels)",
+      "what": "Inter used instead of SF Pro: wider glyphs and different letterforms (e.g. 'Liste de sondages…' and 'On French Wikipedia' run longer, 'Community' wider in the segmented control); sizes and weights otherwise right",
+      "points": 4
+    },
+    {
+      "severity": "major",
+      "criterion": "color",
+      "where": "Games card and Top read card",
+      "what": "the soft drop shadow around the white cards is clipped by the feed container: no shadow below/right of the card, and a grey square artifact shows outside the rounded bottom-right corner instead of the reference's diffuse shadow",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "Top read #3 thumbnail (behind the tab bar)",
+      "what": "Star Academy logo shown whole and contained; the reference crops it aspect-fill so only 'tar / ader' fragments show",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "Top read rows, rank circles and segmented control",
+      "what": "rank circle sits ~3 px lower than the reference, segmented control and labels 1-3 px off; text block extents differ due to the font",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "tab bar, design tokens",
+      "what": "4 tab items are copy-pasted frames, not instances; no text/color styles or variables (styled: 0), colors and sizes repeated as raw values",
+      "points": 4
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "Game card, Top read row 2",
+      "what": "fixed 'Spacer' frames used instead of padding/gap; row 2 title is a 488 px text in a 322 px frame relying on clipping rather than truncation; battery level text floats outside the Battery frame",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "status bar, navigation bar, overlay chrome",
+      "what": "status bar and navigation bar children positioned absolutely rather than with auto-layout; tab 'Selection' rectangle 82 px wide inside a 76 px tab",
+      "points": 3
+    }
+  ],
+  "strengths": [
+    "Geometry matches almost to the pixel: header, banner, both section headers, cards, image thumbnails and the floating tab bar sit at the reference positions (grid cells mostly < 6 meanDiff outside text edges)",
+    "Status bar, W logo, nav pill icons, calendar, overflow dots and tab bar glyphs are real vectors closely matching the SF Symbols of the reference, with correct #3366cc link/rank colours and the selected Home capsule",
+    "Clean named hierarchy (Feed > Header / Section – Games / Section – Top read, Tab bar, Segmented control) with components for the section header, event row and top-read row"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+ "sizeMatch": true,
+ "referenceSize": [
+  1290,
+  2796
+ ],
+ "candidateSize": [
+  1290,
+  2796
+ ],
+ "meanDiff": 7.063,
+ "pctDiff": 3.62,
+ "grid": {
+  "note": "6×4 cells, row-major from top-left; meanDiff per cell",
+  "cells": [
+   [
+    8.83,
+    7.4,
+    2.79,
+    0.42,
+    5.33,
+    3.2
+   ],
+   [
+    8.41,
+    9.18,
+    4.8,
+    0.74,
+    0.97,
+    1.88
+   ],
+   [
+    7.07,
+    15.29,
+    8.72,
+    8.34,
+    5.24,
+    2.03
+   ],
+   [
+    7.49,
+    17.84,
+    12.76,
+    8.66,
+    8.84,
+    13.29
+   ]
+  ]
+ },
+ "outDir": "~/Developer/saymock-bench/2026-11-12-wikipedia/wikipedia-ios/saymock-2/compare"
+}

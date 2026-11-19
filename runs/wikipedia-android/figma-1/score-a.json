@@ -1,0 +1,69 @@
+{
+  "candidate": "16e819",
+  "verdict": "A near pixel-faithful rebuild where only small offsets remain (featured image shifted 2-3 px, enlarged EN letters, red badges tucked closer to their icons); the layers are well named and mostly auto-layout, but there are no text or color styles and the gaps are fractional magic numbers.",
+  "metrics": { "sizeMatch": true, "meanDiff": 8.939, "pctDiff": 5.927 },
+  "scores": {
+    "layout": 13,
+    "typography": 11,
+    "color": 8,
+    "icons": 9,
+    "content": 10,
+    "pixel": 2,
+    "hierarchy": 9,
+    "layoutPrimitives": 10,
+    "reuse": 7,
+    "cleanliness": 7
+  },
+  "visual": 53,
+  "editability": 33,
+  "total": 86,
+  "top_defects": [
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "featured article image",
+      "what": "badge artwork shifted about 2-3 px right/down inside the 415 dp crop (crown finial at x~531 vs ~528 in the reference), which drives the heatmap's 15-27 meanDiff in the image cells",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "typography",
+      "where": "language button",
+      "what": "'EN' letters noticeably taller and bolder (12 px Medium vs about 11 px in the reference); the dark box is slightly narrower and its corners tighter",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "bottom navigation, Saved and Activity",
+      "what": "red #b32424 'new' dots sit 2-3 px lower-left, overlapping the icon more than in the reference, where they sit at the icon's top-right corner",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "reuse",
+      "where": "whole frame",
+      "what": "no text styles or color variables (styled: 0) and no local main components; spacing is fractional magic numbers (gap 36.2, 24.4, 4.3, 8.35, 12.2)",
+      "points": 3
+    },
+    {
+      "severity": "minor",
+      "criterion": "cleanliness",
+      "where": "bottom navigation and header",
+      "what": "a Badge ellipse in every nav item (3 hidden or unused), a 'For you' indicator rectangle kept, and a 'Title row' 384 px wide inside a 379 px parent (overflows by 5 px)",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layoutPrimitives",
+      "where": "featured article card",
+      "what": "the image, scrim, actions and summary are stacked absolutely in a 418 px card, and 38 absolute layers in all; the summary card does not hug to the bottom edge the way the Compose layout does",
+      "points": 2
+    }
+  ],
+  "strengths": [
+    "Every text, icon and color matches the reference, down to the wrapping and the 'Cheltenham Tr…' ellipsis, Noto Serif title, #3366cc tab and #e8f0ff Home pill",
+    "The real Wikipedia wordmark, the globe and the badge are rebuilt from the supplied assets, and the scrim and 92% white summary card match the reference's tones",
+    "Clear naming (Header, Tabs bar, Community banner, Featured article card, Nav item – Home…) with tabs, nav items and action buttons as instances"
+  ]
+}

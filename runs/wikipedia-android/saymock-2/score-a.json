@@ -1,0 +1,76 @@
+{
+  "candidate": "46c40e",
+  "verdict": "A very close, clean rebuild of the Wikipedia Community feed whose main gaps are the article image's slightly different scale and crop and over-tracked body text that moves the extract's truncation, built as well-named flex HTML with a data-driven bottom nav.",
+  "metrics": { "sizeMatch": true, "meanDiff": 11.555, "pctDiff": 8.639 },
+  "scores": {
+    "layout": 13,
+    "typography": 9,
+    "color": 6,
+    "icons": 8,
+    "content": 9,
+    "pixel": 1,
+    "hierarchy": 9,
+    "layoutPrimitives": 11,
+    "reuse": 6,
+    "cleanliness": 7
+  },
+  "visual": 46,
+  "editability": 33,
+  "total": 79,
+  "top_defects": [
+    {
+      "severity": "major",
+      "criterion": "typography",
+      "where": "article card extract and subtitle",
+      "what": "extra letter-spacing (tracking 0.1–0.12px on Roboto 14) widens every line, so the 4th line truncates at 'Cheltenham…' instead of 'Cheltenham Tr…'; lines visibly longer than the reference's",
+      "points": 2
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "featured article image",
+      "what": "badge image scaled and cropped slightly differently (crown and arms offset ~5–10 px, arms wider at card edges); the grid's image cells reach meanDiff 32–35",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "layout",
+      "where": "tabs row, date, section description, banner",
+      "what": "text blocks sit ~2–3 px (about 1 dp) higher than in the reference; tab labels and 'Today - Nov 12, 2026' shifted up",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "red 'new' dots on Saved and Activity",
+      "what": "#d73333 instead of #b32424, and placed ~3 px higher and further right",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "color",
+      "where": "language button",
+      "what": "outline drawn in #202122 at full strength, darker and heavier than the reference's grey stroke; 'EN' box and letters slightly larger",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "icons",
+      "where": "status bar",
+      "what": "Material Symbols Wi-Fi and battery glyphs differ slightly in shape and size from the system ones",
+      "points": 1
+    },
+    {
+      "severity": "minor",
+      "criterion": "content",
+      "where": "article extract, last line",
+      "what": "truncation point differs ('Cheltenham…' vs 'Cheltenham Tr…')",
+      "points": 1
+    }
+  ],
+  "strengths": [
+    "Every block and text of the reference present with the right palette (#3366cc tab and Home, #eaecf0 banner, #e8f0ff pill, #54595d secondary text), Noto Serif title and Roboto elsewhere",
+    "Real assets used correctly: wordmark, globe, app icons for save/share/nav, and the article photo under a veil",
+    "Bottom navigation built once as a template with 5 data items; layers named for nearly every element (42/48)"
+  ]
+}
